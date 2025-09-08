@@ -58,75 +58,16 @@ export default {
   mounted() {
     this.$nextTick(function () {
       this.instructionCodeBlockClipBoard()
-      this.updateFaviconDirectly()
     })
   },
   updated() {
     this.$nextTick(function () {
       // 전체 화면내용이 다시 렌더링된 후에 아래의 코드가 실행됩니다. 
       this.instructionCodeBlockClipBoard()
-      this.updateFaviconDirectly()
     })
-  },
-  watch: {
-    '$route'() {
-      this.$nextTick(() => {
-        this.updateFaviconDirectly()
-      })
-    }
   },
 
     methods: {
-    changeFavicon(faviconPath) {
-      if (typeof window === 'undefined') return;
-
-      const img = new Image();
-      img.crossOrigin = 'anonymous';
-      
-      img.onload = () => {
-        const canvas = document.createElement('canvas');
-        canvas.width = 32;
-        canvas.height = 32;
-        const ctx = canvas.getContext('2d');
-        
-        ctx.drawImage(img, 0, 0, 32, 32);
-        const dataURL = canvas.toDataURL('image/png');
-        
-        const existingLinks = document.querySelectorAll("link[rel*='icon']");
-        existingLinks.forEach(link => link.remove());
-        
-        const link = document.createElement('link');
-        link.rel = 'icon';
-        link.type = 'image/png';
-        link.href = dataURL;
-        
-        document.head.appendChild(link);
-      };
-      
-      img.onerror = () => {
-        const existingLinks = document.querySelectorAll("link[rel*='icon']");
-        existingLinks.forEach(link => link.remove());
-        
-        const link = document.createElement('link');
-        link.rel = 'icon';
-        link.type = 'image/png';
-        link.href = faviconPath + '?v=' + Date.now();
-        
-        document.head.appendChild(link);
-      };
-      
-      img.src = faviconPath;
-    },
-    updateFaviconDirectly() {
-      if (!this.$page || !this.$page.markdownPage || !this.$page.markdownPage.path) {
-        return;
-      }
-      
-      const isProcessGpt = this.$page.markdownPage.path.startsWith('/process-gpt/');
-      const faviconPath = isProcessGpt ? '/process-gpt-favicon.png' : '/favicon.png';
-      
-      this.changeFavicon(faviconPath);
-    },
     instructionCodeBlockClipBoard() {
       // al pre tags on the page
       const pres = document.getElementsByTagName("pre")
@@ -165,29 +106,10 @@ export default {
   metaInfo() {
     const title = this.$page.markdownPage.title;
     const description = this.$page.markdownPage.description || this.$page.markdownPage.excerpt;
-    const isProcessGpt = this.$page.markdownPage.path.startsWith('/process-gpt/');
-    
-    const baseTitle = isProcessGpt ? 'Process-GPT' : 'uEngine6 BPM';
-    const faviconPath = isProcessGpt ? '/process-gpt-favicon.png' : '/favicon.png';
 
     return {
       title: title,
-      titleTemplate: `%s | ${baseTitle}`,
-      link: [
-        {
-          rel: 'icon',
-          type: 'image/png',
-          href: faviconPath,
-          id: 'favicon',
-          key: 'icon'
-        },
-        {
-          rel: 'shortcut icon',
-          type: 'image/png',
-          href: faviconPath,
-          key: 'shortcut-icon'
-        }
-      ],
+      titleTemplate: `%s | Process-GPT`,
       meta: [
         {
           name: 'description',

@@ -1,12 +1,13 @@
 {
-  "name": "my-project",
+  "name": "process-gpt-intro",
+  "description": "Process-GPT Introduction and Documentation Site",
   "private": true,
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
     "explore": "gridsome explore",
     "predeploy": "npm run build",
-    "deploy": "gridsome build && echo 'bpm-intro.uengine.io' > ./dist/CNAME && gh-pages -d dist"
+    "deploy": "gridsome build && echo 'intro.process-gpt.io' > ./dist/CNAME && gh-pages -d dist"
   },
   "dependencies": {
     "clipboard": "^2.0.11",

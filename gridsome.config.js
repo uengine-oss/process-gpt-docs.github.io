@@ -8,11 +8,11 @@ module.exports = {
   siteName: '',// 주석 부분 : uengine6 뒤에 각 리스트의 타이틀을 출력하고 싶을때 사용
   // titleTemplate: 'uengine6 - %s',
   // titleTemplate: 'uengine6',
-  // icon: {
-  //   favicon: './src/assets/favicon.png',
-  //   touchicon: './src/assets/favicon.png'
-  // },
-  siteUrl: (process.env.SITE_URL ? process.env.SITE_URL : 'https://intro.bpm-getting-started5.io'),
+  icon: {
+    favicon: './src/assets/process-gpt-favicon.png',
+    touchicon: './src/assets/process-gpt-favicon.png'
+  },
+  siteUrl: (process.env.SITE_URL ? process.env.SITE_URL : 'https://intro.process-gpt.io'),
   settings: {
     web: process.env.URL_WEB || false,
     twitter: process.env.URL_TWITTER || false,
