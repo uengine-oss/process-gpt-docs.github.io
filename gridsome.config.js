@@ -36,7 +36,7 @@ module.exports = {
           {
             title: '튜토리얼',
             items: [
-              '/tutorial/',
+              '/tutorial/tutorial-lv1/',
               '/tutorial/tutorial-lv2/',
               '/tutorial/tutorial-lv3/',
               '/tutorial/tutorial-lv4/',
@@ -45,7 +45,7 @@ module.exports = {
           {
             title: '세부기능',
             items: [
-              '/advanced-features/',
+              '/advanced-features/user-guide/',
               '/advanced-features/admin-guide/',
               '/advanced-features/process-marketplace/',
               '/advanced-features/simulation/',
