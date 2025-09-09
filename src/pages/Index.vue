@@ -378,7 +378,7 @@ export default {
           text: 'Getting Started'
         },
         {
-          to: 'https://github.com/uengine-oss/process-gpt-intro.github.io',
+          to: 'https://github.com/uengine-oss/process-gpt-docs.github.io',
           text: 'Github'
         },
         // {
