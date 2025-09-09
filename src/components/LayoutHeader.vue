@@ -49,11 +49,11 @@
             <GithubIcon size="1.5x" />
           </a>
 
-          <v-btn class="main-top-btn"
+          <button class="main-top-btn px-4 py-2 bg-ui-primary text-white rounded hover:bg-opacity-80 transition-all flex items-center justify-center"
             @click="openTrainingLink"
           >
-            <span style="color:white;">교육 신청</span>
-          </v-btn>
+            교육 신청
+          </button>
 
           <ToggleDarkMode class="ml-2 sm:ml-8">
             <template slot="default" slot-scope="{ dark }">

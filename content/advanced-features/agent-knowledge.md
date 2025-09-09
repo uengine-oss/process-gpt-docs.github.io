@@ -1,6 +1,6 @@
 ---
 description: ''
-sidebar: 'process-gpt'
+sidebar: 'getting-started'
 ---
 
 # 에이전트 지식관리

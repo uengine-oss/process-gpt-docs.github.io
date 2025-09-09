@@ -1,6 +1,6 @@
 ---
 description: ''
-sidebar: 'process-gpt'
+sidebar: 'getting-started'
 ---
 
 # 프로세스 컨설팅 AI 및 관리

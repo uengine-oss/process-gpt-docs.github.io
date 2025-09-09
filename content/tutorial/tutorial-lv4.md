@@ -1,6 +1,6 @@
 ---
 description: ''
-sidebar: 'process-gpt'
+sidebar: 'getting-started'
 ---
 
 # ERP 데이터 연동을 통한 재고 관리

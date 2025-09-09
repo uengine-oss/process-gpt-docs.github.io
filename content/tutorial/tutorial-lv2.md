@@ -1,6 +1,6 @@
 ---
 description: ''
-sidebar: 'process-gpt'
+sidebar: 'getting-started'
 ---
 
 # AI 에이전트를 활용한 제안서 작성

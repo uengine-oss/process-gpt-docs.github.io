@@ -374,7 +374,7 @@ export default {
       ],
       links: [
         {
-          to: '/process-gpt/',
+          to: '/getting-started/',
           text: 'Getting Started'
         },
         {

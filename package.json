@@ -7,7 +7,7 @@
     "develop": "gridsome develop",
     "explore": "gridsome explore",
     "predeploy": "npm run build",
-    "deploy": "gridsome build && echo 'intro.process-gpt.io' > ./dist/CNAME && gh-pages -d dist"
+    "deploy": "gridsome build && echo 'docs.process-gpt.io' > ./dist/CNAME && gh-pages -d dist"
   },
   "dependencies": {
     "clipboard": "^2.0.11",

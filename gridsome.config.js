@@ -12,48 +12,48 @@ module.exports = {
     favicon: './src/assets/process-gpt-favicon.png',
     touchicon: './src/assets/process-gpt-favicon.png'
   },
-  siteUrl: (process.env.SITE_URL ? process.env.SITE_URL : 'https://intro.process-gpt.io'),
+  siteUrl: (process.env.SITE_URL ? process.env.SITE_URL : 'https://docs.process-gpt.io'),
   settings: {
     web: process.env.URL_WEB || false,
     twitter: process.env.URL_TWITTER || false,
     github: process.env.URL_GITHUB || false,
     nav: {
       links: [
-        { path: '/process-gpt/', title: 'Process-GPT' }
+        { path: '/getting-started/', title: 'Process-GPT' }
       ]
     },
     sidebar: [
       {
-        name: 'process-gpt',
+        name: 'getting-started',
         sections: [
           {
             title: '시작하기',
             items: [
-              '/process-gpt/',
-              '/process-gpt/process-gpt-install/',
+              '/getting-started/',
+              '/getting-started/process-gpt-install/',
             ]
           },
           {
             title: '튜토리얼',
             items: [
-              '/process-gpt/tutorial-lv1/',
-              '/process-gpt/tutorial-lv2/',
-              '/process-gpt/tutorial-lv3/',
-              '/process-gpt/tutorial-lv4/',
+              '/tutorial/',
+              '/tutorial/tutorial-lv2/',
+              '/tutorial/tutorial-lv3/',
+              '/tutorial/tutorial-lv4/',
             ]
           },
           {
             title: '세부기능',
             items: [
-              '/process-gpt/user-guide/',
-              '/process-gpt/admin-guide/',
-              '/process-gpt/process-marketplace/',
-              '/process-gpt/simulation/',
-              '/process-gpt/multi-agent/',
-              '/process-gpt/agent-knowledge/',
-              '/process-gpt/a2a-system/',
-              '/process-gpt/voice-chat/',
-              '/process-gpt/browser-use/',
+              '/advanced-features/',
+              '/advanced-features/admin-guide/',
+              '/advanced-features/process-marketplace/',
+              '/advanced-features/simulation/',
+              '/advanced-features/multi-agent/',
+              '/advanced-features/agent-knowledge/',
+              '/advanced-features/a2a-system/',
+              '/advanced-features/voice-chat/',
+              '/advanced-features/browser-use/',
             ]
           }
         ]
