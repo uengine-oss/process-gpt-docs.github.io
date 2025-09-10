@@ -11,7 +11,21 @@ module.exports = function (api) {
     addMetadata('settings', require('./gridsome.config').settings);
   });
 
-  api.createPages(({ createPage }) => {
+  api.createPages(({ createPage, getCollection }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/
+    
+    // getting-started/index.md를 루트 경로로 설정
+    const markdownPages = getCollection('MarkdownPage');
+    const gettingStartedIndex = markdownPages.findNode({ path: '/getting-started/' });
+    
+    if (gettingStartedIndex) {
+      createPage({
+        path: '/',
+        component: './src/templates/MarkdownPage.vue',
+        context: {
+          id: gettingStartedIndex.id
+        }
+      });
+    }
   });
 }

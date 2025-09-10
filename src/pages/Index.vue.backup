@@ -1,0 +1,404 @@
+<template>
+  <div>
+    <Layout>
+      <!-- pc 환경 style -->
+      <div class="pt-8 md:pt-16 is-pc">
+        <div class="flex">
+          <div style = "width: 47.5%;">
+            <div class="flex flex-col items-left mb-2 text-ui-primary">
+              <h2 class="text-3xl text-6xl font-black tracking-tighter border-none">
+                Process-GPT
+              </h2>
+              <div v-for="(paragraph, index) in paragraphs" :key="index">
+                <p class="lead mt-0 mb-5" style="font-size: 18px;" v-html="paragraph.content"></p>
+              </div>
+              <div class="flex">
+                <g-link
+                  v-for="(link, index) in links"
+                  :key="index"
+                  :to="link.to"
+                  class="glink-margin px-6 py-4 text-2xl leading-none text-white border rounded-lg shadow-lg bg-ui-primary border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1"
+                >
+                  {{ link.text }}
+                </g-link>
+              </div>
+            </div>
+          </div>
+          <div style = "width: 47.5%; margin-left: 5%; margin-top: 140px;">
+            <iframe style ="width: 100%; height: 350px; border: none;"
+              src="https://www.youtube.com/embed/kd6_hKSQDYc"
+              title="YouTube video player" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+        </div>
+
+        <div class="pt-8 mx-auto mt-8 border-t md:mt-16 md:pt-16 border-top border-ui-border max-w-screen-sm"></div>
+        <h2 class="sub-title">FEATURES</h2>
+        <!-- 텍스트 왼쪽 -->
+        <div v-for="(description, index) in mainDescriptions" :key="index" style="margin-top: 50px;" class="flex container">
+          <template v-if="index % 2 === 0">
+            <div style="width: 47.5%;">
+              <h3 style="font-size: 30px; font-weight: 500; margin: 20px 0px 50px 0px;">{{ description.title }}</h3>
+              <div style="font-size: 20px;">
+                {{ description.content }}
+              </div>
+            </div>
+            <g-image :src="description.image" style="width: 47.5%; margin-left: 5%;" />
+          </template>
+          <template v-else>
+            <g-image :src="description.image" style="width: 47.5%;" />
+            <div style="width: 47.5%; margin-left: 5%;">
+              <h3 style="font-size: 30px; font-weight: 500; margin: 20px 0px 50px 0px;">{{ description.title }}</h3>
+              <div style="font-size: 20px;">{{ description.content }}</div>
+            </div>
+          </template>
+        </div>
+        <br><br><br>
+      </div>
+
+      <!-- 모바일 환경 style -->
+      <div class="is-mobile container">
+        <div style="width: 100%;">
+          <div class="flex flex-col items-left mb-2 text-ui-primary">
+            <h2 class="text-3xl text-6xl font-black tracking-tighter border-none">
+              Process-GPT
+            </h2>
+            <div v-for="(paragraph, index) in paragraphs" :key="index">
+              <p class="lead mt-0 mb-5" style="font-size: 18px;" v-html="paragraph.content"></p>
+            </div>
+            <div class="flex">
+              <g-link
+                v-for="(link, index) in links"
+                :key="index"
+                :to="link.to"
+                style="font-size: 14px; font-weight: 500;"
+                class="glink-margin px-6 py-4 text-2xl leading-none text-white border rounded-lg shadow-lg bg-ui-primary border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1"
+              >
+                {{ link.text }}
+              </g-link>
+            </div>
+          </div>
+        </div>
+        <div style = "width: 100%;">
+          <iframe style ="width: 100%; height: 300px; border: none;"
+            src="https://www.youtube.com/embed/ZmytoLlvpMs"
+            title="YouTube video player" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+        <div class="pt-8 mx-auto mt-8 border-t md:mt-16 md:pt-16 border-top border-ui-border max-w-screen-sm"></div>
+        <h2 class="sub-title">FEATURES</h2>
+
+        <div v-for="(description, index) in mainDescriptions" :key="index" class="content-section">
+          <div class="content-text">
+            <h3 style="text-align: center;">{{ description.title }}</h3>
+            <div>{{ description.content }}</div>
+          </div>
+          <img :src="description.image" class="content-image" alt="Process-GPT Feature">
+        </div>
+      </div>
+
+      <!-- <div class="container">
+        <div>
+            <h2 class="sub-title is-mobile-sub-title" style="margin: 50px 0;">Other features</h2>
+            <div style="margin-bottom: 50px;">
+              <dl class="accordion">
+                <div v-for="(item, index) in accordionItems" :key="index"
+                   style="margin-bottom: 30px;"
+                >
+                  <dt>
+                    <a href="#" style="font-size: 20px; font-weight: 700;">{{ item.title }}</a>
+                  </dt>
+                  <dd class="text-gray-700" v-html="item.content"></dd>
+                </div>
+              </dl>
+            </div>
+            
+        </div>                                
+      </div> -->
+
+      <div class="pt-8 mx-auto mt-8 border-t md:mt-20 md:pt-20 border-top border-ui-border max-w-screen-sm"></div>
+
+
+      <!-- uEngine 제품 그룹 섹션 위치 -->
+      <!-- <div class="pt-8 mx-auto mt-8 border-t md:mt-20 md:pt-20 border-top border-ui-border max-w-screen-sm"></div>
+
+
+
+        <div style = "line-height:30px; font-weight:500; font-size:16px;">
+          유엔진 BPM 프로젝트는 기존 고가의 라이센스 비용으로만 접할 수 있던 BPMS 제품을 오픈소스 형태로 제공하고,
+          이를 적용하기 위한 교육과 컨설팅 서비스를 제공함으로써,
+          컨설팅 비용 중심의 예산구조를 통한 충실한 교육과 내재화 달성,
+          소스코드의 제공을 통한 고객 요건에 중심을 둔 충실한 커스터마이징, 다수의 서비스 채널을 허용합니다.
+          BPM도입에서의 고려사항 중 기술적인 내용과 관계있는 사항은, 얼마나 용이하게 커스터마이징 가능한가와 우리 조직 시스템 환경에 부담없이 쉽게 융합될 수 있느냐, 입니다.
+          이러한 커스터마이저빌리티와 리스크 낮은 융합을 위해 유엔진BPMS의 아키텍처는 "객체지향 컴포넌트 프레임워크"의 접근방식인 IoC (제어권의 반전)과 "설계의 재사용"의 컨셉을 적용하고 있습니다.
+          이는, 조직도 찾기 로직의 분리, 액티비티 유형의 컴포넌트 인터페이스화, 엔진상 발생 이벤트의 리스너 등의 컴포넌트 인터페이스를 제공하여
+          BPM Hot-spot 서비스(고정부위)와 BPM 커스터마이징 빈발요소(가변부위)를 정제한 경계를 형성하며 고정부위의 서비스로서,
+          리플렉션을 통한 액티비티 컴포넌트 UI의 자동생성, 인스턴스 데이터의 관리, MQ처리, OLAP분석처리등의 기능을 기반 제공함으로서
+          개발자로 하여금 BPM 기반 개발에 있어 BPM하부 기술에 대한 어떠한 고민도 하지 않더라도 커스터마이징을 용이하게 하는 접근방식입니다.
+          이러한 접근방식은 이미 Spring Framework 등, 다양한 프레임워크에서의 접근방식을 BPM기반 시스템 개발의 영역에 대입한 것으로,
+          일반적으로 패키지 기반으로만 제공되어 Server/Client 방식의 연계만을 허용하는 BPM제품에서의 리스크를 대폭 줄이고 가용성을 최대화하는 기술적 기반이 됩니다.
+        </div>
+        <br><br> -->
+        
+        <!-- Zero Code & Extensible Vocalbulary 섹션 -->
+
+        <section class="pb-0 mb-40">
+          <div class="container">                    
+              <div>
+                  <div class="text-center">
+                      <h2 class="sub-title is-mobile-sub-title" style="line-height: 1.5; margin-bottom: 50px;">Process-GPT의 특징</h2>
+                  </div>
+              </div>
+              <div>
+                  <p style="line-height: 1.8;">
+                    Process-GPT는 AI 기반 비즈니스 프로세스 자동화 플랫폼으로, LLM(Large Language Model) 기술을 활용하여 프로세스 모델링과 실행을 자동화합니다.
+                    자연어 처리를 통해 복잡한 비즈니스 요구사항을 이해하고, 이를 실행 가능한 프로세스로 변환하여 업무 효율성을 극대화합니다.
+                    멀티 에이전트 시스템을 통해 다양한 역할의 AI 에이전트들이 협력하여 복합적인 업무를 처리하며, 브라우저 자동화와 시뮬레이션 기능을 제공합니다.
+                    기존의 복잡한 프로세스 모델링 도구 없이도 대화형 인터페이스를 통해 손쉽게 업무 프로세스를 구성하고 실행할 수 있어, 비전문가도 쉽게 활용할 수 있습니다.
+                  </p>
+              </div>
+          </div>
+        </section>
+
+      </Layout>
+
+  <!-- pc footer -->
+    <footer 
+      style="width: 100%;
+      height: 300px;
+      background-color: #1E88E5;"
+      class="is-pc-footer"
+    >
+      <div class="flex logo-style">
+        <div style="text-align: center; color: white; font-size: 24px; font-weight: bold;">
+          Process-GPT
+        </div>
+      </div>
+      <div style = "width: 100%; height: 100px; text-align: center; font-size: 16px; color: white; font-weight: 300; line-height: 50px; padding-top: 20px;">
+        <div>Copyright © 2017 uEngine &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; All Rights Reserved &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; Designed By Sppark &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; Address 서울 서초구 신반포로45길 18 주일빌딩 501호</div>
+        <div>Email : help@uengine.org</div>
+      </div>
+    </footer>
+
+  <!-- 모바일 footer -->
+    <footer 
+      style = "width: 100%;
+      height: 300px;
+      background-color: #1E88E5;"
+      class="is-mobile-footer"
+    >
+      <div class="flex logo-style">
+        <div style="text-align: center; color: white; font-size: 24px; font-weight: bold;">
+          Process-GPT
+        </div>
+      </div>
+      <div style = "width: 100%; height: 100px; text-align: center; font-size: 16px; color: white; font-weight: 300; line-height: 30px; padding-top: 20px;">
+        <div>Copyright © 2017 uEngine <br> All Rights Reserved <br> Designed By Sppark <br> Address 서울 서초구 신반포로45길 18 주일빌딩 501호</div>
+        <div>Email : help@uengine.org</div>
+      </div>
+    </footer>
+  </div>
+</template>
+
+<script>
+import Logo from '@/components/Logo';
+import { ArrowRightCircleIcon, ZapIcon, CodeIcon, MoonIcon, SearchIcon } from 'vue-feather-icons';
+
+export default {
+  components: {
+    Logo,
+    ArrowRightCircleIcon,
+    ZapIcon,
+    CodeIcon,
+    MoonIcon,
+    SearchIcon
+  },
+
+  data() {
+    return {
+      mainDescriptions: [
+        {
+          title: '에이전트 지식의 자동 관리',
+          content: '업무에 필요한 AI 에이전트를 등록하고, Agent Boss가 자연어로 업무 방식과 목표를 교육합니다. 에이전트는 조직 내에서 실제 업무를 수행하고, 결과에 대한 피드백을 통해 지속적으로 성장하며 다음 업무에 더 정밀하게 대응할 수 있게 됩니다.',
+          image: require('../../uengine-image/process-gpt/organizationa.gif')
+        },
+        {
+          title: '조직 목표를 달성을 위한 자동화된 휴먼-에이전트 팀 프로세스 정의',
+          content: '목표를 입력하면, 휴먼·에이전트 팀과 워크차트가 자동 구성되어 실행됩니다. 에이전트가 업무를 수행하고, 사용자는 전략적 판단과 피드백으로 프로세스를 개선합니다. 필요 시 자연어로 수정하거나 BPMN 모델러를 통해 직접 편집할 수 있습니다.',
+          image: require('../../uengine-image/process-gpt/consulting.gif')
+        },
+        {
+          title: '에이전트가 초안 생성',
+          content: '등록된 에이전트로 다중 구성(Crew)을 생성하고, 각 에이전트는 목표 달성까지 자율적으로 실행됩니다. MCP 기반으로 ERP, 메일, 협업툴 등 다양한 채널을 연결하여 반복 업무는 자동화되고, 결과는 문서로 생성됩니다. 내부 검색·오피스 도구 활용·MCP 연동까지 가능한 실질적인 실행 중심 프로세스 관리 환경을 제공합니다.',
+          image: require('../../uengine-image/process-gpt/agent.gif')
+        },
+        {
+          title: 'A2A 호출 & 서비스 노출',
+          content: '내·외부 시스템의 Open API 명세와 프로세스 데이터를 자동 해석하여 연동 방식을 제안합니다. Process GPT의 프로세스 및 에이전트를 A2A 서비스로 노출하고 외부 시스템에서 직접 호출할 수 있습니다. 자동 연계 구조를 통해 다양한 시스템 간 통합 실행 환경을 손쉽게 구축할 수 있습니다.',
+          image: require('../../uengine-image/process-gpt/a2a.gif')
+        }
+      ],
+      // accordionItems: [
+      //   {
+      //     title: '01. 자연어 기반 프로세스 생성',
+      //     content: `
+      //       ✔ 복잡한 모델링 도구 없이 자연어 대화만으로 프로세스를 생성합니다.<br>
+      //       ✔ 업무 요구사항을 설명하면 AI가 자동으로 최적화된 프로세스를 설계합니다.<br>
+      //       ✔ 실시간 피드백을 통해 프로세스를 지속적으로 개선할 수 있습니다.
+      //     `
+      //   },
+      //   {
+      //     title: '02. 멀티 에이전트 협업',
+      //     content: `
+      //       ✔ 다양한 전문 분야의 AI 에이전트들이 협력하여 업무를 처리합니다.<br>
+      //       ✔ 각 에이전트는 특정 도메인의 전문성을 가지고 있어 정확한 업무 수행이 가능합니다.<br>
+      //       ✔ 에이전트 간 자동 협업을 통해 복합적인 업무도 효율적으로 처리합니다.<br>
+      //       ✔ 조직의 지식을 학습하여 맞춤형 에이전트를 구성할 수 있습니다.
+      //     `
+      //   },
+      //   {
+      //     title: '03. 브라우저 자동화 & 시뮬레이션',
+      //     content: `
+      //       ✔ 웹 브라우저를 통한 반복 작업을 자동화하여 업무 효율성을 향상시킵니다.<br>
+      //       ✔ 실제 실행 전 시뮬레이션을 통해 프로세스 결과를 미리 확인할 수 있습니다.<br>
+      //       ✔ 음성 인터페이스를 통한 직관적인 프로세스 제어가 가능합니다.<br>
+      //       ✔ A2A(Application-to-Application) 시스템 통합을 지원합니다.
+      //     `
+      //   }
+      // ],
+      paragraphs: [
+        {
+          content: '<span style="font-size: 20px; font-weight: bold;">Process-GPT는</span> AI 기반 비즈니스 프로세스 자동화 플랫폼으로, 자연어 처리를 통해 복잡한 업무를 간단하게 자동화합니다.'
+        },
+        {
+          content: '<span style="font-size: 20px; font-weight: bold;">Process-GPT는</span> 대화형 인터페이스를 통해 누구나 쉽게 프로세스를 생성하고 실행할 수 있는 혁신적인 플랫폼입니다. 복잡한 모델링 도구나 프로그래밍 지식 없이도 자연어로 업무를 설명하면, AI가 자동으로 최적화된 프로세스를 생성하고 실행합니다.'
+        },
+        {
+          content: '멀티 에이전트 시스템을 통해 다양한 전문 분야의 AI들이 협력하여 복합적인 업무를 처리하며, 브라우저 자동화, 음성 인터페이스, 시뮬레이션 등의 고급 기능을 제공합니다. 또한 조직의 지식을 학습하여 맞춤형 프로세스를 생성할 수 있어, 기업의 고유한 업무 패턴을 반영한 자동화가 가능합니다.'
+        },
+        {
+          content: '기존의 복잡한 BPM 도구들과 달리, Process-GPT는 직관적이고 사용자 친화적인 접근 방식으로 누구나 쉽게 업무 자동화를 구현할 수 있도록 합니다. 이를 통해 기업은 빠르고 효율적으로 디지털 트랜스포메이션을 달성할 수 있습니다.'
+        }
+      ],
+      links: [
+        {
+          to: '/getting-started/',
+          text: 'Getting Started'
+        },
+        {
+          to: 'https://github.com/uengine-oss/process-gpt',
+          text: 'Github'
+        },
+        // {
+        //   to: 'https://www.facebook.com/groups/uenginebpm/',
+        //   text: 'Facebook'
+        // }
+      ]
+    };
+  },
+
+  metaInfo() {
+    const title = 'Process-GPT';
+    const description = 'AI 기반 비즈니스 프로세스 자동화 플랫폼 - 자연어 처리를 통해 복잡한 업무를 간단하게 자동화합니다.';
+
+    return {
+      title: title,
+      meta: [
+        {
+          name: 'description',
+          content: description
+        },
+        {
+          key: 'og:title',
+          name: 'og:title',
+          content: title,
+        },
+        {
+          key: 'twitter:title',
+          name: 'twitter:title',
+          content: title,
+        },
+        {
+          key: 'og:description',
+          name: 'og:description',
+          content: description,
+        },
+        {
+          key: 'twitter:description',
+          name: 'twitter:description',
+          content: description,
+        },
+      ],
+    }
+  }
+}
+</script>
+
+<style>
+  .home-links a {
+    margin-right: 1rem;
+  }
+  .glink-margin:nth-child(2),
+  .glink-margin:nth-child(3),
+  .glink-margin:nth-child(4){
+    margin-left:2%;
+  }
+  .sub-title{
+    width:100%; text-align:center; font-size:40px; font-weight:700;
+  }
+
+  .logo-style{
+    width:20%; margin-left:40%;  padding-top:60px;
+  }
+
+  .is-mobile-footer{display:none;}
+
+  td {
+      border: 1px solid #999;
+      text-align:center;
+      padding:5px !important;
+  }
+  .is-mobile{display:none;}
+
+  .content-section {
+  margin-top: 50px;
+}
+
+.content-text {
+  width: 100%;
+  font-size: 20px;
+  margin-top:20px;
+}
+
+.content-text h3 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.content-image {
+  width: 100%;
+  margin-top: 30px;
+}
+
+@media only screen and (max-width:1279px) {
+  .is-pc{display:none;}
+  .is-mobile{display:block;}
+
+  .is-mobile-sub-title{font-size:30px;}
+
+  .logo-style{
+    width:40%; margin-left:30%;  padding-top:30px;
+  }
+  .is-mobile-footer{display:block;}
+  .is-pc-footer{display:none;}
+}
+
+
+</style>

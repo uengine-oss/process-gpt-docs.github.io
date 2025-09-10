@@ -121,7 +121,7 @@ export default {
 
   methods: {
     openTrainingLink() {
-      window.open('https://www.gkn.co.kr/_training/detail.php?sn=1602', '_blank');
+      window.open('https://www.uengine.org/contents/educationaiagent.html', '_blank');
     }
   }
 };
