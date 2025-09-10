@@ -40,6 +40,7 @@ module.exports = {
               '/tutorial/tutorial-lv2/',
               '/tutorial/tutorial-lv3/',
               '/tutorial/tutorial-lv4/',
+              '/tutorial/tutorial-lv5/',
             ]
           },
           {
