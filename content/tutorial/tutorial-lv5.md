@@ -3,7 +3,7 @@ description: ''
 sidebar: 'getting-started'
 ---
 
-# 멀티플 인스턴스 뉴스레터 프로세스
+# 멀티플 인스턴스로 실행하는 고객 맞춤 뉴스레터 프로세스
 
 ## VIP 뉴스레터 프로세스로 따라하는 ProcessGPT 튜토리얼 Lv.5
 
