@@ -28,7 +28,7 @@ sidebar: 'getting-started'
 <br>
 
 
-### CRM 데이터 연동 (Supabase 활용_
+### CRM 데이터 연동 (Supabase 활용)
 
 1. 우측 상단 설정 > 데이터소스 메뉴에서 접속 정보를 추가하고 사용할 CRM 데이터 소스 정보를 입력합니다.
 (본 튜토리얼에서는 Supabase를 예시로 사용합니다.)
@@ -102,9 +102,6 @@ sidebar: 'getting-started'
 ### 리뷰
 
 1. 유저인 결정권자는 에이전트가 작성한 초안을 검토합니다. 결과물에 따라 승인(결재 완료)와 재작성을 지시할 수 있습니다.
-
-![](../../uengine-image/process-gpt/tutorial/lv5-14.png)
-<br>
 
 ![](../../uengine-image/process-gpt/tutorial/lv5-15.png)
 <br>
