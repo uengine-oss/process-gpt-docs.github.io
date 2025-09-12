@@ -89,13 +89,13 @@ sidebar: 'getting-started'
 ![](../../uengine-image/process-gpt/tutorial/lv5-3.png)
 <br>
 
-![](../../uengine-image/process-gpt/tutorial/lv5-21(이서연).png)
+![](../../uengine-image/process-gpt/tutorial/lv5-21(lee).png)
 <br>
 
-![](../../uengine-image/process-gpt/tutorial/lv5-22(김지훈).png)
+![](../../uengine-image/process-gpt/tutorial/lv5-22(kim).png)
 <br>
 
-![](../../uengine-image/process-gpt/tutorial/lv5-23(정우성).png)
+![](../../uengine-image/process-gpt/tutorial/lv5-23(jung).png)
 <br>
 
 

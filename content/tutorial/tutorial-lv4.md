@@ -31,7 +31,7 @@ sidebar: 'getting-started'
 ![](../../uengine-image/process-gpt/tutorial/lv4-3.png)
 <br>
 
-![](../../uengine-image/process-gpt/tutorial/lv4-17.JPG)
+![](../../uengine-image/process-gpt/tutorial/lv4-17.png)
 <br>
 
 
@@ -47,7 +47,7 @@ sidebar: 'getting-started'
 
 2. 각 task의 폼을 용도에 맞게 수정합니다. task의 설정과 사용할 에이전트에 대한 설정, Supabase와의 연동을 아래와 같이 진행합니다.
 
-![](../../uengine-image/process-gpt/tutorial/lv4-19.JPG)
+![](../../uengine-image/process-gpt/tutorial/lv4-19.png)
 <br>
 
 ![](../../uengine-image/process-gpt/tutorial/lv4-20.png)
