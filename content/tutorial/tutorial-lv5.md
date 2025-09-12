@@ -89,7 +89,7 @@ sidebar: 'getting-started'
 ![](../../uengine-image/process-gpt/tutorial/lv5-3.png)
 <br>
 
-![](../../uengine-image/process-gpt/tutorial/lv5-21(lee).png)
+![](../../uengine-image/process-gpt/tutorial/lv5-24.png)
 <br>
 
 ![](../../uengine-image/process-gpt/tutorial/lv5-22(kim).png)
