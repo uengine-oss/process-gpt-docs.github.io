@@ -54,7 +54,7 @@ sidebar: 'getting-started'
 1. **프로세스 정의 화면**  
    - 프로세스 정의는 좌측 프로세스 모델링 편집 화면과 우측 프로세스 정의 채팅 화면을 통해 관리합니다.
 
-   ![](../../uengine-image/PAL_processDefinitionChat_sub1.png)
+   ![](../../uengine-image/process-gpt/processDefinitionChat_sub1.png)
 
 <br>
 
