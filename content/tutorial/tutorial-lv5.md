@@ -84,18 +84,35 @@ sidebar: 'getting-started'
 ![](../../uengine-image/process-gpt/tutorial/lv5-12.png)
 <br>
 
-3. CRM 데이터에 연동된 3명의 고객을 위해 생성된 맞춤형 뉴스레터 입니다. 
+3. CRM 데이터에 연동된 3명의 고객을 위해 생성된 맞춤형 뉴스레터 입니다.
+
+아래 이미지와 같이 사내 CRM 데이터를 활용하여 고객별 맞춤형 뉴스레터가 생성됩니다.
 
 ![](../../uengine-image/process-gpt/tutorial/lv5-3.png)
 <br>
 
-![](../../uengine-image/process-gpt/tutorial/lv5-24.png)
+이서연 고객을 대상으로 작성된 뉴스레터 입니다. 지인의 소개와 AI기반 고객 상담자동화에 대한 고객의 관심사를 타겟으로 한 뉴스레터를 작성합니다
+
+![](../../uengine-image/process-gpt/tutorial/lv5-27.png)
 <br>
 
-![](../../uengine-image/process-gpt/tutorial/lv5-22(kim).png)
+![](../../uengine-image/process-gpt/tutorial/lv5-21(lee).png)
+<br>
+
+세미나에서 알게된 정우성 고객에게는 스마트팩토리 및 생산자동화라는 고객의 관심사에 맞춰 뉴스레터가 제작됩니다.
+
+![](../../uengine-image/process-gpt/tutorial/lv5-25.png)
 <br>
 
 ![](../../uengine-image/process-gpt/tutorial/lv5-23(jung).png)
+<br>
+
+김지훈 고객에게는 대학동문으로서의 유대감과 고객의 관심사인 클라우드 기반 ERP 솔루션에 대한 내용을 담은 뉴스레터를 생성합니다.
+
+![](../../uengine-image/process-gpt/tutorial/lv5-26.png)
+<br>
+
+![](../../uengine-image/process-gpt/tutorial/lv5-22(kim).png)
 <br>
 
 
