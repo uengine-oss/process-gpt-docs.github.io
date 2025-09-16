@@ -55,6 +55,8 @@ module.exports = {
               '/advanced-features/a2a-system/',
               '/advanced-features/voice-chat/',
               '/advanced-features/browser-use/',
+              '/advanced-features/feedback-system/',
+              '/advanced-features/multi-instance/',
             ]
           }
         ]
