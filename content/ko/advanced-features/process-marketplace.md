@@ -17,14 +17,14 @@ sidebar: 'getting-started'
 마켓플레이스를 통해 휴가 신청 및 승인 프로세스를 적용하는 방법은 다음과 같습니다.
 
 프로세스 정의 체계도에 진입하여 '마켓플레이스'를 클릭하여 실행합니다.
-![](../../uengine-image//process-gpt/marketplace-1.png)<br>
+![](../../../uengine-image//process-gpt/marketplace-1.png)<br>
 
 마켓플레이스가 실행되면 아래와 같이 검색창에 '휴가 신청 및 승인 프로세스'를 입력하여 마켓플레이스에 등록된 <br> 프로세스를 검색 후, 추가를 진행합니다.
 
-![](../../uengine-image/process-gpt/marketplace-3.png)<br>
+![](../../../uengine-image/process-gpt/marketplace-3.png)<br>
 
 추가가 완료되면 프로세스 정의 체계도에 해당 프로세스를 마켓플레이스에 등록할 때 입력한 Mega, Major 프로세스와 함께 아래와 같이 휴가 신청 프로세스가 생성되어 사용할 수 있습니다.
-![](../../uengine-image/process-gpt/marketplace-4.png)<br>
+![](../../../uengine-image/process-gpt/marketplace-4.png)<br>
 
 
 ## 마켓플레이스 등록
@@ -33,7 +33,7 @@ sidebar: 'getting-started'
 영업관리 프로세스를 활용하여 마켓플레이스에 등록하는 방법은 다음과 같습니다.
 
 생성한 프로세스 정의 화면 우측 영업관리 프로세스 하단에 '마켓플레이스 등록'을 클릭하여 마켓플레이스 등록을 진행합니다.
-![](../../uengine-image/process-gpt/marketplace-5.png)<br>
+![](../../../uengine-image/process-gpt/marketplace-5.png)<br>
 
 마켓플레이스 등록창이 생성되면 영업관리 프로세스를 마켓플레이스에 등록할 때 필수로 입력해야하는 정보창들이 나타나며 다음과 같은 정보를 입력해야 합니다.
 
@@ -45,7 +45,7 @@ sidebar: 'getting-started'
 
 표를 참고하여 아래와 같이 영업관리 프로세스를 마켓플레이스에 등록합니다. 이때, 태그는 키워드 단위로 'enter'를 <br>입력하여 등록할 수 있습니다.
 
-![](../../uengine-image/process-gpt/marketplace-6.png)<br>
+![](../../../uengine-image/process-gpt/marketplace-6.png)<br>
 
 등록이 완료되면 마켓플레이스에 아래와 같이 등록된 것을 확인할 수 있습니다.
-![](../../uengine-image/process-gpt/marketplace-7.png)
+![](../../../uengine-image/process-gpt/marketplace-7.png)

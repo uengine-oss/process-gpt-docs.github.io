@@ -56,10 +56,26 @@ query Sidebar {
   metadata {
     settings {
       sidebar {
-        name
-        sections {
-          title
-          items
+        ko {
+          name
+          sections {
+            title
+            items
+          }
+        }
+        en {
+          name
+          sections {
+            title
+            items
+          }
+        }
+        jp {
+          name
+          sections {
+            title
+            items
+          }
         }
       }
     }
@@ -83,14 +99,27 @@ export default {
     pages() {
       return this.$page.allMarkdownPage.edges.map(edge => edge.node);
     },
+    currentLanguage() {
+      // 현재 페이지 경로를 기반으로 언어 감지
+      const path = this.$page.markdownPage.path;
+      if (path.startsWith('/en/')) return 'en';
+      if (path.startsWith('/jp/')) return 'jp';
+      return 'ko';
+    },
     sidebar() {
-      return this.$static.metadata.settings.sidebar.find(
+      const language = this.currentLanguage;
+      const sidebarData = this.$static.metadata.settings.sidebar[language];
+      
+      if (!sidebarData || !Array.isArray(sidebarData)) {
+        return null;
+      }
+      
+      return sidebarData.find(
         sidebar => sidebar.name === this.$page.markdownPage.sidebar
       );
     },
     showSidebar() {
-      return this.$page.markdownPage.sidebar
-        && this.sidebar;
+      return this.$page.markdownPage.sidebar && this.sidebar;
     },
     currentPage() {
       return this.$page.markdownPage;
@@ -115,7 +144,10 @@ export default {
           }
           // 내부 페이지 경로인 경우
           else {
-            const page = this.pages.find(page => page.path === item);
+            // 상대 경로를 현재 언어에 맞는 절대 경로로 변환
+            const language = this.currentLanguage;
+            const fullPath = `/${language}/${item}`;
+            const page = this.pages.find(page => page.path === fullPath);
             return page;
           }
         }

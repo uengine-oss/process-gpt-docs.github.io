@@ -17,15 +17,15 @@ sidebar: 'getting-started'
 영업관리 프로세스를 통해 시뮬레이션 모드를 실행하는 방법은 다음과 같습니다.
 
 프로세스 정의 화면에서 영업관리 프로세스 하단 메뉴의 '시뮬레이션'을 클릭하여 시뮬레이션 모드를 실행합니다.
-![](../../uengine-image/process-gpt/simulation-1.png)<br>
+![](../../../uengine-image/process-gpt/simulation-1.png)<br>
 
 시뮬레이션이 실행되면 아래와 같은 화면이 생성되며, Agent에 의해 시작 task에 연결한 폼에 적합한 테스트값이 입력된 것을 확인할 수 있습니다.
-![](../../uengine-image/process-gpt/simulation-2.png)<br>
+![](../../../uengine-image/process-gpt/simulation-2.png)<br>
 
 폼에 입력된 값을 확인 후, 우측 상단 '제출 완료'를 클릭하면 다음 단계가 실행됩니다. 이때, 현재 진행되는 단계에서 이상이 발생할 경우 오류가 출력되며 사용자는 출력된 오류를 통해 수정할 수 있습니다.
 
 다음 단계가 실행되면 동일하게 Agent 초안 생성을 통해 현재 task에 적합한 결과물이 생성되며, 사용자는 제출완료를 통해 다음 단계를 진행하거나 '이전 단계'를 클릭하여 이전 task에 입력한 값을 수정할 수 있습니다. <br>
-![](../../uengine-image/process-gpt/simulation-3.png)
+![](../../../uengine-image/process-gpt/simulation-3.png)
 
 ## 피드백 채팅
 
@@ -39,12 +39,12 @@ sidebar: 'getting-started'
 피드백 채팅을 통해 영업관리 프로세스의 제안서 작성 task의 폼을 편집하는 방법은 다음과 같습니다.
 
 제안서 작성 단계에서 하단의 'Feedback'을 클릭하여 피드백을 진행할 채팅창을 활성화합니다.
-![](../../uengine-image/process-gpt/simulation-4.png)<br>
+![](../../../uengine-image/process-gpt/simulation-4.png)<br>
 
 채팅창에 아래와 같이 '제안서 작성자명과 제안 날짜가 필요해'라고 입력 후 'Enter'를 입력하여 채팅을 진행합니다.
-![](../../uengine-image/process-gpt/simulation-5.png)<br>
+![](../../../uengine-image/process-gpt/simulation-5.png)<br>
 
 채팅이 입력되면 AI가 입력된 요구사항을 바탕으로 기존 프로세스에 작성된 폼을 아래와 같이 수정을 진행합니다.
-![](../../uengine-image/process-gpt/simulation-6.png)<br>
+![](../../../uengine-image/process-gpt/simulation-6.png)<br>
 
 이를 통해 사용자는 테스트 환경에서 프로세스를 실행해보며 발생한 문제를 파악하고 각 단계별 수정이 필요한 사항에 빠른 수정을 진행하여 프로세스의 품질을 보장할 수 있습니다.

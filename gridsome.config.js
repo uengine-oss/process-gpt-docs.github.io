@@ -22,46 +22,76 @@ module.exports = {
         { path: '/getting-started/', title: 'Process-GPT' }
       ]
     },
-    sidebar: [
-      {
-        name: 'getting-started',
-        sections: [
-          {
-            title: '시작하기',
-            items: [
-              '/getting-started/',
-              '/getting-started/process-gpt-install/',
-            ]
-          },
-          {
-            title: '튜토리얼',
-            items: [
-              '/tutorial/tutorial-lv1/',
-              '/tutorial/tutorial-lv2/',
-              '/tutorial/tutorial-lv3/',
-              '/tutorial/tutorial-lv4/',
-              '/tutorial/tutorial-lv5/',
-            ]
-          },
-          {
-            title: '세부기능',
-            items: [
-              '/advanced-features/user-guide/',
-              '/advanced-features/admin-guide/',
-              '/advanced-features/process-marketplace/',
-              '/advanced-features/simulation/',
-              '/advanced-features/multi-agent/',
-              '/advanced-features/agent-knowledge/',
-              '/advanced-features/a2a-system/',
-              '/advanced-features/voice-chat/',
-              '/advanced-features/browser-use/',
-              '/advanced-features/feedback-system/',
-              '/advanced-features/multi-instance/',
-            ]
-          }
-        ]
-      }
-    ]
+    sidebar: {
+      ko: [
+        {
+          name: 'getting-started',
+          sections: [
+            {
+              title: '시작하기',
+              items: [
+                'getting-started/',
+                'getting-started/process-gpt-install/',
+              ]
+            },
+            {
+              title: '튜토리얼',
+              items: [
+                'tutorial/tutorial-lv1/',
+                'tutorial/tutorial-lv2/',
+                'tutorial/tutorial-lv3/',
+                'tutorial/tutorial-lv4/',
+                'tutorial/tutorial-lv5/',
+              ]
+            },
+            {
+              title: '세부기능',
+              items: [
+                'advanced-features/user-guide/',
+                'advanced-features/admin-guide/',
+                'advanced-features/process-marketplace/',
+                'advanced-features/simulation/',
+                'advanced-features/multi-agent/',
+                'advanced-features/agent-knowledge/',
+                'advanced-features/a2a-system/',
+                'advanced-features/voice-chat/',
+                'advanced-features/browser-use/',
+                'advanced-features/feedback-system/',
+                'advanced-features/multi-instance/',
+              ]
+            }
+          ]
+        }
+      ],
+      en: [
+        {
+          name: 'getting-started',
+          sections: [
+            {
+              title: 'Getting Started',
+              items: [
+                'getting-started/',
+                'getting-started/process-gpt-install/',
+              ]
+            }
+          ]
+        }
+      ],
+      jp: [
+        {
+          name: 'getting-started',
+          sections: [
+            {
+              title: '始める',
+              items: [
+                'getting-started/',
+                'getting-started/process-gpt-install/',
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   plugins: [
     {
