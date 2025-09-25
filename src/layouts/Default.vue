@@ -56,6 +56,10 @@ import Sidebar from "@/components/Sidebar";
 import LayoutHeader from "@/components/LayoutHeader";
 import { MenuIcon, XIcon } from 'vue-feather-icons';
 
+// gridsome.config.js에서 설정 직접 import
+const gridsomeConfig = require('../../gridsome.config.js');
+const siteSettings = gridsomeConfig.settings;
+
 export default {
   components: {
     Sidebar,
@@ -83,15 +87,10 @@ export default {
     async detectUserLocationAndRedirect() {
       const currentPath = this.$route.path;
       const currentLanguage = this.getCurrentLanguage(currentPath);
-      
-      console.log('현재 경로:', currentPath);
-      console.log('현재 언어:', currentLanguage);
 
       // localStorage에서 사용자가 설정한 언어 확인
       const userPreferredLanguage = this.getUserPreferredLanguage();
       if (userPreferredLanguage) {
-        console.log('사용자 설정 언어:', userPreferredLanguage);
-        
         // 사용자 설정 언어와 현재 언어가 다르면 변경
         if (currentLanguage !== userPreferredLanguage) {
           const newPath = this.buildNewPath(currentPath, currentLanguage, userPreferredLanguage);
@@ -103,18 +102,42 @@ export default {
       }
 
       try {
-        const response = await fetch('https://ipapi.co/json/');
-        const { country_code: countryCode } = await response.json();
+        // 여러 IP API를 순차적으로 시도
+        let countryCode = null;
         
-        console.log('감지된 국가 코드:', countryCode);
+        // 첫 번째 API 시도
+        try {
+          const response1 = await fetch('https://ipapi.co/json/');
+          const data1 = await response1.json();
+          countryCode = data1.country_code;
+        } catch (e) {
+          // 첫 번째 API 실패 시 조용히 처리
+        }
         
-        const targetLanguage = this.getLanguageByCountry(countryCode);
-        console.log('IP 기반 언어 설정:', targetLanguage);
+        // 첫 번째 API가 실패했거나 한국이 아닌 경우 두 번째 API 시도
+        if (!countryCode || countryCode !== 'KR') {
+          try {
+            const response2 = await fetch('https://api.country.is/');
+            const data2 = await response2.json();
+            if (data2.country) {
+              countryCode = data2.country;
+            }
+          } catch (e) {
+            // 두 번째 API 실패 시 조용히 처리
+          }
+        }
         
-        if (currentLanguage !== targetLanguage) {
-          const newPath = this.buildNewPath(currentPath, currentLanguage, targetLanguage);
-          if (newPath !== currentPath) {
-            this.$router.push(newPath);
+        if (countryCode) {
+          console.log('최종 감지된 국가 코드:', countryCode);
+          
+          const targetLanguage = this.getLanguageByCountry(countryCode);
+          console.log('IP 기반 언어 설정:', targetLanguage);
+          
+          if (currentLanguage !== targetLanguage) {
+            const newPath = this.buildNewPath(currentPath, currentLanguage, targetLanguage);
+            if (newPath !== currentPath) {
+              this.$router.push(newPath);
+            }
           }
         }
         
@@ -123,8 +146,8 @@ export default {
       }
     },
     getCurrentLanguage(path) {
-      const settings = this.$static.metadata && this.$static.metadata.settings;
-      const sidebarSettings = settings && settings.sidebar ? settings.sidebar : {};
+      // 직접 import한 설정 사용
+      const sidebarSettings = siteSettings.sidebar || {};
       
       // 설정된 모든 언어에 대해 경로 확인
       for (const langCode of Object.keys(sidebarSettings)) {
@@ -134,23 +157,20 @@ export default {
       }
       
       // 기본 언어 반환
-      return settings && settings.defaultLanguage ? settings.defaultLanguage : 'ko';
+      const defaultLang = siteSettings.defaultLanguage || 'ko';
+      return defaultLang;
     },
     buildNewPath(currentPath, currentLang, targetLang) {
       const langPattern = `/${currentLang}/`;
       const targetPattern = `/${targetLang}/`;
       
-      console.log('경로 변환:', { currentPath, currentLang, targetLang });
-      
       if (currentPath.startsWith(langPattern)) {
         const newPath = currentPath.replace(langPattern, targetPattern);
-        console.log('변환된 경로:', newPath);
         return newPath;
       }
       
       // 언어 경로가 없는 경우 기본 페이지로 이동
       const defaultPath = `/${targetLang}/getting-started/`;
-      console.log('기본 경로 사용:', defaultPath);
       return defaultPath;
     },
     getUserPreferredLanguage() {
@@ -161,9 +181,8 @@ export default {
       return null;
     },
     getLanguageByCountry(countryCode) {
-      // sidebar 설정에서 언어 메타데이터 가져오기
-      const settings = this.$static.metadata && this.$static.metadata.settings;
-      const sidebarSettings = settings && settings.sidebar ? settings.sidebar : {};
+      // 직접 import한 설정 사용
+      const sidebarSettings = siteSettings.sidebar || {};
       
       // 각 언어의 지원 국가 코드 확인
       for (const [langCode, langConfig] of Object.entries(sidebarSettings)) {
@@ -173,7 +192,8 @@ export default {
       }
       
       // 매칭되지 않으면 fallback 언어 사용
-      return settings && settings.fallbackLanguage ? settings.fallbackLanguage : 'en';
+      const fallbackLang = siteSettings.fallbackLanguage || 'en';
+      return fallbackLang;
     }
   },
   computed: {
