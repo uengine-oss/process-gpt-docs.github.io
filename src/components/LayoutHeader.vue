@@ -194,11 +194,11 @@
           }
         }
         sidebar {
-          ko { meta { code label flag countries buttonText defaultPath } }
-          en { meta { code label flag countries buttonText defaultPath } }
+          ko { meta { code label flag countries educationButtonText defaultPath } }
+          en { meta { code label flag countries educationButtonText defaultPath } }
           # 언어 추가 후 수정: 새 언어 설정을 여기에 추가
-          # jp { meta { code label flag countries buttonText defaultPath } }
-          # zh { meta { code label flag countries buttonText defaultPath } }
+          # jp { meta { code label flag countries educationButtonText defaultPath } }
+          # zh { meta { code label flag countries educationButtonText defaultPath } }
         }
       }
     }
@@ -270,7 +270,7 @@ export default {
     getTrainingButtonText() {
       const sidebarSettings = this.settings.sidebar || {};
       const currentLangSettings = sidebarSettings[this.currentLanguage];
-      return currentLangSettings && currentLangSettings.meta ? currentLangSettings.meta.buttonText : '교육 신청';
+      return currentLangSettings && currentLangSettings.meta ? currentLangSettings.meta.educationButtonText : '교육 신청';
     },
     changeLanguage(newLanguage) {
       // 사용자 설정 언어를 localStorage에 저장

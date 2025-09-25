@@ -32,7 +32,7 @@ module.exports = {
           label: '한국어',
           flag: '🇰🇷',
           countries: ['KR'],
-          buttonText: '교육 신청',
+          educationButtonText: '교육 신청',
           defaultPath: '/ko/getting-started/'
         },
         // 사이드바 구조
@@ -84,7 +84,7 @@ module.exports = {
           label: 'English',
           flag: '🇺🇸',
           countries: ['US', 'GB', 'CA', 'AU', 'NZ', 'IE'],
-          buttonText: 'Apply for Training',
+          educationButtonText: 'Apply for Training',
           defaultPath: '/en/getting-started/'
         },
         // 사이드바 구조
@@ -111,7 +111,7 @@ module.exports = {
       //     label: '日本語',
       //     flag: '🇯🇵',
       //     countries: ['JP'],
-      //     buttonText: '教育申請',
+      //     educationButtonText: '教育申請',
       //     defaultPath: '/jp/getting-started/'
       //   },
       //   // 사이드바 구조
@@ -137,7 +137,7 @@ module.exports = {
       //     label: '中文',
       //     flag: '🇨🇳',
       //     countries: ['CN', 'TW', 'HK', 'SG', 'MO'],
-      //     buttonText: '申请培训',
+      //     educationButtonText: '申请培训',
       //     defaultPath: '/zh/getting-started/'
       //   },
       //   // 사이드바 구조
