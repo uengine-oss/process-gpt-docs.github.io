@@ -196,8 +196,9 @@
         sidebar {
           ko { meta { code label flag countries buttonText defaultPath } }
           en { meta { code label flag countries buttonText defaultPath } }
-          jp { meta { code label flag countries buttonText defaultPath } }
-          zh { meta { code label flag countries buttonText defaultPath } }
+          # 언어 추가 후 수정: 새 언어 설정을 여기에 추가
+          # jp { meta { code label flag countries buttonText defaultPath } }
+          # zh { meta { code label flag countries buttonText defaultPath } }
         }
       }
     }

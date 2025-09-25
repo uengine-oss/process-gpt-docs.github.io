@@ -102,59 +102,60 @@ module.exports = {
             ]
           }
         ]
-      },
-      jp: {
-        // 언어 메타데이터
-        meta: {
-          code: 'jp',
-          label: '日本語',
-          flag: '🇯🇵',
-          countries: ['JP'],
-          buttonText: '教育申請',
-          defaultPath: '/jp/getting-started/'
-        },
-        // 사이드바 구조
-        navigation: [
-          {
-            name: 'getting-started',
-            sections: [
-              {
-                title: '始める',
-                items: [
-                  'getting-started/',
-                  'getting-started/process-gpt-install/',
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      zh: {
-        // 언어 메타데이터
-        meta: {
-          code: 'zh',
-          label: '中文',
-          flag: '🇨🇳',
-          countries: ['CN', 'TW', 'HK', 'SG', 'MO'],
-          buttonText: '申请培训',
-          defaultPath: '/zh/getting-started/'
-        },
-        // 사이드바 구조
-        navigation: [
-          {
-            name: 'getting-started',
-            sections: [
-              {
-                title: '开始使用',
-                items: [
-                  'getting-started/',
-                  'getting-started/process-gpt-install/',
-                ]
-              }
-            ]
-          }
-        ]
       }
+      // 언어 추가 후 수정: 새 언어 설정을 여기에 추가
+      // jp: {
+      //   // 언어 메타데이터
+      //   meta: {
+      //     code: 'jp',
+      //     label: '日本語',
+      //     flag: '🇯🇵',
+      //     countries: ['JP'],
+      //     buttonText: '教育申請',
+      //     defaultPath: '/jp/getting-started/'
+      //   },
+      //   // 사이드바 구조
+      //   navigation: [
+      //     {
+      //       name: 'getting-started',
+      //       sections: [
+      //         {
+      //           title: '始める',
+      //           items: [
+      //             'getting-started/',
+      //             'getting-started/process-gpt-install/',
+      //           ]
+      //         }
+      //       ]
+      //     }
+      //   ]
+      // },
+      // zh: {
+      //   // 언어 메타데이터
+      //   meta: {
+      //     code: 'zh',
+      //     label: '中文',
+      //     flag: '🇨🇳',
+      //     countries: ['CN', 'TW', 'HK', 'SG', 'MO'],
+      //     buttonText: '申请培训',
+      //     defaultPath: '/zh/getting-started/'
+      //   },
+      //   // 사이드바 구조
+      //   navigation: [
+      //     {
+      //       name: 'getting-started',
+      //       sections: [
+      //         {
+      //           title: '开始使用',
+      //           items: [
+      //             'getting-started/',
+      //             'getting-started/process-gpt-install/',
+      //           ]
+      //         }
+      //       ]
+      //     }
+      //   ]
+      // }
     }
   },
   plugins: [
