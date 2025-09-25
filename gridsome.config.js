@@ -22,75 +22,139 @@ module.exports = {
         { path: '/getting-started/', title: 'Process-GPT' }
       ]
     },
+    defaultLanguage: 'ko',
+    fallbackLanguage: 'en',
     sidebar: {
-      ko: [
-        {
-          name: 'getting-started',
-          sections: [
-            {
-              title: '시작하기',
-              items: [
-                'getting-started/',
-                'getting-started/process-gpt-install/',
-              ]
-            },
-            {
-              title: '튜토리얼',
-              items: [
-                'tutorial/tutorial-lv1/',
-                'tutorial/tutorial-lv2/',
-                'tutorial/tutorial-lv3/',
-                'tutorial/tutorial-lv4/',
-                'tutorial/tutorial-lv5/',
-              ]
-            },
-            {
-              title: '세부기능',
-              items: [
-                'advanced-features/user-guide/',
-                'advanced-features/admin-guide/',
-                'advanced-features/process-marketplace/',
-                'advanced-features/simulation/',
-                'advanced-features/multi-agent/',
-                'advanced-features/agent-knowledge/',
-                'advanced-features/a2a-system/',
-                'advanced-features/voice-chat/',
-                'advanced-features/browser-use/',
-                'advanced-features/feedback-system/',
-                'advanced-features/multi-instance/',
-              ]
-            }
-          ]
-        }
-      ],
-      en: [
-        {
-          name: 'getting-started',
-          sections: [
-            {
-              title: 'Getting Started',
-              items: [
-                'getting-started/',
-                'getting-started/process-gpt-install/',
-              ]
-            }
-          ]
-        }
-      ],
-      jp: [
-        {
-          name: 'getting-started',
-          sections: [
-            {
-              title: '始める',
-              items: [
-                'getting-started/',
-                'getting-started/process-gpt-install/',
-              ]
-            }
-          ]
-        }
-      ]
+      ko: {
+        // 언어 메타데이터
+        meta: {
+          code: 'ko',
+          label: '한국어',
+          flag: '🇰🇷',
+          countries: ['KR'],
+          buttonText: '교육 신청',
+          defaultPath: '/ko/getting-started/'
+        },
+        // 사이드바 구조
+        navigation: [
+          {
+            name: 'getting-started',
+            sections: [
+              {
+                title: '시작하기',
+                items: [
+                  'getting-started/',
+                  'getting-started/process-gpt-install/',
+                ]
+              },
+              {
+                title: '튜토리얼',
+                items: [
+                  'tutorial/tutorial-lv1/',
+                  'tutorial/tutorial-lv2/',
+                  'tutorial/tutorial-lv3/',
+                  'tutorial/tutorial-lv4/',
+                  'tutorial/tutorial-lv5/',
+                ]
+              },
+              {
+                title: '세부기능',
+                items: [
+                  'advanced-features/user-guide/',
+                  'advanced-features/admin-guide/',
+                  'advanced-features/process-marketplace/',
+                  'advanced-features/simulation/',
+                  'advanced-features/multi-agent/',
+                  'advanced-features/agent-knowledge/',
+                  'advanced-features/a2a-system/',
+                  'advanced-features/voice-chat/',
+                  'advanced-features/browser-use/',
+                  'advanced-features/feedback-system/',
+                  'advanced-features/multi-instance/',
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      en: {
+        // 언어 메타데이터
+        meta: {
+          code: 'en',
+          label: 'English',
+          flag: '🇺🇸',
+          countries: ['US', 'GB', 'CA', 'AU', 'NZ', 'IE'],
+          buttonText: 'Apply for Training',
+          defaultPath: '/en/getting-started/'
+        },
+        // 사이드바 구조
+        navigation: [
+          {
+            name: 'getting-started',
+            sections: [
+              {
+                title: 'Getting Started',
+                items: [
+                  'getting-started/',
+                  'getting-started/process-gpt-install/',
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      jp: {
+        // 언어 메타데이터
+        meta: {
+          code: 'jp',
+          label: '日本語',
+          flag: '🇯🇵',
+          countries: ['JP'],
+          buttonText: '教育申請',
+          defaultPath: '/jp/getting-started/'
+        },
+        // 사이드바 구조
+        navigation: [
+          {
+            name: 'getting-started',
+            sections: [
+              {
+                title: '始める',
+                items: [
+                  'getting-started/',
+                  'getting-started/process-gpt-install/',
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      zh: {
+        // 언어 메타데이터
+        meta: {
+          code: 'zh',
+          label: '中文',
+          flag: '🇨🇳',
+          countries: ['CN', 'TW', 'HK', 'SG', 'MO'],
+          buttonText: '申请培训',
+          defaultPath: '/zh/getting-started/'
+        },
+        // 사이드바 구조
+        navigation: [
+          {
+            name: 'getting-started',
+            sections: [
+              {
+                title: '开始使用',
+                items: [
+                  'getting-started/',
+                  'getting-started/process-gpt-install/',
+                ]
+              }
+            ]
+          }
+        ]
+      }
     }
   },
   plugins: [

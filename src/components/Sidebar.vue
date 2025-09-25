@@ -56,27 +56,10 @@ query Sidebar {
   metadata {
     settings {
       sidebar {
-        ko {
-          name
-          sections {
-            title
-            items
-          }
-        }
-        en {
-          name
-          sections {
-            title
-            items
-          }
-        }
-        jp {
-          name
-          sections {
-            title
-            items
-          }
-        }
+        ko { navigation { name sections { title items } } }
+        en { navigation { name sections { title items } } }
+        jp { navigation { name sections { title items } } }
+        zh { navigation { name sections { title items } } }
       }
     }
   }
@@ -101,25 +84,38 @@ export default {
     },
     currentLanguage() {
       // 현재 페이지 경로를 기반으로 언어 감지
-      const path = this.$page.markdownPage.path;
-      if (path.startsWith('/en/')) return 'en';
-      if (path.startsWith('/jp/')) return 'jp';
-      return 'ko';
+      const path = this.$page.markdownPage ? this.$page.markdownPage.path : '/';
+      const settings = this.$static.metadata && this.$static.metadata.settings;
+      const sidebarSettings = settings && settings.sidebar ? settings.sidebar : {};
+      
+      // 설정된 모든 언어에 대해 경로 확인
+      for (const langCode of Object.keys(sidebarSettings)) {
+        if (path.startsWith(`/${langCode}/`)) {
+          return langCode;
+        }
+      }
+      
+      // 기본 언어 반환
+      return settings && settings.defaultLanguage ? settings.defaultLanguage : 'ko';
     },
     sidebar() {
       const language = this.currentLanguage;
-      const sidebarData = this.$static.metadata.settings.sidebar[language];
+      const settings = this.$static.metadata && this.$static.metadata.settings;
+      const sidebarSettings = settings && settings.sidebar ? settings.sidebar : {};
+      const sidebarLangData = sidebarSettings[language];
       
-      if (!sidebarData || !Array.isArray(sidebarData)) {
+      if (!sidebarLangData || !sidebarLangData.navigation || !Array.isArray(sidebarLangData.navigation)) {
         return null;
       }
       
-      return sidebarData.find(
-        sidebar => sidebar.name === this.$page.markdownPage.sidebar
+      const currentPageSidebar = this.$page.markdownPage ? this.$page.markdownPage.sidebar : 'getting-started';
+      return sidebarLangData.navigation.find(
+        sidebar => sidebar.name === currentPageSidebar
       );
     },
     showSidebar() {
-      return this.$page.markdownPage.sidebar && this.sidebar;
+      const markdownPage = this.$page.markdownPage;
+      return markdownPage && markdownPage.sidebar && this.sidebar;
     },
     currentPage() {
       return this.$page.markdownPage;

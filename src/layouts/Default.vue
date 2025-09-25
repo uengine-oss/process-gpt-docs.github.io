@@ -79,6 +79,101 @@ export default {
       this.$nextTick(() => {
         this.headerHeight = this.$refs.header.offsetHeight;
       });
+    },
+    async detectUserLocationAndRedirect() {
+      const currentPath = this.$route.path;
+      const currentLanguage = this.getCurrentLanguage(currentPath);
+      
+      console.log('현재 경로:', currentPath);
+      console.log('현재 언어:', currentLanguage);
+
+      // localStorage에서 사용자가 설정한 언어 확인
+      const userPreferredLanguage = this.getUserPreferredLanguage();
+      if (userPreferredLanguage) {
+        console.log('사용자 설정 언어:', userPreferredLanguage);
+        
+        // 사용자 설정 언어와 현재 언어가 다르면 변경
+        if (currentLanguage !== userPreferredLanguage) {
+          const newPath = this.buildNewPath(currentPath, currentLanguage, userPreferredLanguage);
+          if (newPath !== currentPath) {
+            this.$router.push(newPath);
+          }
+        }
+        return; // 사용자 설정이 있으면 IP 기반 감지 건너뛰기
+      }
+
+      try {
+        const response = await fetch('https://ipapi.co/json/');
+        const { country_code: countryCode } = await response.json();
+        
+        console.log('감지된 국가 코드:', countryCode);
+        
+        const targetLanguage = this.getLanguageByCountry(countryCode);
+        console.log('IP 기반 언어 설정:', targetLanguage);
+        
+        if (currentLanguage !== targetLanguage) {
+          const newPath = this.buildNewPath(currentPath, currentLanguage, targetLanguage);
+          if (newPath !== currentPath) {
+            this.$router.push(newPath);
+          }
+        }
+        
+      } catch (error) {
+        // API 실패 시에는 현재 언어 유지
+      }
+    },
+    getCurrentLanguage(path) {
+      const settings = this.$static.metadata && this.$static.metadata.settings;
+      const sidebarSettings = settings && settings.sidebar ? settings.sidebar : {};
+      
+      // 설정된 모든 언어에 대해 경로 확인
+      for (const langCode of Object.keys(sidebarSettings)) {
+        if (path.startsWith(`/${langCode}/`)) {
+          return langCode;
+        }
+      }
+      
+      // 기본 언어 반환
+      return settings && settings.defaultLanguage ? settings.defaultLanguage : 'ko';
+    },
+    buildNewPath(currentPath, currentLang, targetLang) {
+      const langPattern = `/${currentLang}/`;
+      const targetPattern = `/${targetLang}/`;
+      
+      console.log('경로 변환:', { currentPath, currentLang, targetLang });
+      
+      if (currentPath.startsWith(langPattern)) {
+        const newPath = currentPath.replace(langPattern, targetPattern);
+        console.log('변환된 경로:', newPath);
+        return newPath;
+      }
+      
+      // 언어 경로가 없는 경우 기본 페이지로 이동
+      const defaultPath = `/${targetLang}/getting-started/`;
+      console.log('기본 경로 사용:', defaultPath);
+      return defaultPath;
+    },
+    getUserPreferredLanguage() {
+      // localStorage에서 사용자 설정 언어 가져오기
+      if (typeof window !== 'undefined') {
+        return localStorage.getItem('preferredLanguage');
+      }
+      return null;
+    },
+    getLanguageByCountry(countryCode) {
+      // sidebar 설정에서 언어 메타데이터 가져오기
+      const settings = this.$static.metadata && this.$static.metadata.settings;
+      const sidebarSettings = settings && settings.sidebar ? settings.sidebar : {};
+      
+      // 각 언어의 지원 국가 코드 확인
+      for (const [langCode, langConfig] of Object.entries(sidebarSettings)) {
+        if (langConfig.meta && langConfig.meta.countries && langConfig.meta.countries.includes(countryCode)) {
+          return langCode;
+        }
+      }
+      
+      // 매칭되지 않으면 fallback 언어 사용
+      return settings && settings.fallbackLanguage ? settings.fallbackLanguage : 'en';
     }
   },
   computed: {
@@ -94,6 +189,7 @@ export default {
   },
   mounted() {
     this.setHeaderHeight();
+    this.detectUserLocationAndRedirect();
   },
   metaInfo() {
     return {

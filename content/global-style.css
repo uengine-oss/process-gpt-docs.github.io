@@ -12,6 +12,11 @@ code{padding:.0rem}
 	white-space: pre;
 }
 
+.layout-header-dropdown-menu {
+    max-height: 30vh;
+    overflow: auto;
+}
+
 .token.comment,
 .token.prolog,
 .token.doctype,
