@@ -58,51 +58,93 @@ module.exports = {
                 ]
               },
               {
-                title: '세부기능',
+                title: '에이전틱 디자인 패턴',
                 items: [
-                  'advanced-features/user-guide/',
-                  'advanced-features/admin-guide/',
-                  'advanced-features/process-marketplace/',
-                  'advanced-features/simulation/',
-                  'advanced-features/multi-agent/',
-                  'advanced-features/agent-knowledge/',
-                  'advanced-features/a2a-system/',
-                  'advanced-features/voice-chat/',
-                  'advanced-features/browser-use/',
-                  'advanced-features/feedback-system/',
-                  'advanced-features/multi-instance/',
+                  'design-pattern/prompt-chaining/',
+                  'design-pattern/routing/',
+                  'design-pattern/parallelization/',
+                  'design-pattern/tool-use/',
+                  'design-pattern/mcp/',
+                  'design-pattern/goal-setting/',
+                  'design-pattern/planning/',
+                  'design-pattern/multi-agent/',
+                  'design-pattern/memory-management/',
+                  'design-pattern/learning/',
+                  'design-pattern/human-in-the-loop/',
                 ]
               }
-            ]
-          }
-        ]
-      },
-      en: {
-        // 언어 메타데이터
-        meta: {
-          code: 'en',
-          label: 'English',
-          flag: '🇺🇸',
-          countries: ['US', 'GB', 'CA', 'AU', 'NZ', 'IE'],
-          educationButtonText: 'Apply for Training',
-          defaultPath: '/en/getting-started/'
-        },
-        // 사이드바 구조
-        navigation: [
-          {
-            name: 'getting-started',
-            sections: [
-              {
-                title: 'Getting Started',
-                items: [
-                  'getting-started/',
-                  'getting-started/process-gpt-install/',
-                ]
-              }
+              // {
+              //   title: '세부기능',
+              //   items: [
+              //     'advanced-features/user-guide/',
+              //     'advanced-features/admin-guide/',
+              //     'advanced-features/process-marketplace/',
+              //     'advanced-features/simulation/',
+              //     'advanced-features/multi-agent/',
+              //     'advanced-features/agent-knowledge/',
+              //     'advanced-features/a2a-system/',
+              //     'advanced-features/voice-chat/',
+              //     'advanced-features/browser-use/',
+              //     'advanced-features/feedback-system/',
+              //     'advanced-features/multi-instance/',
+              //   ]
+              // }
             ]
           }
         ]
       }
+      // en: {
+      //   // 언어 메타데이터
+      //   meta: {
+      //     code: 'en',
+      //     label: 'English',
+      //     flag: '🇺🇸',
+      //     countries: ['US', 'GB', 'CA', 'AU', 'NZ', 'IE'],
+      //     educationButtonText: 'Apply for Training',
+      //     defaultPath: '/en/getting-started/'
+      //   },
+      //   // 사이드바 구조
+      //   navigation: [
+      //     {
+      //       name: 'getting-started',
+      //       sections: [
+      //         {
+      //           title: 'Getting Started',
+      //           items: [
+      //             'getting-started/',
+      //             'getting-started/process-gpt-install/',
+      //           ]
+      //         },
+      //         {
+      //           title: 'Tutorial',
+      //           items: [
+      //             'tutorial/tutorial-lv1/',
+      //             'tutorial/tutorial-lv2/',
+      //             'tutorial/tutorial-lv3/',
+      //             'tutorial/tutorial-lv4/',
+      //             'tutorial/tutorial-lv5/',
+      //           ]
+      //         },
+      //         {
+      //           title: 'Advanced Features',
+      //           items: [
+      //             'advanced-features/user-guide/',
+      //             'advanced-features/admin-guide/',
+      //             'advanced-features/process-marketplace/',
+      //             'advanced-features/simulation/',
+      //             'advanced-features/multi-agent/',
+      //             'advanced-features/agent-knowledge/',
+      //             'advanced-features/a2a-system/',
+      //             'advanced-features/voice-chat/',
+      //             'advanced-features/browser-use/',
+      //             'advanced-features/feedback-system/',
+      //             'advanced-features/multi-instance/',
+      //           ]
+      //         }
+      //       ]
+      //     }
+      //   ]
+      // }
       // 언어 추가 후 수정: 새 언어 설정을 여기에 추가
       // jp: {
       //   // 언어 메타데이터

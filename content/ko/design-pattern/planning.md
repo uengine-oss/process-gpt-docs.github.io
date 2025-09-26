@@ -1,0 +1,37 @@
+---
+description: ''
+sidebar: 'getting-started'
+---
+
+# 7. Planning
+
+## 정의
+최종 목표를 여러 하위 목표로 분해(Planning)하고, 단계별 실행 로드맵을 구축하여 체계적으로 문제를 해결하는 패턴입니다.  
+에이전트가 복잡한 작업을 구조화하는 기반이 됩니다.
+
+## 주요 특징
+| 특징 | 설명 |
+| :--- | :--- |
+| **목표 분해 능력** | 복잡한 목표를 작은 단위의 하위 목표로 세분화 |
+| **실행 전 계획 수립** | 단일 샷 생성이 아닌 선행 계획 후 실행 방식 |
+| **적응형 계획 조정** | 실행 중 피드백에 따라 계획을 수정 가능 |
+| **체계적 접근법** | 복잡한 문제를 구조화된 방식으로 해결 |
+
+## 계획 수립 프로세스
+
+![](../../../uengine-image/process-gpt/design-pattern/7-1.png)
+
+## 활용 사례
+- 복잡한 문제 해결 에이전트  
+- 자동화된 프로젝트 관리  
+- 소프트웨어 개발 계획 수립  
+- 전략적 의사결정 지원 시스템  
+
+##Process GPT 의 CrewAI Deep Research
+작업 수행 시 플래닝 단계를 거쳐, 목표를 세분화하고 실행 계획을 수립·조정하며 각 에이전트가 체계적으로 협력합니다.
+
+https://githubcom/uengine-oss/process-gpt-crewai-deep-research
+
+
+![](../../../uengine-image/process-gpt/design-pattern/7-2.Planning2.png)
+

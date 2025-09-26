@@ -57,7 +57,7 @@ query Sidebar {
     settings {
       sidebar {
         ko { navigation { name sections { title items } } }
-        en { navigation { name sections { title items } } }
+        # en { navigation { name sections { title items } } }
         # 언어 추가 후 수정: 새 언어 설정을 여기에 추가
         # jp { navigation { name sections { title items } } }
         # zh { navigation { name sections { title items } } }
