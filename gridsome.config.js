@@ -58,6 +58,22 @@ module.exports = {
                 ]
               },
               {
+                title: '세부기능',
+                items: [
+                  'advanced-features/user-guide/',
+                  'advanced-features/admin-guide/',
+                  'advanced-features/process-marketplace/',
+                  'advanced-features/simulation/',
+                  'advanced-features/multi-agent/',
+                  'advanced-features/agent-knowledge/',
+                  'advanced-features/a2a-system/',
+                  'advanced-features/voice-chat/',
+                  'advanced-features/browser-use/',
+                  'advanced-features/feedback-system/',
+                  'advanced-features/multi-instance/',
+                ]
+              },
+              {
                 title: '에이전틱 디자인 패턴',
                 items: [
                   'design-pattern/prompt-chaining/',
@@ -73,22 +89,6 @@ module.exports = {
                   'design-pattern/human-in-the-loop/',
                 ]
               }
-              // {
-              //   title: '세부기능',
-              //   items: [
-              //     'advanced-features/user-guide/',
-              //     'advanced-features/admin-guide/',
-              //     'advanced-features/process-marketplace/',
-              //     'advanced-features/simulation/',
-              //     'advanced-features/multi-agent/',
-              //     'advanced-features/agent-knowledge/',
-              //     'advanced-features/a2a-system/',
-              //     'advanced-features/voice-chat/',
-              //     'advanced-features/browser-use/',
-              //     'advanced-features/feedback-system/',
-              //     'advanced-features/multi-instance/',
-              //   ]
-              // }
             ]
           }
         ]
