@@ -31,8 +31,7 @@ AI 애플리케이션과 외부 시스템 간의 보안 통신을 가능케 합�
 
 ## CRM (Supabase MCP) 에서 고객 명단 추출
 
-- 내/외부 시스템들을 접근할 수 있는 **MCP 및 Open API Spec**을 해석하여  
-  프로세스 데이터 값들과 어떻게 연동하면 될지를 자동으로 생성
+- 내/외부 시스템들을 접근할 수 있는 **MCP 및 Open API Spec**을 해석하여 프로세스 데이터 값들과 어떻게 연동하면 될지를 자동으로 생성
 - Process GPT의 프로세스들과 에이전트들을 **A2A 서비스로 Expose**
 
 ## 예시
@@ -46,7 +45,8 @@ AI 애플리케이션과 외부 시스템 간의 보안 통신을 가능케 합�
 
 ## 구현 사례
 
-https://docs.process-gpt.io/tutorial/tutorial-lv4/#%EC%8B%A4%ED%96%89(링크)
+
+[ERP 데이터 연동을 통한 재고 관리 (링크)](https://docs.process-gpt.io/ko/tutorial/tutorial-lv4/#%EC%8B%A4%ED%96%89)
 
 ![](../../../uengine-image/process-gpt/design-pattern/5-4.png)
 

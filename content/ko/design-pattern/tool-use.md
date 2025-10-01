@@ -28,7 +28,7 @@ sidebar: 'getting-started'
 * 멀티모달 기능 (이미지 생성/분석)  
 
 ## ReAct Agent architecture
-툴 호출을 위한 목표 지향적 아키텍처. 
+툴 호출을 위한 목표 지향적 아키텍처.<br>
 Goal을 향하여 완료될때까지 수행하는 Chain
 
 ![](../../../uengine-image/process-gpt/design-pattern/4.PNG)

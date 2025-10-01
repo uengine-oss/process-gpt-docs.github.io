@@ -3,7 +3,7 @@ description: ''
 sidebar: 'getting-started'
 ---
 
-# 10. Learning and Adaptation
+# 10. Learning and Adaptation (학습과 적응)
 
 ## 정의
 실패/성공 경험을 통해 스스로 정책을 개선하고 행동을 최적화하는 패턴입니다.  
