@@ -177,35 +177,10 @@
   </div>
 </template>
 
-<static-query>
-  query {
-    metadata {
-      siteName
-      settings {
-        web
-        github
-        twitter
-        defaultLanguage
-        fallbackLanguage
-        nav {
-          links {
-            path
-            title
-          }
-        }
-        sidebar {
-          ko { meta { code label flag countries educationButtonText defaultPath } }
-          en { meta { code label flag countries educationButtonText defaultPath } }
-          # 언어 추가 후 수정: 새 언어 설정을 여기에 추가
-          # jp { meta { code label flag countries educationButtonText defaultPath } }
-          # zh { meta { code label flag countries educationButtonText defaultPath } }
-        }
-      }
-    }
-  }
-</static-query>
-
 <script>
+// gridsome.config.js에서 설정 직접 import
+const gridsomeConfig = require('../../gridsome.config.js');
+const siteSettings = gridsomeConfig.settings;
 import ToggleDarkMode from "@/components/ToggleDarkMode";
 import Logo from '@/components/Logo';
 import { SunIcon, MoonIcon, GlobeIcon, GithubIcon, TwitterIcon } from "vue-feather-icons";
@@ -231,11 +206,8 @@ export default {
   },
 
   computed: {
-    meta() {
-      return this.$static.metadata;
-    },
     settings() {
-      return this.meta.settings;
+      return siteSettings;
     },
     isProcessGptPage() {
       // 현재 경로가 Process-GPT 페이지인지 확인
@@ -244,7 +216,7 @@ export default {
     currentLanguage() {
       // 현재 페이지 경로를 기반으로 언어 감지
       const path = this.$route ? this.$route.path : '/';
-      const sidebarSettings = this.settings.sidebar || {};
+      const sidebarSettings = siteSettings.sidebar || {};
       
       // 설정된 모든 언어에 대해 경로 확인
       for (const langCode of Object.keys(sidebarSettings)) {
@@ -254,7 +226,7 @@ export default {
       }
       
       // 기본 언어 반환
-      return this.settings.defaultLanguage || 'ko';
+      return siteSettings.defaultLanguage || 'ko';
     },
     languages() {
       // sidebar 설정에서 언어 메타데이터 가져오기

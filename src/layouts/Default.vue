@@ -43,13 +43,6 @@
   </div>
 </template>
 
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
 
 <script>
 import Sidebar from "@/components/Sidebar";

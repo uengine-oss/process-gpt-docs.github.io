@@ -51,23 +51,10 @@
   </div>
 </template>
 
-<static-query>
-query Sidebar {
-  metadata {
-    settings {
-      sidebar {
-        ko { navigation { name sections { title items } } }
-        en { navigation { name sections { title items } } }
-        # 언어 추가 후 수정: 새 언어 설정을 여기에 추가
-        # jp { navigation { name sections { title items } } }
-        # zh { navigation { name sections { title items } } }
-      }
-    }
-  }
-}
-</static-query>
-
 <script>
+// gridsome.config.js에서 설정 직접 import
+const gridsomeConfig = require('../../gridsome.config.js');
+const siteSettings = gridsomeConfig.settings;
 export default {
   data() {
     return {
@@ -86,8 +73,7 @@ export default {
     currentLanguage() {
       // 현재 페이지 경로를 기반으로 언어 감지
       const path = this.$page.markdownPage ? this.$page.markdownPage.path : '/';
-      const settings = this.$static.metadata && this.$static.metadata.settings;
-      const sidebarSettings = settings && settings.sidebar ? settings.sidebar : {};
+      const sidebarSettings = siteSettings.sidebar || {};
       
       // 설정된 모든 언어에 대해 경로 확인
       for (const langCode of Object.keys(sidebarSettings)) {
@@ -97,12 +83,11 @@ export default {
       }
       
       // 기본 언어 반환
-      return settings && settings.defaultLanguage ? settings.defaultLanguage : 'ko';
+      return siteSettings.defaultLanguage || 'ko';
     },
     sidebar() {
       const language = this.currentLanguage;
-      const settings = this.$static.metadata && this.$static.metadata.settings;
-      const sidebarSettings = settings && settings.sidebar ? settings.sidebar : {};
+      const sidebarSettings = siteSettings.sidebar || {};
       const sidebarLangData = sidebarSettings[language];
       
       if (!sidebarLangData || !sidebarLangData.navigation || !Array.isArray(sidebarLangData.navigation)) {
