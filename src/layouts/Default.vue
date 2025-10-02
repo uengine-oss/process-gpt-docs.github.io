@@ -81,50 +81,50 @@ export default {
       const currentPath = this.$route.path;
       const currentLanguage = this.getCurrentLanguage(currentPath);
 
-      // localStorage에서 사용자가 설정한 언어 확인
+      // 1순위: 사용자가 직접 선택한 언어 (최우선)
       const userPreferredLanguage = this.getUserPreferredLanguage();
       if (userPreferredLanguage) {
-        // 사용자 설정 언어와 현재 언어가 다르면 변경
         if (currentLanguage !== userPreferredLanguage) {
           const newPath = this.buildNewPath(currentPath, currentLanguage, userPreferredLanguage);
           if (newPath !== currentPath) {
             this.$router.push(newPath);
           }
         }
-        return; // 사용자 설정이 있으면 IP 기반 감지 건너뛰기
+        return;
       }
 
+      // 2순위: IP로 감지된 언어 (localStorage에 영구 저장)
+      const detectedLanguage = this.getDetectedLanguage();
+      if (detectedLanguage) {
+        if (currentLanguage !== detectedLanguage) {
+          const newPath = this.buildNewPath(currentPath, currentLanguage, detectedLanguage);
+          if (newPath !== currentPath) {
+            this.$router.push(newPath);
+          }
+        }
+        return;
+      }
+
+      // 3순위: IP 기반 국가 감지 (최초 1회만 실행)
       try {
-        // 여러 IP API를 순차적으로 시도
         let countryCode = null;
         
-        // 첫 번째 API 시도
         try {
-          const response1 = await fetch('https://ipapi.co/json/');
-          const data1 = await response1.json();
-          countryCode = data1.country_code;
-        } catch (e) {
-          // 첫 번째 API 실패 시 조용히 처리
-        }
-        
-        // 첫 번째 API가 실패했거나 한국이 아닌 경우 두 번째 API 시도
-        if (!countryCode || countryCode !== 'KR') {
-          try {
-            const response2 = await fetch('https://api.country.is/');
-            const data2 = await response2.json();
-            if (data2.country) {
-              countryCode = data2.country;
-            }
-          } catch (e) {
-            // 두 번째 API 실패 시 조용히 처리
+          const response = await fetch('https://api.country.is/');
+          const data = await response.json();
+          if (data.country) {
+            countryCode = data.country;
           }
+        } catch (e) {
+          // API 실패 시 조용히 처리
         }
         
         if (countryCode) {
-          console.log('최종 감지된 국가 코드:', countryCode);
-          
           const targetLanguage = this.getLanguageByCountry(countryCode);
-          console.log('IP 기반 언어 설정:', targetLanguage);
+          console.log('접속 국가:', countryCode, '→ 설정된 언어:', targetLanguage);
+          
+          // localStorage에 감지 결과 영구 저장
+          this.saveDetectedLanguage(targetLanguage);
           
           if (currentLanguage !== targetLanguage) {
             const newPath = this.buildNewPath(currentPath, currentLanguage, targetLanguage);
@@ -133,9 +133,8 @@ export default {
             }
           }
         }
-        
       } catch (error) {
-        // API 실패 시에는 현재 언어 유지
+        // API 실패 시 조용히 처리
       }
     },
     getCurrentLanguage(path) {
@@ -154,6 +153,11 @@ export default {
       return defaultLang;
     },
     buildNewPath(currentPath, currentLang, targetLang) {
+      // 루트 경로(/)인 경우 리다이렉트하지 않음 (Index.vue가 처리)
+      if (currentPath === '/') {
+        return currentPath;
+      }
+      
       const langPattern = `/${currentLang}/`;
       const targetPattern = `/${targetLang}/`;
       
@@ -167,11 +171,24 @@ export default {
       return defaultPath;
     },
     getUserPreferredLanguage() {
-      // localStorage에서 사용자 설정 언어 가져오기
+      // localStorage에서 사용자가 직접 선택한 언어 가져오기
       if (typeof window !== 'undefined') {
         return localStorage.getItem('preferredLanguage');
       }
       return null;
+    },
+    getDetectedLanguage() {
+      // localStorage에서 IP로 감지된 언어 가져오기
+      if (typeof window !== 'undefined') {
+        return localStorage.getItem('detectedLanguage');
+      }
+      return null;
+    },
+    saveDetectedLanguage(language) {
+      // localStorage에 IP로 감지된 언어 영구 저장
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('detectedLanguage', language);
+      }
     },
     getLanguageByCountry(countryCode) {
       // 직접 import한 설정 사용
