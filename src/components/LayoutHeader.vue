@@ -177,37 +177,6 @@
   </div>
 </template>
 
-<<<<<<< HEAD
-=======
-<static-query>
-  query {
-    metadata {
-      siteName
-      settings {
-        web
-        github
-        twitter
-        defaultLanguage
-        fallbackLanguage
-        nav {
-          links {
-            path
-            title
-          }
-        }
-        sidebar {
-          ko { meta { code label flag countries educationButtonText defaultPath } }
-          # en { meta { code label flag countries educationButtonText defaultPath } }
-          # 언어 추가 후 수정: 새 언어 설정을 여기에 추가
-          # jp { meta { code label flag countries educationButtonText defaultPath } }
-          # zh { meta { code label flag countries educationButtonText defaultPath } }
-        }
-      }
-    }
-  }
-</static-query>
-
->>>>>>> f940bbc0aefb28a64455bcf51e5b2955a6429e65
 <script>
 // gridsome.config.js에서 설정 직접 import
 const gridsomeConfig = require('../../gridsome.config.js');
