@@ -57,6 +57,9 @@ module.exports = {
               '/advanced-features/browser-use/',
               '/advanced-features/feedback-system/',
               '/advanced-features/multi-instance/',
+              '/advanced-features/deterministic-regularization/',
+              '/advanced-features/reference-info/',
+              '/advanced-features/rework/',
             ]
           }
         ]
