@@ -13,19 +13,19 @@ AI의 특성상 동일한 입력에 대해서도 매번 다른 결과를 생성�
 고객별 맞춤 상품 추천 프로세스를 통해 결정론적 규칙을 설정하는 방법은 다음과 같습니다.<bt>
 
 먼저, 아래과 같이 고객별 맞춤 상품 추천 프로세스를 준비합니다.<br>
-![](../../uengine-image/process-gpt/deterministic-regularization/deterministic-1.png)<br>
+![](../../../uengine-image/process-gpt/deterministic-regularization/deterministic-1.png)<br>
 
 우측 메뉴의 '프로세스 편집'을 클릭하여 편집 상태를 활성화 한 후, 서브 프로세스 영역을 더블 클릭하여 패널을 활성화합니다.<br>
-![](../../uengine-image/process-gpt/deterministic-regularization/deterministic-2.png)<br>
+![](../../../uengine-image/process-gpt/deterministic-regularization/deterministic-2.png)<br>
 
 이후, '결정론적 규칙화' 버튼을 클릭합니다. 클릭하면 아래와 같은 화면이 생성되며 서브 프로세스의 이름인 '고객 정보의 자식 수 만큼 실행'을 코드로 변환한 결과가 나타나는 것을 확인할 수 있습니다. 이를 통해 이전 프로세스인 고객 정보 수집 단계에서 수집된 고객의 수 만큼 서브프로세스가 실행되도록 처리됩니다.
-![](../../uengine-image/process-gpt/deterministic-regularization/deterministic-3.png)<br>
+![](../../../uengine-image/process-gpt/deterministic-regularization/deterministic-3.png)<br>
 
 결정론적 규칙이 설정된 후, 저장하여 패널을 닫고 프로세스를 저장합니다. 이후, 프로세스를 실행 및 빠른 예시 생성을 통해 고객 정보 수집 프로세스 단계를 완료하면 아래와 같이 기존에 입력한 3명의 고객에 따른 고객 맞춤형 상품 정보 메일 생성 프로세스가 생성된 것을 확인할 수 있습니다. 
-![](../../uengine-image/process-gpt/deterministic-regularization/deterministic-4.png)<br>
+![](../../../uengine-image/process-gpt/deterministic-regularization/deterministic-4.png)<br>
 <고객 정보 수집 프로세스 예시> <br>
 
-![](../../uengine-image/process-gpt/deterministic-regularization/deterministic-5.png)<br>
+![](../../../uengine-image/process-gpt/deterministic-regularization/deterministic-5.png)<br>
 <수집된 고객 정보 수에 따른 서브프로세스 실행> <br>
 
 이를 통해 프로세스의 정확성을 보장할 수 있습니다. AI의 비결정적 특성으로 인해 발생할 수 있는 불일치를 제거하고, 고정된 규칙을 통해 동일한 조건에서는 항상 동일한 결과를 제공하여 업무의 신뢰성과 예측 가능성이 크게 향상됩니다.

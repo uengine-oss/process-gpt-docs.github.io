@@ -17,26 +17,26 @@ sidebar: 'getting-started'
 숙소 검색 프로세스를 통한 워크아이템 재작업 사용 방법은 다음과 같습니다.
 
 먼저, 아래와 같은 숙소예약 프로세스를 생성합니다.
-![](../../uengine-image/process-gpt/reference/reference-1.png)<br>
+![](../../../uengine-image/process-gpt/reference/reference-1.png)<br>
 
 완료된 숙소 검색 프로세스를 실행하여 여행계획입력단계를 완료합니다. 이후, 칸반보드로 이동하여 여행계획입력 워크아이템이 완료되었는지 확인 후, 클릭합니다.
-![](../../uengine-image/process-gpt/rework/rework-1.png)<br>
+![](../../../uengine-image/process-gpt/rework/rework-1.png)<br>
 
 여행계획입력 단계 우측 상단에 위치한 다시 수행하기를 클릭하면 아래와 같이 재작업 범위를 설정할 수 있습니다.<br>
 이때, 다른 단계에서 여행계획입력 단계를 참조정보로 사용하였다면 '현재 단계를 참조하는 다음 단계 포함'을 통해 연관된 작업에 대한 수정도 같이 진행할 수 있습니다.
-![](../../uengine-image/process-gpt/rework/rework-2.png)<br>
+![](../../../uengine-image/process-gpt/rework/rework-2.png)<br>
 
-![](../../uengine-image/process-gpt/rework/rework-1.5.png)<br>
+![](../../../uengine-image/process-gpt/rework/rework-1.5.png)<br>
 <워크아이템 재작업 범위 지정><br><br>
 
 재작업 범위 설정이 완료되면 워크아이템이 새로 생성되며 여행계획입력 단계에 대한 재작업을 진행할 수 있습니다.
-![](../../uengine-image/process-gpt/rework/rework-3.png)<br>
+![](../../../uengine-image/process-gpt/rework/rework-3.png)<br>
 
 재작업 후, 제출 완료를 클릭하면 이후 단계인 숙소 검색 단계 또한 워크아이템이 아래와 같이 새로 생성되며 클릭시 재작업을 통해 변동된 사항이 적용되어 나타나는 것을 확인할 수 있습니다.
-![](../../uengine-image/process-gpt/rework/rework-5.png)<br>
+![](../../../uengine-image/process-gpt/rework/rework-5.png)<br>
 <재작업에 따른 워크아이템 생성 예시><br><br>
 
-![](../../uengine-image/process-gpt/rework/rework-4.png)<br>
+![](../../../uengine-image/process-gpt/rework/rework-4.png)<br>
 
 재작업 기능을 통해 프로세스 전체를 재실행할 필요 없이 특정 워크아이템만 선택적으로 수정을 통해 불필요한 프로세스 실행 단계를 단축하여 시간과 리소스를 절약할 수 있습니다.<br>
 
