@@ -14,9 +14,9 @@ module.exports = function (api) {
   api.createPages(({ createPage, getCollection }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/
     
-    // getting-started/index.md를 루트 경로로 설정
+    // ko/getting-started/index.md를 루트 경로로 설정
     const markdownPages = getCollection('MarkdownPage');
-    const gettingStartedIndex = markdownPages.findNode({ path: '/getting-started/' });
+    const gettingStartedIndex = markdownPages.findNode({ path: '/ko/getting-started/' });
     
     if (gettingStartedIndex) {
       createPage({

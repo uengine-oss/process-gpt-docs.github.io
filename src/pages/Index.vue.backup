@@ -226,22 +226,22 @@ export default {
         {
           title: '에이전트 지식의 자동 관리',
           content: '업무에 필요한 AI 에이전트를 등록하고, Agent Boss가 자연어로 업무 방식과 목표를 교육합니다. 에이전트는 조직 내에서 실제 업무를 수행하고, 결과에 대한 피드백을 통해 지속적으로 성장하며 다음 업무에 더 정밀하게 대응할 수 있게 됩니다.',
-          image: require('../../uengine-image/process-gpt/organizationa.gif')
+          image: require('../../../uengine-image/process-gpt/organizationa.gif')
         },
         {
           title: '조직 목표를 달성을 위한 자동화된 휴먼-에이전트 팀 프로세스 정의',
           content: '목표를 입력하면, 휴먼·에이전트 팀과 워크차트가 자동 구성되어 실행됩니다. 에이전트가 업무를 수행하고, 사용자는 전략적 판단과 피드백으로 프로세스를 개선합니다. 필요 시 자연어로 수정하거나 BPMN 모델러를 통해 직접 편집할 수 있습니다.',
-          image: require('../../uengine-image/process-gpt/consulting.gif')
+          image: require('../../../uengine-image/process-gpt/consulting.gif')
         },
         {
           title: '에이전트가 초안 생성',
           content: '등록된 에이전트로 다중 구성(Crew)을 생성하고, 각 에이전트는 목표 달성까지 자율적으로 실행됩니다. MCP 기반으로 ERP, 메일, 협업툴 등 다양한 채널을 연결하여 반복 업무는 자동화되고, 결과는 문서로 생성됩니다. 내부 검색·오피스 도구 활용·MCP 연동까지 가능한 실질적인 실행 중심 프로세스 관리 환경을 제공합니다.',
-          image: require('../../uengine-image/process-gpt/agent.gif')
+          image: require('../../../uengine-image/process-gpt/agent.gif')
         },
         {
           title: 'A2A 호출 & 서비스 노출',
           content: '내·외부 시스템의 Open API 명세와 프로세스 데이터를 자동 해석하여 연동 방식을 제안합니다. Process GPT의 프로세스 및 에이전트를 A2A 서비스로 노출하고 외부 시스템에서 직접 호출할 수 있습니다. 자동 연계 구조를 통해 다양한 시스템 간 통합 실행 환경을 손쉽게 구축할 수 있습니다.',
-          image: require('../../uengine-image/process-gpt/a2a.gif')
+          image: require('../../../uengine-image/process-gpt/a2a.gif')
         }
       ],
       // accordionItems: [
