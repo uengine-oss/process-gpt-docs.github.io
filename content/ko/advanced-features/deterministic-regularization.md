@@ -3,7 +3,7 @@ description: ''
 sidebar: 'getting-started'
 ---
 
-# 결정론적 규칙화 (Deterministic Regularization)
+# 결정론적 규칙화
 
 결정론적 규칙화는 프로세스의 분기처리 및 서브프로세스 실행에 있어 AI를 통해 자동으로 처리되었던 과정을 고정된 규칙으로 전환하여 실행할 수 있도록 하는 기능입니다.
 

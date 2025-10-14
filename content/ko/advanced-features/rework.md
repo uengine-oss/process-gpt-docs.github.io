@@ -3,7 +3,7 @@ description: ''
 sidebar: 'getting-started'
 ---
 
-# 워크아이템 재작업 (Rework)
+# 워크아이템 재작업
 
 ## 완료된 워크아이템에 대한 재작업 기능
 
