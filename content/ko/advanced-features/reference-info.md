@@ -3,7 +3,7 @@ description: ''
 sidebar: 'getting-started'
 ---
 
-# 컨텍스트 엔지니어링
+# 컨텍스트 엔지니어링 자동화
 
 ## 참조 정보 설정을 통한 컨텍스트 엔지니어링
 
