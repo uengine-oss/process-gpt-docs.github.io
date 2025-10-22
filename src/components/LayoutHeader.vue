@@ -12,7 +12,8 @@
             title="Home"
           >
           <div class="flex items-center">
-            <g-image style="width:200px;" src="./logo-dark.svg"></g-image>
+            <g-image v-if="!isDarkMode" style="width:200px;" src="./logo-dark.svg"></g-image>
+            <g-image v-else style="width:200px;" src="./logo-white.png"></g-image>
           </div>
         </g-link>
           <!-- 일반 페이지에서는 클릭 가능한 로고 -->
@@ -53,7 +54,10 @@
           <!-- 커스텀 언어 선택 드롭다운 -->
           <div class="relative ml-2 inline-block" @click.stop>
             <button
-              class="appearance-none px-2 py-2 pr-8 rounded-full text-black border hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ui-primary focus:ring-opacity-50 transition-shadow duration-200 cursor-pointer whitespace-nowrap text-center flex items-center justify-center"
+              :class="[
+                'appearance-none px-2 py-2 pr-8 rounded-full border hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ui-primary focus:ring-opacity-50 transition-all duration-200 cursor-pointer whitespace-nowrap text-center flex items-center justify-center',
+                isDarkMode ? 'text-white bg-gray-800 border-gray-600 hover:bg-gray-700' : 'text-black bg-white border-gray-300 hover:bg-gray-50'
+              ]"
               style="width: auto; min-width: fit-content; font-size: 14px;"
               @click="toggleDropdown"
             >
@@ -62,7 +66,7 @@
             
             <!-- 커스텀 드롭다운 화살표 -->
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-              <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg :class="['w-4 h-4', isDarkMode ? 'text-white' : 'text-black']" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </div>
@@ -70,13 +74,19 @@
             <!-- 드롭다운 메뉴 -->
             <div 
               v-show="isDropdownOpen" 
-              class="absolute top-full left-0 mt-1 bg-white border border-ui-border rounded-lg shadow-lg z-50 min-w-full layout-header-dropdown-menu"
+              :class="[
+                'absolute top-full left-0 mt-1 border rounded-lg shadow-lg z-50 min-w-full layout-header-dropdown-menu',
+                isDarkMode ? 'bg-gray-800 border-gray-600' : 'bg-white border-ui-border'
+              ]"
               @click.stop
             >
               <div
                 v-for="lang in languages"
                 :key="lang.code"
-                class="px-2 py-2 hover:bg-ui-sidebar cursor-pointer flex"
+                :class="[
+                  'px-2 py-2 cursor-pointer flex',
+                  isDarkMode ? 'text-white hover:bg-gray-700' : 'text-black hover:bg-ui-sidebar'
+                ]"
                 style="font-size: 14px;"
                 @click="selectLanguage(lang.code)"
               >{{ lang.flag }} {{ lang.label }}
@@ -107,7 +117,8 @@
           <div class="flex-shrink-0">
             <g-link to="/" class="flex items-center" title="Home">
               <div class="flex items-center">
-                <g-image style="width:150px;" src="./logo-dark.svg"></g-image>
+                <g-image v-if="!isDarkMode" style="width:150px;" src="./logo-dark.svg"></g-image>
+                <g-image v-else style="width:150px;" src="./logo-white.png"></g-image>
               </div>
             </g-link>
           </div>
@@ -133,7 +144,10 @@
           <!-- 커스텀 언어 선택 드롭다운 -->
           <div class="relative inline-block" @click.stop>
             <button
-              class="appearance-none px-2 py-2 pr-8 rounded-full text-black border hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ui-primary focus:ring-opacity-50 transition-shadow duration-200 cursor-pointer whitespace-nowrap text-center flex items-center justify-center"
+              :class="[
+                'appearance-none px-2 py-2 pr-8 rounded-full border hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ui-primary focus:ring-opacity-50 transition-all duration-200 cursor-pointer whitespace-nowrap text-center flex items-center justify-center',
+                isDarkMode ? 'text-white bg-gray-800 border-gray-600 hover:bg-gray-700' : 'text-black bg-white border-gray-300 hover:bg-gray-50'
+              ]"
               style="width: auto; min-width: fit-content; font-size: 14px;"
               @click="toggleDropdown"
             >
@@ -142,7 +156,7 @@
             
             <!-- 커스텀 드롭다운 화살표 -->
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-              <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg :class="['w-4 h-4', isDarkMode ? 'text-white' : 'text-black']" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </div>
@@ -150,13 +164,19 @@
             <!-- 드롭다운 메뉴 -->
             <div 
               v-show="isDropdownOpen" 
-              class="absolute top-full left-0 mt-1 bg-white border border-ui-border rounded-lg shadow-lg z-50 min-w-full"
+              :class="[
+                'absolute top-full left-0 mt-1 border rounded-lg shadow-lg z-50 min-w-full',
+                isDarkMode ? 'bg-gray-800 border-gray-600' : 'bg-white border-ui-border'
+              ]"
               @click.stop
             >
               <div
                 v-for="lang in languages"
                 :key="lang.code"
-                class="px-3 py-2 hover:bg-ui-sidebar cursor-pointer flex items-center justify-center"
+                :class="[
+                  'px-3 py-2 cursor-pointer flex items-center justify-center',
+                  isDarkMode ? 'text-white hover:bg-gray-700' : 'text-black hover:bg-ui-sidebar'
+                ]"
                 style="font-size: 14px;"
                 @click="selectLanguage(lang.code)"
               >
@@ -201,7 +221,8 @@ export default {
 
   data() {
     return {
-      isDropdownOpen: false
+      isDropdownOpen: false,
+      isDarkMode: false
     };
   },
 
@@ -276,7 +297,29 @@ export default {
     getCurrentLanguageDisplay() {
       const currentLang = this.languages.find(lang => lang.code === this.currentLanguage);
       return currentLang ? `${currentLang.flag} ${currentLang.label}` : '🌐 Language';
+    },
+    checkDarkMode() {
+      // HTML 요소에 lights-out 속성이 있는지 확인
+      this.isDarkMode = document.documentElement.hasAttribute('lights-out');
+    },
+    setupDarkModeObserver() {
+      // MutationObserver를 사용하여 다크 모드 변경을 감지
+      const observer = new MutationObserver(() => {
+        this.checkDarkMode();
+      });
+      
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['lights-out']
+      });
     }
+  },
+
+  mounted() {
+    // 초기 다크 모드 상태 확인
+    this.checkDarkMode();
+    // 다크 모드 변경 감지를 위한 옵저버 설정
+    this.setupDarkModeObserver();
   }
 };
 </script>
