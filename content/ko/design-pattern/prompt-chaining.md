@@ -52,8 +52,18 @@ sidebar: 'getting-started'
     앞선 세단계의 출력을 순차적으로 호출하여 종합합니다.
 
 
-## 예시 영상
+## 🎬 예시 영상
 
-<a href="https://www.youtube.com/watch?v=7yXa___W9_M" target="_blank">
-  <img src="https://img.youtube.com/vi/7yXa___W9_M/0.jpg" width="640" alt="ProcessGPT 소개 영상 썸네일"/>
-</a>
+ProcessGPT를 활용한 **보험 심사 프로세스 프롬프트 체이닝**의 실제 실행 화면입니다.  
+계약 정보 입력 → 위험도 평가 → 보험료 산출 → 고객 설명 보고서 작성의 전체 흐름을 시연합니다.
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);margin-top:1rem;margin-bottom:1rem;">
+  <iframe src="https://www.youtube.com/embed/7yXa___W9_M?rel=0&modestbranding=1"
+          title="ProcessGPT 보험심사 예시 영상"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;">
+  </iframe>
+</div>
+
+<p align="center"><em>▶ 영상이 보이지 않는 경우 <a href="https://www.youtube.com/watch?v=7yXa___W9_M" target="_blank">여기를 클릭해 YouTube에서 보기</a></em></p>
