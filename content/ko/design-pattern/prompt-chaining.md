@@ -56,14 +56,9 @@ sidebar: 'getting-started'
 
 ProcessGPT 보험 심사 프롬프트 체이닝 흐름을 시연한 영상입니다.
 
-<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border:0;">
-  <iframe
-    src="https://www.youtube.com/embed/7yXa___W9_M?rel=0&modestbranding=1"
-    title="ProcessGPT 보험심사 예시 영상"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;">
-  </iframe>
-</div>
+<a href="https://www.youtube.com/watch?v=7yXa___W9_M" target="_blank">
+  <img src="https://img.youtube.com/vi/7yXa___W9_M/0.jpg" width="640" alt="ProcessGPT 소개 영상 썸네일"/>
+</a>
+
 
 *영상이 안 보이면 [YouTube에서 보기](https://www.youtube.com/watch?v=7yXa___W9_M).*
