@@ -31,7 +31,7 @@ sidebar: 'getting-started'
 
 ## 간단한 구현 예시 (작동 원리)
 
-![](../../../uengine-image/process-gpt/design-pattern/prompt_chaining_1.png.png)
+![](../../../uengine-image/process-gpt/design-pattern/prompt_chaining_1.png)
 
 
 1. **초기 프롬프트 (계약 정보 입력)**:
