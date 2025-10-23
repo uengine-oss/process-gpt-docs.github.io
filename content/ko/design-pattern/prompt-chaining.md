@@ -55,17 +55,12 @@ sidebar: 'getting-started'
 
 ## 🎬 예시 영상
 
-ProcessGPT 보험료 산출 프롬프트 체이닝 흐름을 시연한 프로세스 영상입니다.
+ProcessGPT 보험료 산출 프롬프트 체이닝 흐름을 시연한 영상입니다.
 
-
-<div style="position: relative; padding-bottom: 56.25%; padding-top: 0px; height: 0; overflow: hidden;">
-            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-              src="https://(https://www.youtube.com/watch?v=7yXa___W9_M)" 
-              frameborder="0" crolling="no" allowfullscreen="">
-            </iframe>
-          </div>
+[![ProcessGPT 소개 영상](https://img.youtube.com/vi/7yXa___W9_M/0.jpg)](https://www.youtube.com/watch?v=7yXa___W9_M)
 
 
 *영상이 안 보이면 [YouTube에서 보기](https://www.youtube.com/watch?v=7yXa___W9_M).*
+
 
 
