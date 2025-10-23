@@ -34,7 +34,7 @@ sidebar: 'getting-started'
 
 ## 간단한 구현 예시
 
-![](../../../uengine-image/process-gpt/design-pattern/routing_process.png)
+![](../../../uengine-image/process-gpt/design-pattern/routing_process2.png)
 
 
 1. **요청 수집 단계**:
