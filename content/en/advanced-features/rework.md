@@ -19,16 +19,16 @@ Rework operates as follows in the example below.
 The method for using rework through the hotel search process is as follows.
 
 First, create a hotel reservation process as shown below.
-![](../../../uengine-image/process-gpt/reference/reference-1.png)<br>
+![](../../../uengine-image/process-gpt/en/reference/reference-1.png)<br>
 
 After that, execute the completed hotel search process to complete the hotel search step. Then, go to the kanban board to check if the hotel search work item has been completed, and click it.
-![](../../../uengine-image/process-gpt/rework/rework-1.png)<br>
+![](../../../uengine-image/process-gpt/en/rework/rework-1.png)<br>
 
 By clicking the 'Re-execute' in the upper right corner of the hotel search step, you can set the rework range as shown below.<br>
-![](../../../uengine-image/process-gpt/rework/rework-2.png)<br>
+![](../../../uengine-image/process-gpt/en/rework/rework-2.png)<br>
 
-![](../../../uengine-image/process-gpt/rework/rework-3.png)<br>
+![](../../../uengine-image/process-gpt/en/rework/rework-3.png)<br>
 <Rework Range Specification><br><br>
 
 After setting the rework range, a new work item is created, and you can see that the hotel search performed through the agent is rolled back due to compensation processing and re-executed.
-![](../../../uengine-image/process-gpt/rework/rework-3.5.png)<br>
+![](../../../uengine-image/process-gpt/en/rework/rework-3.5.png)<br>

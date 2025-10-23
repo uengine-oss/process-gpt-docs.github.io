@@ -17,16 +17,16 @@ The user can configure the process to be connected automatically without writing
 The method for setting reference information through the hotel reservation process is as follows.
 
 First, create a hotel reservation process as shown below.
-![](../../../uengine-image/process-gpt/reference/reference-1.png)<br>
+![](../../../uengine-image/process-gpt/en/reference/reference-1.png)<br>
 
 After that, double-click the hotel search activity to create a panel, then click the reference information tab.<br>
-![](../../../uengine-image/process-gpt/reference/reference-2.png)<br>
+![](../../../uengine-image/process-gpt/en/reference/reference-2.png)<br>
 
 The form to be referenced can be selected from the stages that wish to reference the previous stage based on the current stage, and the necessary information from the information registered in the form of the previous stage, the travel plan input step, can be selected when selected.<br>
-![](../../../uengine-image/process-gpt/reference/reference-3.png)<br>
+![](../../../uengine-image/process-gpt/en/reference/reference-3.png)<br>
 
 After selection is completed, save and execute the process to proceed to the hotel search step, you can see the values you entered in the previous input values section when the travel plan input step is completed, as shown below.<br>
 
 Based on this, by clicking the 'Hand Over to Agent' tab, the agent can identify the information needed for hotel search based on the information referenced by the user, and can see the result of the hotel search as shown below.
-![](../../../uengine-image/process-gpt/reference/reference-4.png)<br>
+![](../../../uengine-image/process-gpt/en/reference/reference-4.png)<br>
 
