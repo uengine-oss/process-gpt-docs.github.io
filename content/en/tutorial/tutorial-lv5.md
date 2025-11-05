@@ -12,7 +12,7 @@ The agent creates a newsletter customized to the customer's interests and level 
 Therefore, each customer can automatically receive the customized newsletter optimized for themselves.  
 The generated draft is automatically sent when approved through the review process, and the result can also be checked individually by customer unit.
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-0.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-0.png)
 <br>
 
 
@@ -21,10 +21,10 @@ The generated draft is automatically sent when approved through the review proce
 1. Register the marketing team in the organization chart, and create a customer management agent.
     Define the agent's role and goal, grant the necessary tools, and train the knowledge needed for customer management.
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-1-1.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-1-1.png)
 <br>
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-2-2.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-2-2.png)
 <br>
 
 
@@ -33,37 +33,37 @@ The generated draft is automatically sent when approved through the review proce
 1. Select 'Settings' > 'Data Source' menu on the right and enter the CRM data source information to use.
 (In this tutorial, Supabase is used as an example.)
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-2.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv4-2.png)
 <br>
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-3.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-3.png)
 <br>
 
 2. Use the curl example and API key in Read rows of Supabase API Docs to connect.
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-3.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv4-3.png)
 <br>
 
 
 ### Process Creation and Form Modification
 
 1. Create a process in the definition management.
-    Click the “Create Extended Sub Process” icon at the top to set the process to run the multiple instance.
+    Click the “Create expanded SubProcess” icon at the top to set the process to run the multiple instance.
     When the multiple instance is set, the process branches by customer unit, and the customized mail writing and sending process is executed in parallel for each customer.
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-4-1.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-4-1.png)
 <br>
 
 2. After creating the process, modify the form of each task according to the purpose.
    Set the task and the agent to use, and connect to Supabase as shown below.
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-5.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-5.png)
 <br>
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-6.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-6.png)
 <br>
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-7-1.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-7-1.png)
 <br>
 
 
@@ -72,46 +72,46 @@ The generated draft is automatically sent when approved through the review proce
 1. Execute the process to write the newsletter draft.
    Use the source add function at the bottom left to upload a file to refer to, or click "Quick Example" to generate a draft automatically based on LLM.
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-9.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-9.png)
 <br>
 
 2. Based on the generated draft, the agent uses the granted Supabase mcp tool to check the customer information linked to the CRM data, and creates a customized newsletter for each customer based on it.
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-11.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-11.png)
 <br>
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-12.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-12.png)
 <br>
 
 3. The customized newsletter created for the three customers linked to the CRM data.
 
 Using the internal CRM data, the customized newsletter is created for each customer as shown in the image below.
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-3.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-3.png)
 <br>
 
 The newsletter written for the Lee Seoyeon customer. It is a newsletter targeting the introduction of a friend and the customer's interest in AI-based customer consultation automation.
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-27.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-27.png)
 <br>
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-21(lee).png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-21(lee).png)
 <br>
 
 The newsletter written for the Jung Woo-seong customer. It is a newsletter targeting the customer's interest in smart factory and production automation.
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-25.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-25.png)
 <br>
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-23(jung).png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-23(jung).png)
 <br>
 
 The newsletter written for the Kim Ji-hoon customer. It is a newsletter targeting the customer's interest in cloud-based ERP solution.
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-26.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-26.png)
 <br>
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-22(kim).png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-22(kim).png)
 <br>
 
 
@@ -119,19 +119,19 @@ The newsletter written for the Kim Ji-hoon customer. It is a newsletter targetin
 
 1. The user in charge of the decision approves the draft written by the agent. Based on the result, it can instruct approval (payment complete) or re-writing.
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-15.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-15.png)
 <br>
 
 2. The newsletter approved is sent to the customer's email address registered in the CRM data.
    
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-16.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-16.png)
 <br>
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-17.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-17.png)
 <br>
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-18.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-18.png)
 <br>
 
 
@@ -139,8 +139,8 @@ The newsletter written for the Kim Ji-hoon customer. It is a newsletter targetin
 
 1. The decision-maker provides the agent with a rewrite opinion and feedback on the draft written by the agent, and the agent rewrites based on the review content.
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-19.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-19.png)
 <br>
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-20.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv5-20.png)
 <br>
