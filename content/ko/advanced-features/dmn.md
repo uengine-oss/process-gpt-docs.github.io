@@ -3,7 +3,7 @@ description: ''
 sidebar: 'getting-started'
 ---
 
-# DMN(Decision Model and Notation)
+# DMN 규칙 학습 및 추론
 
 ## 에이전트의 DMN 규칙 학습 및 추론
 
