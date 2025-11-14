@@ -5,36 +5,79 @@ sidebar: 'getting-started'
 
 # ERP 데이터 연동을 통한 재고 관리
 
-## 주문처리프로세스로 따라하는 ProcessGPT 튜토리얼 Lv.4
+## 재고 관리 프로세스로 따라하는 ProcessGPT 튜토리얼 Lv.4
 
-본 튜토리얼은 **AI 에이전트**와 ERP 데이터를 연동하여 수행하는 재고 관리 프로세스를 안내합니다. 
-에이전트는 외부 ERP 데이터를 기반으로 재고를 확인하고 입·출고를 처리합니다. 재고가 부족할 경우 생산을 요청하여 부족분을 보충한 뒤 출고를 진행합니다.
+본 튜토리얼은 **AI 에이전트**와 ERP 데이터를 연동하여 수행하는 재고 관리 프로세스를 안내합니다. <br>
+Supabase를 활용하여 데이터 테이블을 연동하고 에이전트를 통해 재고의 입·출고 처리 및 생산 요청들의 업무를 처리합니다.
+
+### ERP 데이터 연동 (Supabase 활용)
+설정 > 데이터소스 탭으로 이동하여 접속 정보를 추가합니다.<br>
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-1.png)
+
+이때, Supabase의 정보를 기반하여 접속정보를 추가해야하기 때문에 Supabase로 접속합니다. https://supabase.com/ <br>
+
+가입 후, 조직 생성을 위해 'Create organization'을 클릭 후, Name을 설정하여 조직을 생성합니다. 
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-2.png)
+
+생성한 조직 > 'New Projsct'를 통해 Name, Region, Password를 입력하여 생성하면 아래와 같이 프로젝트가 생성된 것을 확인할 수 있습니다.
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-3.png)
+
+생성한 프로젝트 > 좌측 'Table Editor' > 'New table'을 클릭 후, 아래 내용을 참고하여 Product Table을 생성합니다.
+
+
+| Name         | Type      |
+|--------------|-----------|
+| product_name   | text      |
+| product_id     | text      |
+| category       | text      |
+| unit_price     | numeric   |
+| unit           | text      |
+| description    | text      |
+| stock_quantity | numeric   |
+| created_at   | timestamptz |
+
+테이블 등록 후, 좌측 메뉴 'API Docs' > product_table > 우측 상단 'Bash'를 클릭하면 아래와 같은 화면이 생성되며, curl 하단 https://tjzssujilztwhzqbtgin.supabase.co/rest/까지 복사하여 접속 정보 URL에 추가합니다. <br>
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-4.png)
+
+이후, 상단 Connect > App Frameworks에 등록된 SUPABASE_ANON_KEY를 복사하여 접속 정보 Header Value에 추가합니다. <br>
+
+최종 완성된 접속 정보는 아래와 같으며, 모든 정보를 추가한 후 저장합니다. <br>
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-5.png)
 
 
 ### MRP 에이전트 등록 및 재고 관리를 위한 도구 부여
 
-1. 조직도에 물류팀을 등록 후, ERP에이전트를 등록합니다. 에이전트의 역할, 목표, 정의하고, 필요한 도구를 부여합니다.
+MRP 에이전트에 사용할 Supabase MCP를 등록하기 위해 설정 > MCP 서버 > '새 MCP 서버 추가'를 클릭하여 아래와 같이 입력합니다. <br>
+이때 Access_Token은 Supabase 프로필 > Account preferences > Access Tokens로 이동하여 Token 발급 후 입력합니다. <br>
+```
+{
+    "mcpServers": {
+        "supabase": {
+            "env": {
+                "SUPABASE_ACCESS_TOKEN": ""
+            },
+            "args": [
+                "-y",
+                "@supabase/mcp-server-supabase@latest",
+                "--project-ref",
+                "vlkoplsvrpjldnpcelqb"
+            ],
+            "command": "npx",
+            "enabled": true
+        }
+    }
+}
+```
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-1.png)
-<br>
+MCP 설정 완료 후, 조직도 정의에서 물류팀을 등록합니다.
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-6.png)
 
-
-### ERP 데이터 연동 (Supabase 활용)
-
-1. 우측 상단 설정 > 데이터소스 > 접속 정보 추가를 선택하고 ERP 데이터 소스 정보를 입력합니다.
-
-![](../../../uengine-image/process-gpt/tutorial/lv4-2.png)
-<br>
-
-2. Supabase API Docs의 Read rows에 있는 curl 예시와 API 키를 활용하여 연동합니다.
-
-![](../../../uengine-image/process-gpt/tutorial/lv4-3.png)
-<br>
-
-![](../../../uengine-image/process-gpt/tutorial/lv4-17.png)
-<br>
-
-
+이후, 물류팀에서 '+' > '신규 에이전트 추가'를 클릭후 아래와 같이 입력한 다음 AI로 에이전트 생성을 진행합니다.
+```
+물류팀의 자제 소요 계획(MRP)업무를 자동화하고 지원합니다.
+```
+생성된 에이전트의 도구에 supabase MCP가 등록되어있는지 확인 후, 저장을 통해 MRP 에이전트를 추가합니다.
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-7.png)
 
 ### 프로세스 생성 및 폼 수정
 
