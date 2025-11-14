@@ -97,7 +97,7 @@ MCP 설정 완료 후, 조직도 정의에서 물류팀을 등록합니다.
 <br>
 
 
-3. 생성된 프로세스의 폼은 실제 ERP 데이터와 연동되어, 프로세스의 물품명, 단가, 재고가 Supabase의 **product name, unit price, stock quantity**와 연결됩니다.
+3. 생성된 프로세스의 폼은 실제 ERP 데이터와 연동되어, 프로세스의 물품명, 단가, 재고가 Supabase의 **product_name, unit_price, stock_ quantity**와 연결됩니다.
 
 ![](../../../uengine-image/process-gpt/tutorial/lv4-6.png)
 <br>
