@@ -19,7 +19,7 @@ sidebar: 'getting-started'
 ### 고객관리 에이전트 선언 및 교육
 
 1. 조직도에 마케팅팀을 등록한 뒤, 고객관리 에이전트를 생성합니다.
-   에이전트의 역할과 목표를 정의하고 필요한 도구를 부여한 후, 고객관리에 필요한 지식을 학습시킵니다.
+   에이전트의 역할과 목표를 정의하고 필요한 도구를 부여한 후, 고객관리에 뉴스레터 작성에 필요한 지식을 학습시킵니다.
 
 ![](../../../uengine-image/process-gpt/tutorial/lv5-1-1.png)
 <br>
@@ -31,27 +31,19 @@ sidebar: 'getting-started'
 ### CRM 데이터 연동 (Supabase 활용)
 
 1. 우측 상단 설정 > 데이터소스 메뉴에서 접속 정보를 추가하고 사용할 CRM 데이터 소스 정보를 입력합니다.
-(본 튜토리얼에서는 Supabase를 예시로 사용합니다.)
+(데이터소스는 Supabase를 예시로 사용하며, 설정은 [Supabase 설정 방법](https://docs.process-gpt.io/ko/tutorial/tutorial-lv4/#erp-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%97%B0%EB%8F%99-supabase-%ED%99%9C%EC%9A%A9)을 참고하여 설정합니다.)
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-2.png)
-<br>
-
-![](../../../uengine-image/process-gpt/tutorial/lv5-3.png)
-<br>
-
-2. Supabase API Docs의 Read rows에 있는 curl 예시와 API 키를 활용하여 연동합니다.
-
-![](../../../uengine-image/process-gpt/tutorial/lv4-3.png)
-<br>
 
 
 ### 프로세스 생성 및 폼 수정
 
-1. 정의 관리에서 프로세스를 생성합니다.
-   상단의 “확장된 하위 프로세스 생성” 아이콘을 클릭하여 멀티플인스턴스를 실행할 프로세스를 설정합니다.
-   멀티플 인스턴스를 설정하면 프로세스가 고객 단위로 분기되어, 각 고객별로 맞춤형 메일 작성 및 발송 프로세스가 병렬로 실행됩니다.
+1. 정의 관리에서 고객 맞춤 뉴스레터 프로세스를 아래와 같이 생성합니다. <br>
+   ![](../../../uengine-image/process-gpt/tutorial/lv-5/5-1.png)
 
-![](../../../uengine-image/process-gpt/tutorial/lv5-4-1.png)
+'VIP 관심사 기반 뉴스레터 작성'단계 부터 '뉴스레터 발송' 단계 까지 멀티플 인스턴스 설정을 위해 상단의 “확장된 하위 프로세스 생성” 아이콘을 클릭하여 서브 프로세스를 생성합니다. <br> 
+
+서브 프로세스 설정을 완료하면 VIP 정보 수집의 수 만큼 영역 내의 프로세스가 분기되어 생성되며, 이를 통해 각 고객별로 맞춤형 메일 작성 및 발송 프로세스가 병렬로 실행됩니다.
+
 <br>
 
 2. 프로세스 생성 후, 각 task의 폼을 용도에 맞게 수정합니다.
