@@ -52,12 +52,13 @@ Supabase에서 테이블을 생성하면 기본적으로 모든 외부 접근이
 본 튜토리얼에서는 ProcessGPT의 MRP 에이전트가 Supabase MCP를 통해 product_table의 데이터를 읽고 쓸 수 있도록 하기 위해 다음의 방법으로 진행합니다.
 
 Supabase 메뉴 'Authentication' > 'Policies'로 이동합니다.
-![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-5.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-8.png)
 
 이후 해당 테이블의 사용목적에 맞게 정책을 생성하기 위해 'Create policy'를 클릭하여 아래와 같은 화면을 생성합니다. <br>
-![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-5.png) <br>
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-9.png) <br>
 
 해당 화면에서 Product 테이블에 대한 조회, 생성, 수정, 삭제에 대한 정책을 형성할 수 있으며 우측 'Templates' 영역의 목적에 맞게 선택 후, Policy Name에 해당 정책의 이름을 수정하여 저장하면 아래와 같이 정책이 생성된 것을 확인할 수 있습니다.
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-10.png) <br>
 
 ### MRP 에이전트 등록 및 재고 관리를 위한 도구 부여
 
