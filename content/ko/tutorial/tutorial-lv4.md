@@ -98,23 +98,23 @@ MCP 설정 완료 후, 조직도 정의에서 물류팀을 등록합니다.
 
 1. 프로세스를 아래와 같이 생성합니다. 
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-4.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-11.png)
 - 재고가 충분할 경우 → 즉시 출고 진행
 - 재고가 부족할 경우 → 생산 요청 후, 입고 완료된 제품을 출고
 <br><br>
 
 2. 각 task의 폼을 용도에 맞게 수정합니다. task의 설정과 사용할 에이전트에 대한 설정, Supabase와의 연동을 아래와 같이 진행합니다.
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-19.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-23.png)
 <br>
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-20.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-24.png)
 <br>
 
 
 3. 생성된 프로세스의 폼은 실제 ERP 데이터와 연동되어, 프로세스의 물품명, 단가, 재고가 Supabase의 **product_name, unit_price, stock_ quantity**와 연결됩니다.
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-6.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-12.png)
 <br>
 
 
@@ -122,42 +122,42 @@ MCP 설정 완료 후, 조직도 정의에서 물류팀을 등록합니다.
 
 1. 프로세스를 실행하고 고객의 요청사항을 입력하면 에이전트가 재고 확인을 시작합니다.
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-7.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-13.png)
 <br>
 
 2. 에이전트는 고객이 주문한 히터모듈의 재고가 주문량 70개보다 많은 것을 확인 후, 바로 출고를 진행합니다.
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-8.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-14.png)
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-9.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-15.png)
 <br>
 
 3. 에이전트는 출고 후 남은 재고 수량도 Supabase mcp를 통해 연동된 ERP 데이터를 확인할 수 있습니다.
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-10.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-16.png)
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-11.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-17.png)
 <br>
 
 4. 만약, 재고 수량이 고객의 주문 수량보다 부족할 경우, 재고 보충을 위해 금형세트 100대 생산을 요청합니다.
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-12.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-18.png)
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-13.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-19.png)
 <br>
 
 5. 생산이 완료되면 에이전트가 입고를 처리하며, ERP 데이터에서도 수량이 반영됩니다.
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-14.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-20.png)
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-15.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-21.png)
 <br>
 
 6. 이후 재고가 충분해지면 출고를 진행하고, 남은 재고 수량 역시 ERP에서 확인할 수 있습니다.
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-14.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-20.png)
 
-![](../../../uengine-image/process-gpt/tutorial/lv4-16.png)
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-22.png)
 <br>
 
 7. 출고가 완료되면 프로세스가 종료됩니다.
