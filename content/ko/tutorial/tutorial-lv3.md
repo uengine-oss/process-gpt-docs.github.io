@@ -42,7 +42,8 @@ sidebar: 'getting-started'
 
 이후, 제안서 확인 단계에서 영업팀장에 의해 검토 여부를 파악하고 재작성이 필요한 경우 다음과 같이 검토 여부 체크해제 후, 제출을 진행하면 다시 '제안서 초안 생성' 단계로 돌아가 프로세스가 진행됩니다.
 
-![](../../../uengine-image/process-gpt/tutorial/lv-3/5.png)<br>
+![](../../../uengine-image/process-gpt/tutorial/lv-3/5.png)
+
 ![](../../../uengine-image/process-gpt/tutorial/lv-3/6.png)<br>
 
 초안이 재작성이 이루어지면 '제안서 확인' 단계가 다시 진행되며 검토 여부 확인 후, 보완 필요한 사항이 존재하지 않아 검토 여부를 체크하면 프로세스는 종료됩니다.<br>
