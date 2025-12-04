@@ -7,24 +7,31 @@ sidebar: 'getting-started'
 
 ## 재고 관리 프로세스로 따라하는 ProcessGPT 튜토리얼 Lv.4
 
-본 튜토리얼은 **AI 에이전트**와 ERP 데이터를 연동하여 수행하는 재고 관리 프로세스를 안내합니다. <br>
+본 튜토리얼은 **AI 에이전트**와 ERP 데이터를 연동하여 수행하는 재고 관리 프로세스를 안내합니다.<br>
 Supabase를 활용하여 데이터 테이블을 연동하고 에이전트를 통해 재고의 입·출고 처리 및 생산 요청들의 업무를 처리합니다.
 
+
 ### ERP 데이터 연동 (Supabase 활용)
+
 #### 1. Supabase 프로젝트 및 테이블 생성
-설정 > 데이터소스 탭으로 이동하여 접속 정보를 추가합니다.<br>
+
+설정 > 데이터소스 탭으로 이동하여 접속 정보를 추가합니다.
+
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-1.png)
 
-이때, Supabase의 정보를 기반하여 접속정보를 추가해야하기 때문에 Supabase로 접속합니다. https://supabase.com/ <br>
+이때, Supabase의 정보를 기반하여 접속정보를 추가해야하기 때문에 Supabase로 접속합니다. https://supabase.com/
 
-가입 후, 조직 생성을 위해 'Create organization'을 클릭 후, Name을 설정하여 조직을 생성합니다. 
+가입 후, 조직 생성을 위해 'Create organization'을 클릭 후, Name을 설정하여 조직을 생성합니다.
+
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-2.png)
+<br>
 
 생성한 조직 > 'New Projsct'를 통해 Name, Region, Password를 입력하여 생성하면 아래와 같이 프로젝트가 생성된 것을 확인할 수 있습니다.
+
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-3.png)
+<br>
 
 생성한 프로젝트 > 좌측 'Table Editor' > 'New table'을 클릭 후, 아래 내용을 참고하여 Product Table을 생성합니다.
-
 
 | Name         | Type      |
 |--------------|-----------|
@@ -38,32 +45,41 @@ Supabase를 활용하여 데이터 테이블을 연동하고 에이전트를 통
 | created_at   | timestamptz |
 
 테이블 등록 후, 좌측 메뉴 'API Docs' > product_table > 우측 상단 'Bash'를 클릭하면 아래와 같은 화면이 생성되며, curl 하단 https://tjzssujilztwhzqbtgin.supabase.co/rest/까지 복사하여 접속 정보 URL에 추가합니다. <br>
+
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-4.png)
 
-이후, 상단 Connect > App Frameworks에 등록된 SUPABASE_ANON_KEY를 복사하여 접속 정보 Header Value에 추가합니다. <br>
+이후, 상단 Connect > App Frameworks에 등록된 SUPABASE_ANON_KEY를 복사하여 접속 정보 Header Value에 추가합니다.
 
-최종 완성된 접속 정보는 아래와 같으며, 모든 정보를 추가한 후 저장합니다. <br>
+최종 완성된 접속 정보는 아래와 같으며, 모든 정보를 추가한 후 저장합니다.
+
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-5.png)
+<br>
 
 #### 2. RLS(Row Level Security) 정책 설정
 
-Supabase에서 테이블을 생성하면 기본적으로 모든 외부 접근이 차단되어 있습니다. 이는 데이터베이스 보안을 위한 기본 설정으로, RLS(Row Level Security) 정책을 통해 명시적으로 접근 권한을 부여해야 데이터를 조회하거나 수정할 수 있습니다. <br>
+Supabase에서 테이블을 생성하면 기본적으로 모든 외부 접근이 차단되어 있습니다. 이는 데이터베이스 보안을 위한 기본 설정으로, RLS(Row Level Security) 정책을 통해 명시적으로 접근 권한을 부여해야 데이터를 조회하거나 수정할 수 있습니다.
 
 본 튜토리얼에서는 ProcessGPT의 MRP 에이전트가 Supabase MCP를 통해 product_table의 데이터를 읽고 쓸 수 있도록 하기 위해 다음의 방법으로 진행합니다.
 
 Supabase 메뉴 'Authentication' > 'Policies'로 이동합니다.
-![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-8.png)
 
-이후 해당 테이블의 사용목적에 맞게 정책을 생성하기 위해 'Create policy'를 클릭하여 아래와 같은 화면을 생성합니다. <br>
-![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-9.png) <br>
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-8.png)
+<br>
+
+이후 해당 테이블의 사용목적에 맞게 정책을 생성하기 위해 'Create policy'를 클릭하여 아래와 같은 화면을 생성합니다.
+
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-9.png)
+<br>
 
 해당 화면에서 Product 테이블에 대한 조회, 생성, 수정, 삭제에 대한 정책을 형성할 수 있으며 우측 'Templates' 영역의 목적에 맞게 선택 후, Policy Name에 해당 정책의 이름을 수정하여 저장하면 아래와 같이 정책이 생성된 것을 확인할 수 있습니다.
-![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-10.png) <br>
+
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-10.png)
+<br>
 
 ### MRP 에이전트 등록 및 재고 관리를 위한 도구 부여
 
-MRP 에이전트에 사용할 Supabase MCP를 등록하기 위해 설정 > MCP 서버 > '새 MCP 서버 추가'를 클릭하여 아래와 같이 입력합니다. <br>
-이때 Access_Token은 Supabase 프로필 > Account preferences > Access Tokens로 이동하여 Token 발급 후 입력합니다. <br>
+MRP 에이전트에 사용할 Supabase MCP를 등록하기 위해 설정 > MCP 서버 > '새 MCP 서버 추가'를 클릭하여 아래와 같이 입력합니다.<br>
+이때 Access_Token은 Supabase 프로필 > Account preferences > Access Tokens로 이동하여 Token 발급 후 입력합니다.
 ```
 {
     "mcpServers": {
@@ -83,22 +99,30 @@ MRP 에이전트에 사용할 Supabase MCP를 등록하기 위해 설정 > MCP �
     }
 }
 ```
+<br>
 
 MCP 설정 완료 후, 조직도 정의에서 물류팀을 등록합니다.
+
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-6.png)
+<br>
 
 이후, 물류팀에서 '+' > '신규 에이전트 추가'를 클릭후 아래와 같이 입력한 다음 AI로 에이전트 생성을 진행합니다.
 ```
 물류팀의 자제 소요 계획(MRP)업무를 자동화하고 지원합니다.
 ```
+<br>
+
 생성된 에이전트의 도구에 supabase MCP가 등록되어있는지 확인 후, 저장을 통해 MRP 에이전트를 추가합니다.
+
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-7.png)
+<br>
 
 ### 프로세스 생성 및 폼 수정
 
 1. 프로세스를 아래와 같이 생성합니다. 
 
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-11.png)
+
 - 재고가 충분할 경우 → 즉시 출고 진행
 - 재고가 부족할 경우 → 생산 요청 후, 입고 완료된 제품을 출고
 <br><br>
@@ -106,17 +130,14 @@ MCP 설정 완료 후, 조직도 정의에서 물류팀을 등록합니다.
 2. 각 task의 폼을 용도에 맞게 수정합니다. task의 설정과 사용할 에이전트에 대한 설정, Supabase와의 연동을 아래와 같이 진행합니다.
 
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-23.png)
-<br>
 
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-24.png)
 <br>
-
 
 3. 생성된 프로세스의 폼은 실제 ERP 데이터와 연동되어, 프로세스의 물품명, 단가, 재고가 Supabase의 **product_name, unit_price, stock_ quantity**와 연결됩니다.
 
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv4-12.png)
 <br>
-
 
 ### 실행
 
