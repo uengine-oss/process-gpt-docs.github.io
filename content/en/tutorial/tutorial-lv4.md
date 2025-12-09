@@ -21,7 +21,7 @@ Go to Settings > Data Sources tab to add the connection information.
 
 Then, you need to access Supabase to add connection information based on Supabase information. https://supabase.com/
 
-After signing up, click 'Create organization' to create an organization by setting the Name. 
+After signing up, [click 'Create organization'](https://supabase.com/dashboard/organizations) to create an organization by setting the Name. 
 
 ![](../../../uengine-image/process-gpt/en/tutorial/lv-4/lv-4-2.png)
 <br>
@@ -31,7 +31,7 @@ By entering Name, Region, and Password through 'New Projsct' of the created orga
 ![](../../../uengine-image/process-gpt/en/tutorial/lv-4/lv-4-3.png)
 <br>
 
-Click 'Table Editor' on the left side of the created project > 'New table' and create a Product Table based on the following contents.
+Click 'Table Editor' on the left side of the created project > 'New table' and create a product_table based on the following contents.
 
 | Name         | Type      |
 |--------------|-----------|

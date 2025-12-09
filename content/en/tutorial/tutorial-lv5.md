@@ -30,42 +30,30 @@ The generated draft is automatically sent when approved through the review proce
 
 ### CRM Data Connection (Supabase Use)
 
-1. Select 'Settings' > 'Data Source' menu on the right and enter the CRM data source information to use.
-(In this tutorial, Supabase is used as an example.)
-
-![](../../../uengine-image/process-gpt/en/tutorial/lv4-2.png)
-<br>
-
-![](../../../uengine-image/process-gpt/en/tutorial/lv5-3.png)
-<br>
-
-2. Use the curl example and API key in Read rows of Supabase API Docs to connect.
-
-![](../../../uengine-image/process-gpt/en/tutorial/lv4-3.png)
-<br>
+1. At the top right, go to Settings > Data Sources, add the connection information, and enter the CRM data source information to use.
+(Data source is used as an example of Supabase, and the settings are referred to [Supabase setting method](https://docs.process-gpt.io/en/tutorial/tutorial-lv4/#erp-data-integration-using-supabase).)
 
 
 ### Process Creation and Form Modification
 
-1. Create a process in the definition management.
-    Click the “Create expanded SubProcess” icon at the top to set the process to run the multiple instance.
-    When the multiple instance is set, the process branches by customer unit, and the customized mail writing and sending process is executed in parallel for each customer.
+1. Create the customer-customized newsletter process as shown below in the definition management.
 
-![](../../../uengine-image/process-gpt/en/tutorial/lv5-4-1.png)
-<br>
+![](../../../uengine-image/process-gpt/en/tutorial/lv-5/5-1.png)
+
+To set up multiple instances from the "VIP Interest-based Newsletter Writing" step to the "Newsletter Sending" step, click the "Create Expanded Sub-process" icon at the top to create a sub-process.
+
+When the sub-process is completed, the process branches by customer unit, and the customized mail writing and sending process is executed in parallel for each customer.
+<br><br>
 
 2. After creating the process, modify the form of each task according to the purpose.
    Set the task and the agent to use, and connect to Supabase as shown below.
 
 ![](../../../uengine-image/process-gpt/en/tutorial/lv5-5.png)
-<br>
 
 ![](../../../uengine-image/process-gpt/en/tutorial/lv5-6.png)
-<br>
 
 ![](../../../uengine-image/process-gpt/en/tutorial/lv5-7-1.png)
 <br>
-
 
 ### Writing a Customer-Customized Newsletter by the Agent
 

@@ -21,7 +21,7 @@ Supabase를 활용하여 데이터 테이블을 연동하고 에이전트를 통
 
 이때, Supabase의 정보를 기반하여 접속정보를 추가해야하기 때문에 Supabase로 접속합니다. https://supabase.com/
 
-가입 후, 조직 생성을 위해 'Create organization'을 클릭 후, Name을 설정하여 조직을 생성합니다.
+가입 후, 조직 생성을 위해 ['Create organization'을 클릭](https://supabase.com/dashboard/organizations) 후, Name을 설정하여 조직을 생성합니다.
 
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-2.png)
 <br>
@@ -31,7 +31,7 @@ Supabase를 활용하여 데이터 테이블을 연동하고 에이전트를 통
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-3.png)
 <br>
 
-생성한 프로젝트 > 좌측 'Table Editor' > 'New table'을 클릭 후, 아래 내용을 참고하여 Product Table을 생성합니다.
+생성한 프로젝트 > 좌측 'Table Editor' > 'New table'을 클릭 후, 아래 내용을 참고하여 product_table을 생성합니다.
 
 | Name         | Type      |
 |--------------|-----------|
@@ -44,7 +44,7 @@ Supabase를 활용하여 데이터 테이블을 연동하고 에이전트를 통
 | stock_quantity | numeric   |
 | created_at   | timestamptz |
 
-테이블 등록 후, 좌측 메뉴 'API Docs' > product_table > 우측 상단 'Bash'를 클릭하면 아래와 같은 화면이 생성되며, curl 하단 https://tjzssujilztwhzqbtgin.supabase.co/rest/까지 복사하여 접속 정보 URL에 추가합니다. <br>
+테이블 등록 후, 좌측 메뉴 'API Docs' > product_table > 우측 상단 'Bash'를 클릭하면 아래와 같은 화면이 생성되며, curl 하단 https://tjzssujilztwhzqbtgin.supabase.co/rest/ 까지 복사하여 접속 정보 URL에 추가합니다. <br>
 
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-4.png)
 
