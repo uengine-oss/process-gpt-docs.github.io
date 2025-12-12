@@ -19,7 +19,7 @@ sidebar: 'getting-started'
 ### 고객관리 에이전트 선언 및 교육
 
 1. 조직도에 마케팅팀을 등록한 뒤, 고객관리 에이전트를 생성합니다.
-   에이전트의 역할과 목표를 정의하고 필요한 도구를 부여한 후, 고객관리에 뉴스레터 작성에 필요한 지식을 학습시킵니다.
+   에이전트의 역할과 목표를 정의하고 필요한 도구를 부여한 후, 고객관리 에이전트에게 뉴스레터 작성에 필요한 지식을 학습시킵니다.
 
 ![](../../../uengine-image/process-gpt/tutorial/lv5-1-1.png)
 <br>
@@ -65,7 +65,7 @@ sidebar: 'getting-started'
 ![](../../../uengine-image/process-gpt/tutorial/lv5-9.png)
 <br>
 
-2. 생성된 초안을 바탕으로 에이전트는 부여된 Supabase mcp 도구를 활용해, CRM 데이터에 연동된 고객의 정보를 확인하고, 이를 기반으로 각각의 고객 맞춤형 뉴스레터를 생성합니다
+2. 생성된 초안을 바탕으로 에이전트는 부여된 Supabase mcp 도구를 활용해, CRM 데이터에 연동된 고객의 정보를 확인하고, 이를 기반으로 각각의 고객 맞춤형 뉴스레터를 생성합니다.
 
 ![](../../../uengine-image/process-gpt/tutorial/lv5-11.png)
 <br>
@@ -80,7 +80,7 @@ sidebar: 'getting-started'
 ![](../../../uengine-image/process-gpt/tutorial/lv5-3.png)
 <br>
 
-이서연 고객을 대상으로 작성된 뉴스레터 입니다. 지인의 소개와 AI기반 고객 상담자동화에 대한 고객의 관심사를 타겟으로 한 뉴스레터를 작성합니다
+이서연 고객을 대상으로 작성된 뉴스레터입니다. 지인의 소개와 AI 기반 고객 상담 자동화에 대한 고객의 관심사를 타겟으로 한 뉴스레터를 작성합니다.
 
 ![](../../../uengine-image/process-gpt/tutorial/lv5-27.png)
 <br>
@@ -88,7 +88,7 @@ sidebar: 'getting-started'
 ![](../../../uengine-image/process-gpt/tutorial/lv5-21(lee).png)
 <br>
 
-세미나에서 알게된 정우성 고객에게는 스마트팩토리 및 생산자동화라는 고객의 관심사에 맞춰 뉴스레터가 제작됩니다.
+세미나에서 알게 된 정우성 고객에게는 스마트팩토리 및 생산 자동화라는 고객의 관심사에 맞춰 뉴스레터가 제작됩니다.
 
 ![](../../../uengine-image/process-gpt/tutorial/lv5-25.png)
 <br>

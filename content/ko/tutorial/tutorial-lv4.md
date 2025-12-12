@@ -19,14 +19,14 @@ Supabase를 활용하여 데이터 테이블을 연동하고 에이전트를 통
 
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-1.png)
 
-이때, Supabase의 정보를 기반하여 접속정보를 추가해야하기 때문에 Supabase로 접속합니다. https://supabase.com/
+이때, Supabase의 정보를 기반으로 접속 정보를 추가해야 하기 때문에 Supabase로 접속합니다. https://supabase.com/
 
 가입 후, 조직 생성을 위해 ['Create organization'을 클릭](https://supabase.com/dashboard/organizations) 후, Name을 설정하여 조직을 생성합니다.
 
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-2.png)
 <br>
 
-생성한 조직 > 'New Projsct'를 통해 Name, Region, Password를 입력하여 생성하면 아래와 같이 프로젝트가 생성된 것을 확인할 수 있습니다.
+생성한 조직 > 'New Project'를 통해 Name, Region, Password를 입력하여 생성하면 아래와 같이 프로젝트가 생성된 것을 확인할 수 있습니다.
 
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-3.png)
 <br>
@@ -106,13 +106,13 @@ MCP 설정 완료 후, 조직도 정의에서 물류팀을 등록합니다.
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-6.png)
 <br>
 
-이후, 물류팀에서 '+' > '신규 에이전트 추가'를 클릭후 아래와 같이 입력한 다음 AI로 에이전트 생성을 진행합니다.
+이후, 물류팀에서 '+' > '신규 에이전트 추가'를 클릭한 후 아래와 같이 입력한 다음 AI로 에이전트 생성을 진행합니다.
 ```
-물류팀의 자제 소요 계획(MRP)업무를 자동화하고 지원합니다.
+물류팀의 자재 소요 계획(MRP) 업무를 자동화하고 지원합니다.
 ```
 <br>
 
-생성된 에이전트의 도구에 supabase MCP가 등록되어있는지 확인 후, 저장을 통해 MRP 에이전트를 추가합니다.
+생성된 에이전트의 도구에 supabase MCP가 등록되어 있는지 확인 후, 저장을 통해 MRP 에이전트를 추가합니다.
 
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-7.png)
 <br>
