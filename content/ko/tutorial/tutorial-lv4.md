@@ -44,11 +44,13 @@ Supabase를 활용하여 데이터 테이블을 연동하고 에이전트를 통
 | stock_quantity | numeric   |
 | created_at   | timestamptz |
 
-테이블 등록 후, 좌측 메뉴 'API Docs' > product_table > 우측 상단 'Bash'를 클릭하면 아래와 같은 화면이 생성되며, curl 하단 https://tjzssujilztwhzqbtgin.supabase.co/rest/ 까지 복사하여 접속 정보 URL에 추가합니다. <br>
+테이블 등록 후, 좌측 메뉴 'API Docs' > product_table > 우측 상단 'Bash'를 클릭하면 아래와 같은 화면이 생성되며, curl 하단 https://tjzssujilztwhzqbtgin.supabase.co/rest/v1 까지 복사하여 접속 정보 URL에 추가합니다. <br>
 
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-4.png)
 
 이후, 상단 Connect > App Frameworks에 등록된 SUPABASE_ANON_KEY를 복사하여 접속 정보 Header Value에 추가합니다.
+* 참고: Connect 정보에서 ANON_KEY가 아닌 PUBLISHABLE_DEFAULT_KEY가 존재할 경우 해당 KEY를 Header Value에 추가합니다.
+![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-5-1.png) <br>
 
 최종 완성된 접속 정보는 아래와 같으며, 모든 정보를 추가한 후 저장합니다.
 
