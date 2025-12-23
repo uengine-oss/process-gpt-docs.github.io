@@ -43,16 +43,17 @@ Click **New MCP Server** to register Perplexity MCP by copying and pasting the f
 
 ### Agent Registration
 
-1. Click the organization chart icon next to the agent.
+1. Click the '+' icon (Add and Manage Organization Chart) next to the agent.
 
 ![](../../../uengine-image/process-gpt/en/tutorial/lv-2/lv2-2.png)
 <br>
 
-To add a new sales team to the organization in the created organization chart, click the '+' at the top of the organization chart to add a sales team.
+In the created organization chart, click 'Add Team' to add a new Sales Team to the organization.
 
 ![](../../../uengine-image/process-gpt/en/tutorial/lv-2/lv2-3.png)
+<br>
 
-After that, click the '+' in the sales team > click the 'New Agent Add' tab > enter '**Proposal Writing Agent**' > click 'Create Agent by AI'.
+After that, click the 'Add New Agent' tab in the sales team > enter '**Proposal Writing Agent**' > click 'Create Agent With AI' button.
 
 Through this process, you can create a new agent related to the tasks used by the sales team.
 
