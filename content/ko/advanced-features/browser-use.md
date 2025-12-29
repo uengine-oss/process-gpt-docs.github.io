@@ -6,9 +6,11 @@ sidebar: 'getting-started'
 # Browser Use 에이전트
 
 ## Browser Use 에이전트를 활용한 웹 도구 연동
-Browser Use 에이전트 시스템은 프로세스의 Task를 처리하는데 있어 필요한 웹 기반 업무를 자동으로 감지하고 처리하는 기응입니다.
+Browser Use 에이전트 시스템은 프로세스의 Task를 처리하는데 있어 필요한 웹 기반 업무를 자동으로 감지하고 처리하는 기능입니다.
 
 제안서 작업에 필요한 PPT제작에 있어 AI 기반 PPT 제작 도구 GenSpark나 검색 사이트 Google 등 Browser Use를 통해 웹 기반 도구에 접근하여 프로세스에 적합한 업무를 처리할 수 있습니다.
+
+또한 hwp, pdf 확장자로 설정된 공고문에 대하여 Upstage AI를 결합하여 브러우저 환경에 해당 문서를 다운로드한 뒤, Upstage AI로 파싱하여 읽을 수 있는 형태로 변환하고 분석 및 판단하여 문서 작성을 진행하는 등 업무에 바로 활용 할 수 있습니다.
 
 ### Browser Use 에이전트 사용하기
 Browser Use 에이전트를 활용하여 영업제안 프로세스를 웹기반 젠스파크 도구를 활용하여 PPT 생성하는 방법은 다음과 같습니다.

@@ -3,94 +3,113 @@ description: ''
 sidebar: 'getting-started'
 ---
 
+
 # Process Creation and Execution
 
-## ProcessGPT Tutorial Lv.1 - Following a Sales Activity Process
+## ProcessGPT Tutorial Lv.1 Followed by Sales Proposal Writing Process
 
-This tutorial introduces the **ProcessGPT usage** through the sales proposal writing process. When a customer requests, the sales manager can easily prepare a proposal draft using the Quick Example Generation feature.
-When a customer requests, the sales manager can easily prepare a proposal draft using the Quick Example Generation feature.
+This tutorial introduces **ProcessGPT usage** through the following sales proposal writing process.
+
+Sales Proposal Writing Process:<br>
+**Customer Request Input → Sales Representative Proposal Writing**
 
 
-### Process Creation
+### Process Definition Screen Navigation
 
-Click the “Process Definition” tab on the left to directly draw a process.
+Clicking the "Definition Management" tab > "Process Definition" will navigate to the process definition screen, which supports the following features.
 
-1. Click the “Create Pool/Participant (Horizontal)” at the top.
+![](../../../uengine-image/process-gpt/en/tutorial/lv-1/lv1-0.png)
 
-![](../../../uengine-image/process-gpt/tutorial/lv1-1.png)
+1) The top of the process definition screen is equipped with a BPMN palette to allow users to manually draw processes.<br>
+For detailed information on the BPMN palette, please refer to the reference materials.
+[[Process Definition Guide](https://bpm-intro.uengine.io/bpm6-started/)]
 
-- After clicking the created pool, you can divide the lanes into the number of roles needed on the right icon. 
-- After assigning roles to each lane, click the right save icon.
+2) The right side of the process definition screen allows users to create processes through AI based on their requirements.
+
+
+### Process Definition
+
+To define the sales proposal writing process, follow the steps below.
+
+1. Create a process by dragging and dropping the "Full/Participant Creation (Horizontal)" icon from the palette, and click to define the lanes according to the number of roles needed for the process.
+
+![](../../../uengine-image/process-gpt/en/tutorial/lv-1/lv1-1.png)
+
+Example) Customer, Sales Representative<br><br>
+
+2. Place the start event on the customer lane in the palette, and then select the task icon displayed when the start event is placed to confirm that it is created on the same lane.
+
+![](../../../uengine-image/process-gpt/en/tutorial/lv-1/lv1-3.png)
 <br>
 
-2. Click the start icon to set the process start.
+3. Double-click the task to change it to 'Customer Request Input', and then move to the 'Form Editing' tab. <br>
 
-![](../../../uengine-image/process-gpt/tutorial/lv1-2.png)
+Form editing allows users to create forms based on the information to be input in the task, or to create forms automatically based on requirements by clicking the right arrow.
 
-- Click the work item to place it in the corresponding lane. Click the placed work item to enter the name and characteristics of the work item.
-- Click the work item to connect it to other elements. Click the “Connect to Other Elements” to specify the order between work items.
+![](../../../uengine-image/process-gpt/en/tutorial/lv-1/lv1-2.png)
+
+For detailed information on form creation, please refer to the reference materials.
+[[Form Creation Guide](https://bpm-intro.uengine.io/bpm6-started/form-definition/)]
+<br><br>
+
+The final completed sales proposal writing process through 1~3 is as follows.
+
+![](../../../uengine-image/process-gpt/en/tutorial/lv-1/lv1-4.png)
 <br>
 
-3. Add the end icon to complete the process and click the right save button to save the process.
+## Process Save and Edit
 
-![](../../../uengine-image/process-gpt/tutorial/lv1-3.png)
+To save the completed process, click the save icon in the right area, and then enter the following information in the screen below.
 
-![](../../../uengine-image/process-gpt/tutorial/lv1-4.png)
-
-- The created process can be checked in the “Process Definition” tab on the left.
+![](../../../uengine-image/process-gpt/en/tutorial/lv-1/lv1-5-1.png)
 <br>
 
+After saving, it will change to 'Read Mode', and you can edit the process by clicking the pencil icon.
 
-### Process Modification
-
-1. Click the pencil icon on the right to modify the process.
-
-![](../../../uengine-image/process-gpt/tutorial/lv1-5.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv-1/lv1-5-2.png)
 <br>
 
-2. The form of the work item can be modified in natural language. After modifying, you need to click the save button at the top right to complete the save. Save the process after modification.
+## Process Execution
 
-![](../../../uengine-image/process-gpt/tutorial/lv1-6.png)
+To execute the created process, click the 'Process Definition Diagram' icon in the top left to navigate.<br>
+
+Then, click the pencil icon to activate the edit mode for the definition diagram, and then register and save the process as shown below.
+
+    Mega Process: 영업 관리(Sales Management)
+    Major Process: 제안 관리(Proposal Management)
+    Sub Process: 제안서 작성 프로세스(Proposal Writing Process)
+
+![](../../../uengine-image/process-gpt/en/tutorial/lv-1/lv1-5-4.png)
 <br>
 
-3. When modifying, you can manage the modified content through version management.
+By clicking the proposal writing process, you can view the defined process, and validate or execute the process through the simulation mode.
 
-![](../../../uengine-image/process-gpt/tutorial/lv1-7.png)
+![](../../../uengine-image/process-gpt/en/tutorial/lv-1/lv1-5-5.png)
+
+By clicking 'Execute', you can view the first step of the proposal writing process, and after assigning roles and entering results, you can click 'Submit Complete' to execute the process.<br>
+At this time, role assignment can be made by a user who has joined ProcessGPT or a registered Agent.
+<br><br>
+
+Result input can be manually entered or generated by AI through 'Delegate to Agent' to create appropriate input values for the process.
+
+![](../../../uengine-image/process-gpt/en/tutorial/lv-1/lv1-5-7.png)
 <br>
 
-### Process Execution
+By clicking 'Submit Complete', the process will be executed, and the following results can be checked.
 
-1. Click the process you want to use in the process definition map.
+![](../../../uengine-image/process-gpt/en/tutorial/lv-1/lv1-5-8.png)
 
-![](../../../uengine-image/process-gpt/tutorial/lv1-8.png)
-<br>
+1. Instance <br>
+    When the process is executed, the executed process is registered in the instance, and detailed information can be checked by clicking.
 
-2. Click the execution on the right.
+2. Kanban Board <br>
+    By clicking the 'Kanban Board' tab of the proposal writing process, you can check the status of work items registered in the process based on the Kanban board.
+    For tasks in progress and expected tasks, the tasks corresponding to your lane are displayed.
+<br><br>
 
-![](../../../uengine-image/process-gpt/tutorial/lv1-9.png)
-<br>
+After clicking the proposal writing step, it is created as shown below, and the information entered in the previous step can be checked.
 
-3. Specify the role on the left, enter the customer's request, and click the submit complete.
+![](../../../uengine-image/process-gpt/en/tutorial/lv-1/lv1-5-9.png)
 
-![](../../../uengine-image/process-gpt/tutorial/lv1-10.png)
-<br>
-
-4. The process is executed. The running process can be checked in the left instance list.
-
-![](../../../uengine-image/process-gpt/tutorial/lv1-11.png)
-<br>
-
-5. Click the kanban board to check the progress of the tasks assigned to the user.
-
-![](../../../uengine-image/process-gpt/tutorial/lv1-12.png)
-<br>
-
-6. Click the quick example generation button to automatically write a draft by looking up the customer's order contents and past data using ChatGPT-based LLM. After checking the written content, click the submit complete at the top right.
-
-![](../../../uengine-image/process-gpt/tutorial/lv1-13.png)
-<br>
-
-7. The kanban board shows that all tasks assigned to the user have been completed. When all tasks assigned to the users are completed, the process is also completed.
-
-![](../../../uengine-image/process-gpt/tutorial/lv1-14.png)
+By proceeding with 'Delegate to Agent', ProcessGPT automatically connects each step through AI to create a result with a connection based on the information received from the previous steps through **Prompt Chaining** and **Context Engineering** that automatically extracts the necessary information from each step and passes it to the next step.
 

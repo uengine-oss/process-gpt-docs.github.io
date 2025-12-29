@@ -30,10 +30,50 @@ sidebar: 'getting-started'
 
 ## 라우팅 구조
 
-![](../../../uengine-image/process-gpt/design-pattern/2.Routing.png)
+![](../../../uengine-image/process-gpt/design-pattern/2.Routing2.png)
 
 ## 간단한 구현 예시
 
-![](../../../uengine-image/process-gpt/design-pattern/2.Routing2.png)
+![](../../../uengine-image/process-gpt/design-pattern/routing_process2.png)
 
+
+1. **요청 수집 단계**:
+   "고객이 요성 사항을 입력합니다."  
+    이 단계에서 텍스트를 분석해 의도와 업무 범주를 추출합니다.
+    이 데이터는 이후 라우팅 판단의 기초가 됩니다.
+
+
+2. **라우팅 판단 단계**:
+   "입력된 요청의 특성을 분석해 적합한 처리 경로를 결정합니다" <br>
+    요청이 질의 응답 / 견적 요청 / 제안 요청 중 어떤 유형에 해당하는지를 식별합니다.
+    분류 결과에 따라 자동으로 다음 경로를 선택합니다.
+   
+    → 이 단계는 LLM의 분류 판단(Classification Prompt)을 기반으로 한
+      조건 분기(Conditional Routing)입니다.
+
+
+ 4. **경로별 처리 단계**:
+
+ | 경로 유형 | 수행 동작 | 출력 형태 |
+|------------|------------|------------|
+| 질의 응답 경로 | 요청된 질문에 대한 명확한 답변 생성 | 텍스트 응답 |
+| 견적 요청 경로 | 세부 항목 및 금액을 포함한 견적서 작성 | 수치·표 기반 문서 |
+| 제안 요청 경로 | 요구사항 분석 후 대응 전략과 솔루션 제시 | 제안서 문서 |
+  
+  각 경로는 독립적으로 실행되며, AI는 라우팅 판단 결과에 따라 적합한 담당자나 에이전트를 자동 호출합니다.
+
+
+ 4. **결과 통합 단계**:
+  
+   “각 경로(질의응답, 견적 요청, 제안 요청)에서 생성된 결과물은 품질 기준에 따라
+    개별적으로 검토되며, 검토 결과에 따라 승인되거나 반려됩니다.”
+
+
+
+
+## 🎬 예시 영상
+
+지능적 라우팅을 시연한 고객 요청 대응 프로세스 영상입니다.
+
+[![ProcessGPT 라우팅 시연 영상](https://img.youtube.com/vi/c5QHCJVnaKE/maxresdefault.jpg)](https://www.youtube.com/watch?v=c5QHCJVnaKE)
 
