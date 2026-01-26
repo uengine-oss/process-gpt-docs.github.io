@@ -269,14 +269,26 @@ export default {
       // 사용자 설정 언어를 localStorage에 저장
       this.setUserPreferredLanguage(newLanguage);
       
-      // sidebar 설정에서 언어별 기본 경로 가져오기
-      const sidebarSettings = this.settings.sidebar || {};
-      const currentLangSettings = sidebarSettings[newLanguage];
-      const newPath = currentLangSettings && currentLangSettings.meta ? 
-        currentLangSettings.meta.defaultPath : `/${newLanguage}/getting-started/`;
+      const currentPath = this.$route.path;
+      const currentLang = this.currentLanguage;
+      
+      // 현재 경로에서 언어 부분만 변경
+      let newPath;
+      const langPattern = `/${currentLang}/`;
+      const targetPattern = `/${newLanguage}/`;
+      
+      if (currentPath.startsWith(langPattern)) {
+        newPath = currentPath.replace(langPattern, targetPattern);
+      } else {
+        // 언어 경로가 없는 경우 기본 페이지로 이동
+        const sidebarSettings = this.settings.sidebar || {};
+        const currentLangSettings = sidebarSettings[newLanguage];
+        newPath = currentLangSettings && currentLangSettings.meta ? 
+          currentLangSettings.meta.defaultPath : `/${newLanguage}/getting-started/`;
+      }
       
       // 현재 경로와 다른 경우에만 라우팅
-      if (newPath !== this.$route.path) {
+      if (newPath !== currentPath) {
         this.$router.push(newPath);
       }
     },
