@@ -15,7 +15,7 @@ Additionally, when the user requests the process and requirements in voice, it c
 
 ### Process List View
 
-The method of checking the process list created by voice chat is as follows.
+The method of checking the process list created by voice chat is as follows. 
 
 Click the chat icon at the top to enter the chat screen, and check if Assistant has been created. If it hasn't been created, check if the screen below appears by adding System as a participant through chat room creation.<br>
 ![](../../../uengine-image/process-gpt/voice-chat/1.png)
