@@ -3,9 +3,9 @@ description: ''
 sidebar: 'getting-started'
 ---
 
-# Claude Skills-based Reasoning Agent
+# Claude Skills-based Reasoning Agent Control and Optimization
 
-ProcessGPT goes beyond simple question-answering AI by integrating with **Claude Skills** to provide **Autonomous Agent** functionality that analyzes situations, uses tools independently, and completes tasks.
+ProcessGPT leverages Claude's powerful skill (tool) usage capabilities to autonomously reason through and execute complex tasks. Beyond simply leaving everything to the AI, it provides a transparent control environment where users can directly add/manage the agent's **Skills** and intuitively control reasoning priorities.
 
 ## What is a Self-Evolving Agent?
 
@@ -126,6 +126,42 @@ Supports **'Ephemeral'** functionality that allows safe modification and testing
 
 ![](../../../uengine-image/process-gpt/claude-skills/5.png)
 - Version history saving modified content as temporary versions and managing history to assist safe deployment
+<br>
+<br>
+<br>
 
 
+## Advanced] Reasoning Agent Skill Integration Management and Optimization
+
+ProcessGPT goes beyond simply leaving everything to the AI, providing a transparent control environment where users can directly add/manage the agent's 'Skills' and intuitively control reasoning priorities.
+
+### 1. Systematic Integrated Skill Management Environment
+
+An intuitive skill management dashboard is provided where you can easily add, modify, and delete various 'skills (tools)' needed for the agent to perform tasks in one place. User-added skills and built-in default skills are clearly distinguished, allowing real-time control of agent capabilities.
+
+![](../../../uengine-image/process-gpt/claude-skills/deepening1.png)
+- Integrated skill list for intuitively managing and viewing all skills assigned to the agent at a glance
+<br>
+<br>
+<br>
+
+### 2. Internal Reasoning Logic Visualization through Graph UI
+
+Clicking on a specific skill opens a file system-based UI that transparently reveals the agent's reasoning structure. The diagram-style graph view allows you to understand reference relationships between files, and the markdown preview enables direct verification of internal instructions (Prompts) and code.
+
+![](../../../uengine-image/process-gpt/claude-skills/deepening2.png)
+- Graph UI showing the internal workflow of a skill and code-level markdown preview screen
+<br>
+<br>
+<br>
+
+### 3. Intuitive Knowledge/Tool Usage Priority Setting
+
+Users directly control which information the agent should reference first when making reasoning and decisions, simply by mouse drag. Changing the priorities of **Skills**, **Business Rules (DMN)**, **Memory**, etc. is immediately reflected in the agent's action plan.
+
+![](../../../uengine-image/process-gpt/claude-skills/deepening3.png)
+- Control screen for easily changing the priority of information the agent references using mouse drag
+<br>
+<br>
+<br>
 
