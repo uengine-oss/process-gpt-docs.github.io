@@ -131,7 +131,7 @@ Supports **'Ephemeral'** functionality that allows safe modification and testing
 <br>
 
 
-## Advanced] Reasoning Agent Skill Integration Management and Optimization
+## \[Advanced\] Reasoning Agent Skill Integration Management and Optimization
 
 ProcessGPT goes beyond simply leaving everything to the AI, providing a transparent control environment where users can directly add/manage the agent's 'Skills' and intuitively control reasoning priorities.
 
