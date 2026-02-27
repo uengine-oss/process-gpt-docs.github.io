@@ -23,7 +23,7 @@ export default function (Vue, { router, head, isClient }) {
       Vue.nextTick(() => {
         // 약간의 시간 후에 이동 (콘텐츠 로딩 고려)
         setTimeout(() => {
-          const el = document.querySelector(to.hash);
+          const el = document.getElementById(decodeURIComponent(to.hash.slice(1)));
           if (el) {
             el.scrollIntoView({ behavior: 'auto', block: 'start' });
           }

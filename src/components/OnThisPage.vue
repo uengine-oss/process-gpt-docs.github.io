@@ -58,7 +58,7 @@ export default {
   watch: {
     $route: function() {
       if (process.isClient && window.location.hash) {
-        this.activeAnchor = window.location.hash;
+        this.activeAnchor = decodeURIComponent(window.location.hash);
       }
 
       // Clear the current observer.
@@ -111,7 +111,7 @@ export default {
   mounted() {
     if (process.isClient) {
       if (window.location.hash) {
-        this.activeAnchor = window.location.hash;
+        this.activeAnchor = decodeURIComponent(window.location.hash);
       }
       this.$nextTick(this.initObserver);
     }
