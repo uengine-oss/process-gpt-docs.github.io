@@ -2,7 +2,7 @@
   <Layout>
       <div class="flex flex-wrap items-start justify-start">
 
-        <div class="order-2 w-full md:w-1/4 sm:pl-4 md:pl-6 lg:pl-8 sticky" style="top: 4rem">
+        <div class="order-2 w-full md:w-1/4 sm:pl-4 md:pl-6 lg:pl-8 sticky overflow-y-auto overflow-x-hidden" style="top: 4rem; max-height: calc(100vh - 4rem)">
           <OnThisPage />
         </div>
 
