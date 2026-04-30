@@ -106,38 +106,7 @@ This is a step-by-step guide on how to use the automation features described abo
 
 <br>   
 
-## 3. Enterprise-Ready AI: An Autonomous Operating Environment Completed with a Single Document Upload
-
-Security concerns, output variance, and environmental constraints — the three walls that have made enterprises hesitant to adopt AI have all been brought down with this update. ProcessGPT has now evolved beyond a simple PDF reader into an Enterprise AI that autonomously operates the company's knowledge.
-
-### 3.1 Right Through to Air-Gapped Networks (Air-gapped Security)
-
-The security of documents — the company's core asset — is treated as the top priority.
-
-- **Air-gapped Environment Support:** Even in air-gapped environments without external internet access, the same performance as the cloud is delivered, fundamentally eliminating concerns about data leakage.
-
-<br>
-
-### 3.2 Same Document, Same Result: A Workflow Map with Zero Omissions (Consistent Output)
-
-AI answer variance is reduced to maximize reliability in real-world operations.
-
-- **Semantic-Unit Analysis:** Documents are not simply chopped apart but split and merged by semantic unit, so even complex proposals are analyzed without omissions.
-- **Complex Relationship Structuring:** Conditional branches and relationships scattered across multiple documents are independently identified and organized into a single, consistent workflow map. In particular, HWPX form snapshot analysis allows even complex table structures to be accurately captured without structural collapse.
-
-<br>
-
-### 3.3 Immediate Deployment in Any Environment (Plug-and-Play)
-
-Without complex infrastructure setup, the system can be put straight into production.
-
-- **Complete with a Single Installer:** Whether cloud, on-premises, or air-gapped, the system can be deployed instantly with a single installer.
-- **Environment Independence:** Without complex pre-work such as server configuration or API integration, simply attaching Skills to an agent completes a company-specific AI environment.
-
-<br><br><br>
-
-
-## 4. Detailed Process Definition and Form/Script Generation
+## 3. Detailed Process Definition and Form/Script Generation
 
 1. **Process Definition Screen**  
    - The process definition is managed through the left process modeling edit screen and the right process definition chat screen.
@@ -180,7 +149,7 @@ Without complex infrastructure setup, the system can be put straight into produc
 
 <br>
 
-## 5. Organization Chart Management (Organization)
+## 4. Organization Chart Management (Organization)
 
 1. **Organization Chart Definition Screen**
    - The organization chart definition is managed through the left chat screen and the right organization chart.

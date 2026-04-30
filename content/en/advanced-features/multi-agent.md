@@ -3,7 +3,7 @@ description: ''
 sidebar: 'getting-started'
 ---
 
-# Multi Agent
+# Fully Autonomous Deep Agent: Plan & Solve
 
 ## 1. MCP-based Multi Agent Automatic Draft Creation
 
@@ -81,33 +81,150 @@ The next operation resumes only after the administrator has finally reviewed and
 <br>
 <br>
 
-## 3. From Black Box to Glass Box: A Transparent Environment Where Every AI Action Is Visible (Glass-box Orchestration)
+## 3. From Imperative AI to Delegational AI
 
-The biggest concern when delegating work to an AI is the frustration of "not being able to see the process." ProcessGPT automates complex collaboration scenarios while exposing every reasoning step and execution detail of its agents in real time, turning what used to be a "black box" workspace into a "glass box."
+Existing AI was like a car in which the driver had to operate the pedals and steering wheel at every moment. The user had to instruct the next action at every step, and had to be involved in every detail — the order of tool use, data sources, exception handling, and so on. As a result, delegating work to AI often turned out to be more cumbersome than doing it manually.
 
-### 3.1 Real-time Visibility into Every Step
+**ProcessGPT's Deep Agent is different.** Just like fully autonomous driving, **once you tell it the destination (the request), it handles everything from route planning to driving — all on its own.** What makes this possible is the **Plan & Solve paradigm**.
 
-The right-side panel exposes, in real time, how the agent has decomposed the task (To-Do) as well as which tools and materials it is currently using.
+> **📌 What is Plan & Solve?**
+> An autonomous execution model in which the Main Agent receives the user request, ① decomposes the task and establishes a plan (**Plan**), and then ② orchestrates the appropriate Sub-Agents and tools to fully execute it (**Solve**). The user simply receives the result.
 
-- **Step-by-step tracking:** No matter how long the task is, you can see step-by-step progress instantly — eliminating the "I have no idea what the AI is doing right now" frustration.
-- **Reasoning transparency:** Beyond just producing a final result, the agent transparently shows why it chose a given tool and which sources it is referencing.
+---
 
+## 4. Plan Stage — It Decomposes and Configures On Its Own
+
+When a user request comes in, the first thing the **Main Agent** does is not to produce a response. **It first designs "how to solve this request."**
+
+### 4.1 Dynamic Plan Generation
+
+The Main Agent independently judges the complexity of the request and chooses one of two paths.
+
+- **Simple request** → The Main Agent handles it directly to minimize response time.
+- **Complex request** → The task is broken down into multiple sub-tasks, and a **Sub-Agent** specialized for each sub-task is dynamically configured.
+
+The important point here is that Sub-Agents are not pre-registered fixed workflows but **one-off agents generated on demand to fit the request**. Even for the same user, the task is decomposed into a different combination each time depending on the request content.
+
+### 4.2 Automatic Skill Mapping
+
+Each Sub-Agent is automatically mapped to the **Skills** and **Tools** required to perform its role, without any separate designation. The user does not need to tell it "use this API" or "look at this data source" individually.
+
+**Example:** "Tell me how to apply for vacation, and also show me the status of my vacation requests."
+
+| Step | Auto-Mapped Tools |
+|------|----------------|
+| User identification | `get_current_user` |
+| Process definition lookup | `process list lookup`, `process detail lookup` |
+| Application form analysis | `form field lookup` |
+| Personal progress lookup | `instance list lookup`, `task list lookup` |
+
+→ **The user entered just one sentence, but the Main Agent calls 6 tools simultaneously.**
+
+![](../../../uengine-image/process-gpt/multi-agent/15.png)
+[Plan — The request is decomposed and the necessary tools are automatically selected. The right-side panel shows 6 tools being auto-invoked in real time.]
+<br>
+<br>
 <br>
 
-[Multi-agent task decomposition and real-time progress UI]
-<br><br><br>
+---
 
-### 3.2 Uninterrupted Work That Completes Even When You Step Away (Persistence)
+## 5. Solve Stage — It Executes to the End and Returns an Integrated Result
 
-Even if you close the chat room or move on to other work, the agent's task does not stop.
+Once the plan is established, Sub-Agents execute tasks in parallel or sequentially, and the Main Agent bundles the results into a single final answer.
 
-- **Background execution:** Complex analyses or long reports are safely finalized by the AI in the background.
-- **Completion alerts and listing:** Generated files and outputs are organized into a clean list so you can come back anytime to download them.
+### 5.1 Autonomous Execution
 
+- Without any additional questions to the user, it finds answers by calling registered data and systems.
+- Failed tool calls are retried or alternative paths are explored.
+- The Main Agent **integrates the results from multiple Sub-Agents into a single coherent response**.
+
+### 5.2 Background Persistence
+
+For long-running tasks, even if the user closes the chat window or moves on to other work, **the agent finishes the task to the end in the background**. Generated files and outputs are managed in a separate downloads list so they can be revisited at any time.
+
+This is built on top of a LangGraph-based checkpointing structure, so even if the container is restarted or moved to another node, the task is not interrupted and continues.
+
+![](../../../uengine-image/process-gpt/multi-agent/16.png)
+[Solve — The 6 tools are combined to return a complete answer. Application procedure guide (process definition) + personal application status (instance) integrated into a single-screen response.]
+<br>
+<br>
 <br>
 
-### 3.3 Human Approval for Critical Tasks (Human-in-the-Loop)
+---
 
-The speed of automation and human judgment are combined in balance to guarantee a safe operating environment.
+## 6. Safety Net — Human-in-the-Loop
 
-<br><br><br>
+The speed of autonomy must not become the speed of risk. ProcessGPT's Deep Agent **always requires explicit user approval** for the following kinds of actions.
+
+- Irreversible actions such as deleting or modifying DB data
+- Write actions against external systems (sending emails, submitting approvals, payments, etc.)
+- Sensitive actions pre-designated by the administrator
+
+It is a structure where the speed of automation and human judgment are balanced. It is like having an emergency stop button in an autonomous vehicle.
+
+---
+
+## 7. Behavior Example — Vacation Request Scenario
+
+### User Request
+> "Tell me how to apply for vacation, and also show me the status of my vacation requests."
+
+### Agent Behavior
+
+**Plan Stage (instant):**
+- The Main Agent decomposes the request into two sub-objectives
+  - ① Vacation request procedure guide (definition area)
+  - ② Look up the user's own vacation request status (instance area)
+- Auto-identifies 6 tools needed for each objective
+- Sequential calls start from `tool_start: work-assistant__get_form_fields`
+
+**Solve Stage (within seconds):**
+- Step-by-step application guide (based on process definition + form fields)
+  1. Fill in the application form in the vacation request process
+  2. Input items: vacation start date / vacation end date / reason
+  3. Upon submission, proceed to the administrator approval/rejection step
+  4. After approval, continue to the HR notification step
+- Integrated display of the user's own application status (based on instance + tasks)
+
+### User-Perspective Difference
+- **Existing approach:** "Show me the process definition" → check → "Show me my application status" → check → mentally combine the two pieces of information
+- **Plan & Solve:** **One sentence → one integrated answer**
+
+---
+
+## 8. Comparison with the Traditional Approach
+
+| Aspect | Traditional Fragmented AI | Plan & Solve Deep Agent |
+|------|--------------|----------------------|
+| **User burden** | Step-by-step instruction required | Delegated with a single request |
+| **Task decomposition** | User decomposes and instructs directly | Main Agent decomposes automatically |
+| **Sub-Agents** | None or fixed | Dynamically generated per request |
+| **Tool mapping** | User specifies explicitly | Role-based automatic mapping |
+| **Execution persistence** | Stops when leaving the screen | Auto-completes in the background |
+| **Result form** | Separate response per tool call | Integrated single answer |
+| **Safety control** | None or blanket blocking | HITL approval only for critical actions |
+
+---
+
+## 9. Suitable Workloads
+
+The Plan & Solve Deep Agent is most effective for **work that crosses multiple systems, data sources, and rules**.
+
+- **Internal administration** — Vacation/business trip/purchase application procedure guides + personal status lookup
+- **Data analysis** — Data collection from multiple DBs and files → processing → visualization
+- **Document processing** — Parsing heterogeneous formats such as PDF/BPMN/Excel → integrated report generation
+- **Process operations** — Instance monitoring + anomaly detection + automated owner notifications
+- **Customer response** — Policy guidance + per-customer history lookup + response guide generation
+
+Conversely, for **single information lookups** or **clear single-tool calls** where decomposition is unnecessary, the Main Agent handles them directly, so the system does not always run heavily.
+
+---
+
+## 10. Key Message
+
+> **Beyond simple conversational bots, it understands business context and proactively orchestrates workflows.**
+> **Now, experience true AI automation that is transparent and controllable.**
+
+---
+
+*ProcessGPT is an enterprise AI workspace based on the LangChain Deep Agents architecture, and the Plan & Solve behavior described in this document is provided by default in all standard license environments.*
