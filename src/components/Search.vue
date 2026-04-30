@@ -92,6 +92,10 @@ query Search {
 import Fuse from 'fuse.js';
 import { ChevronRightIcon, SearchIcon } from 'vue-feather-icons';
 
+// gridsome.config.js에서 설정 직접 import
+const gridsomeConfig = require('../../gridsome.config.js');
+const siteSettings = gridsomeConfig.settings;
+
 export default {
   components: {
     ChevronRightIcon,
@@ -108,27 +112,45 @@ export default {
   computed: {
     results() {
       const fuse = new Fuse(this.filteredHeadings, {
-        keys: ['value'],
-        threshold: .25
+        keys: ['value', 'title'],
+        threshold: .4,
+        ignoreLocation: true
       });
 
       return fuse.search(this.query).slice(0, 15);
     },
-    currentSidebar() {
-      // Process-GPT 모드만 사용
-      return 'process-gpt';
+    currentLanguage() {
+      const path = this.$route ? this.$route.path : '/';
+      const sidebarSettings = siteSettings.sidebar || {};
+
+      for (const langCode of Object.keys(sidebarSettings)) {
+        if (path.startsWith(`/${langCode}/`)) {
+          return langCode;
+        }
+      }
+
+      return siteSettings.defaultLanguage || 'ko';
     },
     filteredHeadings() {
       let result = [];
       const allPages = this.$static.allMarkdownPage.edges.map(edge => edge.node);
+      const language = this.currentLanguage;
 
-      // Process-GPT 관련 페이지들만 필터링
+      // 현재 언어에 해당하는 페이지만 필터링
       const filteredPages = allPages.filter(page => {
-        return page.path.startsWith('/process-gpt/');
+        return page.path.startsWith(`/${language}/`);
       });
 
-      // 필터링된 페이지들의 헤딩만 포함
+      // 필터링된 페이지들의 헤딩과 페이지 제목 모두 포함
       filteredPages.forEach(page => {
+        // 페이지 자체도 검색 결과에 포함 (제목으로 검색 가능하도록)
+        result.push({
+          value: page.title,
+          anchor: '',
+          path: page.path,
+          title: page.title
+        });
+
         page.headings.forEach(heading => {
           result.push({
             ...heading,
