@@ -162,6 +162,30 @@ The speed of autonomy must not become the speed of risk. ProcessGPT's Deep Agent
 
 It is a structure where the speed of automation and human judgment are balanced. It is like having an emergency stop button in an autonomous vehicle.
 
+### 6.1 Pre-Generation Review — Selecting Skills, Agents, and DMN Rules
+
+Instead of generating the process immediately, the AI first presents candidate Skills, Agents, and DMN rules it deems necessary. The user selects and approves only the desired items, and can also make additional requests through a direct input field. Only approved items are reflected in the generation, preventing unwanted elements from being mixed into the result.
+
+![](../../../uengine-image/process-gpt/multi-agent/17.png)
+[Screen where the user directly selects the Skills and Agents to be generated during the HITL stage (vacation request process example)]
+<br>
+<br>
+<br>
+
+### 6.2 Generation Resolution Selection
+
+Even with the same document, you can directly specify the level of detail of the result according to the work purpose. By choosing one of Concise, Standard, or Detailed, the strength of node normalization and deduplication is adjusted accordingly. Concise for reports, Detailed for training/manuals — one generation handles multiple purposes.
+
+### 6.3 Post-Generation Automatic Verification and Correction
+
+Immediately after generating the process as approved, the system inspects the result for defects on its own and automatically corrects missing parts. Even without the user manually reviewing each item, the result delivered at the completion point has already gone through one round of verification. Following Principle 3 (Separation of Automatic Compensation and Recovery Responsibilities), the system takes responsibility for its own integrity.
+
+![](../../../uengine-image/process-gpt/multi-agent/18.png)
+[Screen where the system automatically detects and corrects defects in the generated process]
+<br>
+<br>
+<br>
+
 ---
 
 ## 7. Behavior Example — Vacation Request Scenario

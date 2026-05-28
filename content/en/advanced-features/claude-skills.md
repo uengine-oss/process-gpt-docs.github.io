@@ -13,7 +13,23 @@ ProcessGPT leverages Claude's powerful skill (tool) usage capabilities to autono
 "Beyond simple execution, it learns and optimizes the organization's business logic on its own."
 While traditional AI agents were **'Static Tools'** that only repeated pre-defined scripts, ProcessGPT is a '**Self-Evolving Partner**' that grows through feedback. Without additional developer involvement or complex data tuning (Zero-Effort Training), the agent evolves into a form that perfectly fits the organization's characteristics through daily repetitive tasks.
 
-## 1. 3-Step Reasoning Engine
+## 1. Router + Worker Architecture
+
+Instead of entrusting all work to a single massive model, ProcessGPT separates roles into a **Router** that distributes work and **Workers (Sub Agents)** that actually carry it out — handling complex tasks with a "don't grow the model, divide the work" approach.
+
+- **Router**: Analyzes the request to decide which Worker to delegate to, and is only responsible for flow control.
+- **Worker (Sub Agent)**: Performs the delegated unit of work, and is injected with only the minimal set of tools needed for that task, narrowing its decision scope.
+
+Thanks to this structure, even small open-source models in closed networks (banking, public sector, defense) — where external cloud models cannot be used — can reach tool-call accuracy at a practically usable level. Furthermore, each agent's model is managed as a profile decoupled from the code, so better models can be swapped in without any code changes when they become available.
+
+![](../../../uengine-image/process-gpt/claude-skills/0.png)
+- A real collaboration example where document search · summarization · analysis is divided among role-specific AIs and completed
+<br>
+<br>
+<br>
+
+
+## 2. 3-Step Reasoning Engine
 
 The agent processes user requests through a 3-step reasoning process: Situation Analysis (Thought) → Tool Execution (Action) → Result Verification (Observation). Users can transparently review this entire process in 'Action Mode' to understand the agent's reasoning.
 
@@ -33,11 +49,11 @@ The agent processes user requests through a 3-step reasoning process: Situation 
 <br>
 
 
-## 2. Key Usage Scenarios
-### 2. Use Case 1: Feedback-based Business Rule Refactoring (Rule Refactoring)
+## 3. Key Usage Scenarios
+### 3. Use Case 1: Feedback-based Business Rule Refactoring (Rule Refactoring)
 When users provide feedback in natural language about task processing results, AI does not simply leave it as a memo. It analyzes the feedback and immediately modifies (Re-programming) the system's **Business Rules**.
 
-#### 2.1. Problem Situation and Feedback Provision
+#### 3.1. Problem Situation and Feedback Provision
 The agent rejected a book rental application according to existing rules (rental prohibited if overdue history exists). The administrator instructs a new policy in natural language through the chat window: **"Allow rental if overdue history is less than 5 times"**.
 
 ![](../../../uengine-image/process-gpt/claude-skills/key-Usage-scenarios-1.png)
@@ -46,7 +62,7 @@ The agent rejected a book rental application according to existing rules (rental
 <br>
 <br>
 
-#### 2.2. Automatic Rule Conversion and Application
+#### 3.2. Automatic Rule Conversion and Application
 AI immediately analyzes this feedback and modifies the internal Decision Table. Without complex coding, the **'Rental Availability'** judgment logic is updated in real-time.
 
 ![](../../../uengine-image/process-gpt/claude-skills/key-Usage-scenarios-2.png)
@@ -55,7 +71,7 @@ AI immediately analyzes this feedback and modifies the internal Decision Table. 
 <br>
 <br>
 
-#### 2.3. Reprocessing with Changed Rules (Success)
+#### 3.3. Reprocessing with Changed Rules (Success)
 After the rules are changed, the agent completes the approval process for rental applications under the same conditions. In this way, the agent acts like a colleague who responds flexibly to situations, not a fixed program.
 
 ![](../../../uengine-image/process-gpt/claude-skills/key-Usage-scenarios-3.png)
@@ -64,10 +80,10 @@ After the rules are changed, the agent completes the approval process for rental
 <br>
 <br>
 
-### 3. Use Case 2: Skill Generation through Real-time Coding (Custom Skill Generation)
+### 4. Use Case 2: Skill Generation through Real-time Coding (Custom Skill Generation)
 When a new feature that doesn't exist in the organization is needed, AI responds by creating **'Custom Skills'** through real-time coding.
 
-#### 3.1. New Feature Request
+#### 4.1. New Feature Request
 The user requests **"Generate the completed book rental application results as an Excel file"**. The existing system does not have an Excel generation feature.
 
 ![](../../../uengine-image/process-gpt/claude-skills/key-Usage-scenarios-4.png)
@@ -76,7 +92,7 @@ The user requests **"Generate the completed book rental application results as a
 <br>
 <br>
 
-#### 3.2. Skill Generation and Code Writing
+#### 4.2. Skill Generation and Code Writing
 AI writes the necessary code itself to perform the request. It generates execution code like generate_excel.py and registers it in its **Skillset**.
 
 ![](../../../uengine-image/process-gpt/claude-skills/key-Usage-scenarios-5.png)
@@ -85,7 +101,7 @@ AI writes the necessary code itself to perform the request. It generates executi
 <br>
 <br>
 
-#### 3.3. Skill Registration Complete
+#### 4.3. Skill Registration Complete
 Now this agent has permanently acquired the **'Excel generation'** ability. When similar requests come in later, it processes the task using that skill without additional learning.
 
 ![](../../../uengine-image/process-gpt/claude-skills/key-Usage-scenarios-6.png)
@@ -97,7 +113,7 @@ Now this agent has permanently acquired the **'Excel generation'** ability. When
 
 
 
-## 3. Integrated Tab and Process Instance View
+## 4. Integrated Tab and Process Instance View
 
 Complex workflows are provided through **'Integrated Tabs'** and **'Table UI'** that can be grasped at a glance, rather than fragmented chat windows.
 
@@ -111,7 +127,7 @@ Complex workflows are provided through **'Integrated Tabs'** and **'Table UI'** 
 <br>
 
 
-## 4. Safe Optimization: Ephemeral Versions
+## 5. Safe Optimization: Ephemeral Versions
 
 Supports **'Ephemeral'** functionality that allows safe modification and testing of specific agent behavior without stopping the entire operational system.
 
