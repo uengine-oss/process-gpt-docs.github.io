@@ -48,3 +48,7 @@ When the chat is entered, AI edits the form written in the existing process base
 ![](../../../uengine-image/process-gpt/simulation-6.png)<br>
 
 Through this, the user can identify the problems that occurred during the process execution in the test environment and quickly modify the necessary modifications for each step to ensure the quality of the process.
+
+## Unit Test
+
+Unit Test is a feature that lets you pre-register cases of "given this input, this is the expected result" and automatically verifies them whenever the process is modified. While simulation runs each step manually, unit tests automatically execute the registered cases and compare results against the expected values, blocking regression errors caused by modifications in advance.
