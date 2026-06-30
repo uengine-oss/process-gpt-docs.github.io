@@ -50,10 +50,10 @@ The agent processes user requests through a 3-step reasoning process: Situation 
 
 
 ## 3. Key Usage Scenarios
-### 3. Use Case 1: Feedback-based Business Rule Refactoring (Rule Refactoring)
+### Use Case 1: Feedback-based Business Rule Refactoring (Rule Refactoring)
 When users provide feedback in natural language about task processing results, AI does not simply leave it as a memo. It analyzes the feedback and immediately modifies (Re-programming) the system's **Business Rules**.
 
-#### 3.1. Problem Situation and Feedback Provision
+#### 1) Problem Situation and Feedback Provision
 The agent rejected a book rental application according to existing rules (rental prohibited if overdue history exists). The administrator instructs a new policy in natural language through the chat window: **"Allow rental if overdue history is less than 5 times"**.
 
 ![](../../../uengine-image/process-gpt/claude-skills/key-Usage-scenarios-1.png)
@@ -62,7 +62,7 @@ The agent rejected a book rental application according to existing rules (rental
 <br>
 <br>
 
-#### 3.2. Automatic Rule Conversion and Application
+#### 2) Automatic Rule Conversion and Application
 AI immediately analyzes this feedback and modifies the internal Decision Table. Without complex coding, the **'Rental Availability'** judgment logic is updated in real-time.
 
 ![](../../../uengine-image/process-gpt/claude-skills/key-Usage-scenarios-2.png)
@@ -71,7 +71,7 @@ AI immediately analyzes this feedback and modifies the internal Decision Table. 
 <br>
 <br>
 
-#### 3.3. Reprocessing with Changed Rules (Success)
+#### 3) Reprocessing with Changed Rules (Success)
 After the rules are changed, the agent completes the approval process for rental applications under the same conditions. In this way, the agent acts like a colleague who responds flexibly to situations, not a fixed program.
 
 ![](../../../uengine-image/process-gpt/claude-skills/key-Usage-scenarios-3.png)
@@ -80,10 +80,10 @@ After the rules are changed, the agent completes the approval process for rental
 <br>
 <br>
 
-### 4. Use Case 2: Skill Generation through Real-time Coding (Custom Skill Generation)
+### Use Case 2: Skill Generation through Real-time Coding (Custom Skill Generation)
 When a new feature that doesn't exist in the organization is needed, AI responds by creating **'Custom Skills'** through real-time coding.
 
-#### 4.1. New Feature Request
+#### 1) New Feature Request
 The user requests **"Generate the completed book rental application results as an Excel file"**. The existing system does not have an Excel generation feature.
 
 ![](../../../uengine-image/process-gpt/claude-skills/key-Usage-scenarios-4.png)
@@ -92,7 +92,7 @@ The user requests **"Generate the completed book rental application results as a
 <br>
 <br>
 
-#### 4.2. Skill Generation and Code Writing
+#### 2) Skill Generation and Code Writing
 AI writes the necessary code itself to perform the request. It generates execution code like generate_excel.py and registers it in its **Skillset**.
 
 ![](../../../uengine-image/process-gpt/claude-skills/key-Usage-scenarios-5.png)
@@ -101,7 +101,7 @@ AI writes the necessary code itself to perform the request. It generates executi
 <br>
 <br>
 
-#### 4.3. Skill Registration Complete
+#### 3) Skill Registration Complete
 Now this agent has permanently acquired the **'Excel generation'** ability. When similar requests come in later, it processes the task using that skill without additional learning.
 
 ![](../../../uengine-image/process-gpt/claude-skills/key-Usage-scenarios-6.png)
@@ -113,7 +113,52 @@ Now this agent has permanently acquired the **'Excel generation'** ability. When
 
 
 
-## 4. Integrated Tab and Process Instance View
+## 4. Skill Governance — Versioning, Review and Approval
+
+As seen in the use cases above, ProcessGPT creates and modifies skills from nothing more than documents and natural-language requests. But because a skill is effectively a business rule, it becomes an operational risk if there is no record of who changed what and when. ProcessGPT treats skills like code: every change — from creation to the smallest edit — is recorded as a version, and only takes effect in production after review and approval.
+
+### Document-based Automatic Skill Generation
+Upload a practical guide document and make a request, and the system generates the skill folder structure (SKILL.md, references/, evals/) and verifies before-and-after behavior with holdout document-based tests. The generation process is tracked step by step through a knowledge base and a to-do list.
+
+![](../../../uengine-image/process-gpt/claude-skills/6.png)
+- Screen automatically generating a skill from a document and tracking the generation process step by step
+<br>
+<br>
+<br>
+
+### Change History — Who, When, What
+Every change to a skill is recorded together with its author, commit, and timestamp. If a problem arises, you can roll back to a previous state at any time, and responsibility for each change is clear.
+
+![](../../../uengine-image/process-gpt/claude-skills/7.png)
+- Screen where a skill's change history is recorded chronologically together with its author
+<br>
+<br>
+<br>
+
+### PR-based Review and Approval
+Other people's edits are not applied immediately. They are submitted as a Pull Request and merged into main only after review and administrator approval. This is the safeguard that prevents arbitrary changes from destabilizing the entire operation.
+
+![](../../../uengine-image/process-gpt/claude-skills/8.png)
+- Screen where edits are merged after going through review and approval (PR)
+<br>
+<br>
+<br>
+
+### Change Comparison — What Changed and How
+Before merging, a color-coded comparison view (diff) shows exactly what was added and modified. Reviewers can see precisely what changes and approve accordingly.
+
+![](../../../uengine-image/process-gpt/claude-skills/9.png)
+- Screen for checking changes through a color-coded comparison view
+<br>
+<br>
+<br>
+
+In this way, ProcessGPT goes beyond just creating skills — it provides a system for teams to verify and safely operate the skills they create together.
+
+
+
+
+## 5. Integrated Tab and Process Instance View
 
 Complex workflows are provided through **'Integrated Tabs'** and **'Table UI'** that can be grasped at a glance, rather than fragmented chat windows.
 
@@ -127,7 +172,7 @@ Complex workflows are provided through **'Integrated Tabs'** and **'Table UI'** 
 <br>
 
 
-## 5. Safe Optimization: Ephemeral Versions
+## 6. Safe Optimization: Ephemeral Versions
 
 Supports **'Ephemeral'** functionality that allows safe modification and testing of specific agent behavior without stopping the entire operational system.
 
