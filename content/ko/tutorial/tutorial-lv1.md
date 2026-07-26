@@ -12,6 +12,16 @@ sidebar: 'getting-started'
 영업 제안서 작성 프로세스:<br>
 **고객 요청 입력 → 영업 담당자 제안서 작성**
 
+<video controls width="100%" preload="metadata" style="max-width: 960px; border-radius: 8px; margin: 1.5rem 0;">
+  <source src="/videos/tutorial/tutorial-lv1-process-basics-narrated.mp4" type="video/mp4">
+  브라우저가 video 태그를 지원하지 않습니다. <a href="/videos/tutorial/tutorial-lv1-process-basics-narrated.mp4">영상 다운로드</a>
+</video>
+
+> 💡 현재 버전에서는 화면 우측의 **AI 채팅에 자연어로 요청** → 프로세스가 자동
+> 생성되는 흐름이 기본입니다(기본 오케스트레이션 = **딥 에이전트(deepagents)**).
+> 아래에서 설명하는 BPMN 팔레트 수동 편집은 세부 보정을 위한 **보조 수단**으로
+> 활용하시면 됩니다.
+
 
 ### 프로세스 정의 화면 이동
 
@@ -110,4 +120,4 @@ BPMN 팔레트에 대한 자세한 설명은 참고 자료를 확인하시기 �
 
 ![](../../../uengine-image/process-gpt/tutorial/lv-1/lv1-5-9.png)
 
-이때, '에이전트에 맡기기'를 진행할 경우 ProcessGPT에서 각 단계를 AI를 통해 자동으로 연결하는 **프롬프트 체이닝**과 각 단계에서 필요한 정보를 자동으로 추려 다음 단계에 전달하는 **컨텍스트 엔지니어링**을 통해 이전 단계에서 전달받은 정보를 기반으로 연결성 있는 결과가 생성됩니다.
+이때, '에이전트에 맡기기'를 진행할 경우 기본 오케스트레이션인 **딥 에이전트(deepagents)**가 각 단계를 AI를 통해 자동으로 연결하는 **프롬프트 체이닝**과 각 단계에서 필요한 정보를 자동으로 추려 다음 단계에 전달하는 **컨텍스트 엔지니어링**을 통해 이전 단계에서 전달받은 정보를 기반으로 연결성 있는 결과가 생성됩니다.

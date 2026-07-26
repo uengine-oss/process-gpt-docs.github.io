@@ -8,14 +8,26 @@ sidebar: 'getting-started'
 ## ProcessGPT Tutorial Lv.4 Followed by Inventory Management Process
 
 This tutorial introduces how to use AI agents to manage inventory through the following inventory management process.<br>
-Using Supabase, you can integrate your data tables and have AI agents handle inventory receipt, shipment, and production request tasks.
+You integrate a data table as a data source and have AI agents handle inventory receipt, shipment, and production request tasks.
+
+<video controls width="100%" preload="metadata" style="max-width: 960px; border-radius: 8px; margin: 1.5rem 0;">
+  <source src="/videos/tutorial/tutorial-lv4-erp-inventory-narrated.mp4" type="video/mp4">
+  Your browser does not support the video tag. <a href="/videos/tutorial/tutorial-lv4-erp-inventory-narrated.mp4">Download the video</a>
+</video>
 
 
-### ERP Data Integration (Using Supabase)
+### ERP Data Integration (Data Source Registration)
 
-#### 1. Creating Supabase Project and Table
+> 💡 The ERP data source can be **① a local / self-hosted Supabase**, **② an
+> existing ERP REST endpoint**, or **③ an external `supabase.com` project** —
+> all are connected the same way by registering the REST endpoint and auth
+> headers (apikey / Bearer token) under **Account Settings → Data Sources**. The
+> steps below use external `supabase.com` as an example; substitute the REST URL
+> and key of your local Supabase or in-house ERP if you use those.
 
-Go to Settings > Data Sources tab to add the connection information.
+#### 1. Preparing the Data Table and Registering Connection Info
+
+Go to Settings → **Data Sources tab** to add the connection information.
 
 ![](../../../uengine-image/process-gpt/en/tutorial/lv-4/lv-4-1.png)
 

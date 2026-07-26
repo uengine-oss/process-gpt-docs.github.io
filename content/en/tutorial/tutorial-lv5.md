@@ -12,6 +12,16 @@ The agent creates a newsletter customized to the customer's interests and level 
 Therefore, each customer can automatically receive the customized newsletter optimized for themselves.  
 The generated draft is automatically sent when approved through the review process, and the result can also be checked individually by customer unit.
 
+<video controls width="100%" preload="metadata" style="max-width: 960px; border-radius: 8px; margin: 1.5rem 0;">
+  <source src="/videos/tutorial/tutorial-lv5-multi-instance-newsletter-narrated.mp4" type="video/mp4">
+  Your browser does not support the video tag. <a href="/videos/tutorial/tutorial-lv5-multi-instance-newsletter-narrated.mp4">Download the video</a>
+</video>
+
+> 💡 The **number of instances is auto-inferred by the backend from the number
+> of collected VIPs (determinationCode)** at run time — the child processes are
+> spawned deterministically in parallel, one per VIP in the collected list (e.g.
+> 3 VIPs → 3 child instances), with no explicit count and no LLM involvement.
+
 ![](../../../uengine-image/process-gpt/en/tutorial/lv5-0.png)
 <br>
 

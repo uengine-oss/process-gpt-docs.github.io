@@ -12,6 +12,11 @@ sidebar: 'getting-started'
 따라서 각 고객은 자신에게 최적화된 커스텀 뉴스레터를 자동으로 받아볼 수 있습니다.  
 생성된 초안은 리뷰 과정을 거쳐 승인되면 자동 발송되며, 발송 결과 또한 고객 단위로 개별 확인이 가능합니다.
 
+<video controls width="100%" preload="metadata" style="max-width: 960px; border-radius: 8px; margin: 1.5rem 0;">
+  <source src="/videos/tutorial/tutorial-lv5-multi-instance-newsletter-narrated.mp4" type="video/mp4">
+  브라우저가 video 태그를 지원하지 않습니다. <a href="/videos/tutorial/tutorial-lv5-multi-instance-newsletter-narrated.mp4">영상 다운로드</a>
+</video>
+
 ![](../../../uengine-image/process-gpt/tutorial/lv5-0.png)
 <br>
 
@@ -43,7 +48,7 @@ sidebar: 'getting-started'
 
 'VIP 관심사 기반 뉴스레터 작성'단계 부터 '뉴스레터 발송' 단계 까지 멀티플 인스턴스 설정을 위해 상단의 “확장된 하위 프로세스 생성” 아이콘을 클릭하여 서브 프로세스를 생성합니다.
 
-서브 프로세스 설정을 완료하면 VIP 정보 수집의 수 만큼 영역 내의 프로세스가 분기되어 생성되며, 이를 통해 각 고객별로 맞춤형 메일 작성 및 발송 프로세스가 병렬로 실행됩니다.
+서브 프로세스 설정을 완료하면, **인스턴스 개수는 실행 시 백엔드가 수집된 VIP 수에서 자동으로 추론(determinationCode)** 합니다. 즉 직전 'VIP 정보 수집' 단계에서 모인 VIP 리스트의 길이만큼(예: 3명 → 자식 인스턴스 3개) 영역 내의 프로세스가 **결정론적으로 분기·병렬 생성**되며, 별도로 개수를 지정하거나 LLM이 개입하지 않습니다. 이를 통해 각 고객별로 맞춤형 메일 작성 및 발송 프로세스가 병렬로 실행됩니다.
 <br><br>
 
 2. 프로세스 생성 후, 각 task의 폼을 용도에 맞게 수정합니다.

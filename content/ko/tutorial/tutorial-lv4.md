@@ -8,18 +8,30 @@ sidebar: 'getting-started'
 ## 재고 관리 프로세스로 따라하는 ProcessGPT 튜토리얼 Lv.4
 
 본 튜토리얼은 **AI 에이전트**와 ERP 데이터를 연동하여 수행하는 재고 관리 프로세스를 안내합니다.<br>
-Supabase를 활용하여 데이터 테이블을 연동하고 에이전트를 통해 재고의 입·출고 처리 및 생산 요청들의 업무를 처리합니다.
+데이터 테이블을 데이터소스로 연동하고 에이전트를 통해 재고의 입·출고 처리 및 생산 요청들의 업무를 처리합니다.
+
+<video controls width="100%" preload="metadata" style="max-width: 960px; border-radius: 8px; margin: 1.5rem 0;">
+  <source src="/videos/tutorial/tutorial-lv4-erp-inventory-narrated.mp4" type="video/mp4">
+  브라우저가 video 태그를 지원하지 않습니다. <a href="/videos/tutorial/tutorial-lv4-erp-inventory-narrated.mp4">영상 다운로드</a>
+</video>
 
 
-### ERP 데이터 연동 (Supabase 활용)
+### ERP 데이터 연동 (데이터소스 등록)
 
-#### 1. Supabase 프로젝트 및 테이블 생성
+> 💡 ERP 데이터소스는 **① 로컬/자체 호스팅 Supabase**, **② 기존 ERP의 REST
+> 엔드포인트**, **③ 외부 `supabase.com` 프로젝트** 중 무엇이든 **계정 설정 →
+> 데이터소스 탭**에 REST 엔드포인트와 인증 헤더(apikey / Bearer 토큰)를 등록하는
+> 방식으로 동일하게 연동됩니다. 아래는 외부 `supabase.com`을 예시로 든 절차이며,
+> 로컬 Supabase나 사내 ERP를 쓰는 경우 해당 REST URL과 키로 대체하면 됩니다.
 
-설정 > 데이터소스 탭으로 이동하여 접속 정보를 추가합니다.
+#### 1. 데이터 테이블 준비 및 접속 정보 등록
+
+설정 → **데이터소스 탭**으로 이동하여 접속 정보를 추가합니다.
 
 ![](../../../uengine-image/process-gpt/tutorial/lv-4/lv-4-1.png)
 
-이때, Supabase의 정보를 기반으로 접속 정보를 추가해야 하기 때문에 Supabase로 접속합니다. https://supabase.com/
+외부 `supabase.com`을 사용하는 경우, 접속 정보를 얻기 위해 Supabase로 접속합니다. https://supabase.com/
+(로컬/자체 Supabase 또는 사내 ERP를 쓰는 경우 이 가입 절차는 건너뛰고 해당 REST 엔드포인트·키를 바로 등록하면 됩니다.)
 
 가입 후, 조직 생성을 위해 ['Create organization'을 클릭](https://supabase.com/dashboard/organizations) 후, Name을 설정하여 조직을 생성합니다.
 
@@ -80,8 +92,9 @@ Supabase 메뉴 'Authentication' > 'Policies'로 이동합니다.
 
 ### MRP 에이전트 등록 및 재고 관리를 위한 도구 부여
 
-MRP 에이전트에 사용할 Supabase MCP를 등록하기 위해 설정 > MCP 서버 > '새 MCP 서버 추가'를 클릭하여 아래와 같이 입력합니다.<br>
+MRP 에이전트에 사용할 Supabase MCP를 등록하려면 **계정 설정 → MCP 서버 탭**에서 '새 MCP 서버 추가'를 클릭하여 아래와 같이 입력합니다.<br>
 이때 Access_Token은 Supabase 프로필 > Account preferences > Access Tokens로 이동하여 Token 발급 후 입력합니다.
+(재고 확인·입출고 판단은 에이전트의 프로필 지식과 데이터소스 연동만으로도 동작하므로, MCP 등록은 에이전트가 DB에 직접 SQL로 접근하도록 확장할 때의 선택 사항입니다.)
 ```
 {
     "mcpServers": {

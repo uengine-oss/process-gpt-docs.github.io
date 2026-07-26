@@ -12,9 +12,18 @@ This tutorial introduces how to use AI agents to write a sales proposal through 
 Sales Proposal Writing Process:<br>
 **Customer Request Input → Proposal Draft Writing by AI Agent → Proposal Review**
 
-### MCP Registration
+<video controls width="100%" preload="metadata" style="max-width: 960px; border-radius: 8px; margin: 1.5rem 0;">
+  <source src="/videos/tutorial/tutorial-lv2-ai-agent-proposal-narrated.mp4" type="video/mp4">
+  Your browser does not support the video tag. <a href="/videos/tutorial/tutorial-lv2-ai-agent-proposal-narrated.mp4">Download the video</a>
+</video>
 
-Click the right-side top settings > MCP Server tab to navigate to the screen where MCP(Model Context Protocol) necessary during process execution can be registered.
+> 💡 In this tutorial the proposal draft is generated unattended by the default
+> orchestration, **deep agents (deepagents)**. The agent's knowledge is provided
+> in a dual form — **learning (mem0)** plus a **DMN decision table**.
+
+### (Optional) MCP Registration
+
+Click the right-side top settings > MCP Server tab to navigate to the screen where MCP(Model Context Protocol) necessary during process execution can be registered. The pre-seeded MCP servers are **read-only seeds**, and this tutorial's draft generation works purely from the agent's learned/profile knowledge without external tools, so **MCP registration is optional** — register one only if you need tools such as external search.
 
 ![](../../../uengine-image/process-gpt/en/tutorial/lv-2/lv2-1.png)
 <br>
@@ -83,9 +92,17 @@ The following is the information necessary for writing a proposal, so please che
 ```
 <br>
 
-After learning is completed, the learned information is created as shown below, and a proposal draft can be created based on the learned information when writing a proposal.
+After learning is completed, the learned information is created as shown below (you can review/delete the learned knowledge in the **Knowledge Management** tab of the agent chat), and a proposal draft can be created based on the learned information when writing a proposal.
 
 ![](../../../uengine-image/process-gpt/en/tutorial/lv-2/lv2-6.png)
+<br>
+
+2. **Dual-encoding rule-based knowledge — register a DMN decision table**
+
+The region-based pricing/lead-time/certification table above is not narrative knowledge but **rule-based knowledge that maps a condition (region) to results (min. quantity, unit price, shipping, lead time, certification)**. Because learning (mem0) is semantic search, recall of such decision rules can be unstable, so it is recommended to also register the same table as a **DMN decision table**.
+
+Use **'Business Rule +'** on the left of the agent chat to add a decision table with region as input and the pricing policy fields as outputs. The registered table appears under **'Business Rules'** in the agent chat and can be opened/edited in the decision-table editor at `/dmn/<rule id>`. Dual-encoding as **learning (mem0) + DMN decision table** gives you both narrative training and structured management/lookup of rule-based knowledge.
+
 <br>
 
 ### Process Creation and Form Editing
@@ -95,9 +112,9 @@ Create the sales proposal writing process as shown below.
 ![](../../../uengine-image/process-gpt/en/tutorial/lv-2/lv2-7.png)
 <br>
 
-To proceed with the settings for the proposal draft writing task, double-click to create a panel and then proceed with the settings.
+To proceed with the settings for the proposal draft writing task, double-click to create a panel and then proceed with the settings in the **Agent** tab.
 
-The settings according to the agent are as shown below, and the mode and research method can be set according to the purpose and method of using the agent.
+In the Agent tab, set **Agent research method = Deep Agent (deepagents)** and **Completion level = Draft**, then check **'Use a preconfigured agent'** and select the proposal writing agent created earlier. (With the completion level set to 'Draft', the agent fills in a draft and waits for a person to review and submit.)
 
 ![](../../../uengine-image/process-gpt/en/tutorial/lv-2/lv2-8.png)
 <br>

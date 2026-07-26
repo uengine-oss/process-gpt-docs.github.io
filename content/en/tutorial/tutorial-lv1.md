@@ -13,6 +13,16 @@ This tutorial introduces **ProcessGPT usage** through the following sales propos
 Sales Proposal Writing Process:<br>
 **Customer Request Input → Sales Representative Proposal Writing**
 
+<video controls width="100%" preload="metadata" style="max-width: 960px; border-radius: 8px; margin: 1.5rem 0;">
+  <source src="/videos/tutorial/tutorial-lv1-process-basics-narrated.mp4" type="video/mp4">
+  Your browser does not support the video tag. <a href="/videos/tutorial/tutorial-lv1-process-basics-narrated.mp4">Download the video</a>
+</video>
+
+> 💡 In the current version, the primary flow is to **describe your request in
+> natural language in the AI chat** on the right, which auto-generates the
+> process (default orchestration = **deep agents / deepagents**). The manual
+> BPMN palette described below is now a **secondary** tool for fine-tuning.
+
 
 ### Process Definition Screen Navigation
 

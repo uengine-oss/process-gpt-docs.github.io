@@ -14,6 +14,19 @@ Sales Proposal Writing Process:<br>
 
 The review of typos, missing attachments, and customer request compliance during proposal writing is performed by the agent, and the review requiring strategic judgment is performed by the sales team manager.
 
+<video controls width="100%" preload="metadata" style="max-width: 960px; border-radius: 8px; margin: 1.5rem 0;">
+  <source src="/videos/tutorial/tutorial-lv3-conditional-feedback-narrated.mp4" type="video/mp4">
+  Your browser does not support the video tag. <a href="/videos/tutorial/tutorial-lv3-conditional-feedback-narrated.mp4">Download the video</a>
+</video>
+
+> 💡 This tutorial edits the process **directly in the BPMN editor**: enter edit
+> mode (pencil icon), place an exclusive gateway, and set branch conditions by
+> double-clicking the flow to enter a **natural-language condition** — then use
+> the **'Deterministic rule'** button (or function mode) to turn it into a
+> deterministic condition function (e.g. `needs_revision == 'true'`), which
+> keeps runtime branching stable. Checkpoints are added from the task's Setting
+> tab.
+
 
 ### Process Modification
 
